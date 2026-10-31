@@ -160,6 +160,22 @@
   .panel{background:var(--step);border:1px solid var(--line);border-radius:var(--r-lg);padding:40px}
   @media(max-width:760px){.panel{padding:24px}}
 
+  .deliver{font-size:clamp(18px,2vw,20px);color:var(--white);max-width:54ch;margin-top:24px;
+    border-left:3px solid var(--accent);padding-left:16px}
+  .trust-strip{margin-top:24px;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r-sm);
+    color:var(--silver);font-size:16px;max-width:70ch}
+  .who{display:grid;gap:24px}
+  .who-item{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:baseline;
+    padding-top:24px;border-top:1px solid var(--line)}
+  .who-item:first-child{border-top:0;padding-top:0}
+  .who-q{font-size:20px;font-weight:600;color:var(--white);max-width:32ch}
+  .who-a{color:var(--silver);max-width:54ch}
+  .why{display:grid;gap:32px}
+  .why-item{max-width:60ch}
+  .why-item b{display:block;font-size:20px;color:var(--white);margin-bottom:6px}
+  .why-item p{color:var(--silver)}
+  @media(max-width:820px){.who-item{grid-template-columns:1fr;gap:8px}}
+
   footer{padding:64px 0 48px}
   .fname{font-size:clamp(36px,7vw,72px);font-weight:600;line-height:1;letter-spacing:-0.03em;
     color:var(--white)}
@@ -194,6 +210,8 @@
 <main id="main">
   <header class="wrap hero">
     <h1>Сайт начинается с интервью</h1>
+    <p class="deliver">На выходе: сайт с ценами и записью, заявка приходит вам в Telegram, вас
+      находят по поиску по городу. Локальный бизнес, Сыктывкар.</p>
     <div class="hero-grid">
       <p class="lead">Спрашиваю, как устроен ваш бизнес, где теряются клиенты и что вы хотите
         показать. Дальше проект, тексты и сайт. Сам, без посредников.</p>
@@ -205,8 +223,34 @@
     </div>
   </header>
 
+  <section class="wrap">
+    <h2 class="s-head rev">Кому это нужно</h2>
+    <div class="who rev">
+      <div class="who-item">
+        <div class="who-q">Есть группа ВКонтакте, а сайта нет</div>
+        <div class="who-a">В поиске вас не находят: человек ищет услугу по городу и попадает
+          к конкуренту. Цены разбросаны по постам, одни и те же вопросы приходят в личку.
+          Группа остаётся, сайт приводит людей из поиска.</div>
+      </div>
+      <div class="who-item">
+        <div class="who-q">Сайт есть, но заявок нет</div>
+        <div class="who-a">Нет цен, нет кнопки записи, с телефона не позвонить в один тап,
+          заголовок «Главная». Сайт существует, но человеку по нему некуда идти. Начинаем
+          с разбора: где именно теряются заявки.</div>
+      </div>
+      <div class="who-item">
+        <div class="who-q">Только телефон, и больше ничего</div>
+        <div class="who-a">Вас негде найти, кроме сарафана и случайного звонка. При этом есть
+          график и услуги, которыми можно торговать. Тут собираем с нуля: структура, тексты,
+          сайт, заявка в мессенджер.</div>
+      </div>
+    </div>
+  </section>
+
   <section class="wrap" id="work">
     <h2 class="s-head rev">Три работы, каждая открывается</h2>
+    <p class="s-note rev">Это мои работы. Объекты и названия вымышленные: клиентские проекты
+      я не публикую без разрешения. Показываю структуру и тексты, а не чужие фото.</p>
     <div class="shots">
       <figure class="shot rev">
         <div class="frame">
@@ -245,6 +289,8 @@
         </figcaption>
       </figure>
     </div>
+    <p class="trust-strip rev">Тридцать дней после запуска исправляю свои ошибки бесплатно
+      и в первую очередь: поехала вёрстка, не работает форма или кнопка.</p>
   </section>
 
   <section class="wrap">
@@ -281,6 +327,28 @@
         <p>Дизайн, вёрстка, мобильная версия, скорость. Форма заявки уходит в Telegram или WhatsApp,
           домен и публикация на мне.</p>
         <p class="meta">Приёмка на телефоне: проверяем кнопку звонка и отправляем тестовую заявку.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2 class="s-head rev">Почему со мной</h2>
+    <div class="why rev">
+      <div class="why-item">
+        <b>Не студия</b>
+        <p>Разговариваете со мной, делает тоже я. Ни менеджера, ни «отдела», которому
+          передадут вашу задачу и всё перепутают.</p>
+      </div>
+      <div class="why-item">
+        <b>Не однодневка</b>
+        <p>Работаю системным администратором: серверы, базы данных, Linux. Техническое
+          образование, «Информационные системы и технологии». Поэтому домен, хостинг, почта
+          и форма заявки на мне, и обслуживаю их тоже я, а не подрядчик.</p>
+      </div>
+      <div class="why-item">
+        <b>Не сайт ради сайта</b>
+        <p>Сначала интервью и страница выводов, потом работа. Вы видите структуру, тексты
+          и прототип до того, как заплатите за сборку.</p>
       </div>
     </div>
   </section>
