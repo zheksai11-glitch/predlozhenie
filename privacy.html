@@ -10,20 +10,20 @@
 <style>
   @font-face{font-family:"Manrope";src:url("fonts/manrope-400.woff2") format("woff2");font-weight:400;font-display:swap}
   @font-face{font-family:"Manrope";src:url("fonts/manrope-600.woff2") format("woff2");font-weight:600;font-display:swap}
-  :root{--ink:#111827;--muted:#475569;--accent:#111827;--surface:#F1F5F9;--r:16px;--ease:cubic-bezier(.22,1,.36,1)}
+  :root{--ink:#F8FAFC;--muted:#CBD5E1;--accent:#0EA5E9;--surface:rgba(248,250,252,.06);--r:16px;--ease:cubic-bezier(.22,1,.36,1)}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#F8FAFC;color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:18px;
+  body{background:#111827;color:var(--ink);font-family:"Manrope",system-ui,sans-serif;font-size:18px;
     line-height:1.6;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline;text-underline-offset:.18em}
+  a{color:#F8FAFC;text-decoration:none}
+  a:hover{color:#0EA5E9;text-decoration:underline;text-underline-offset:.18em}
   .wrap{max-width:760px;margin:0 auto;padding:64px 24px 96px}
-  h1{font-size:clamp(30px,5vw,48px);line-height:1.05;letter-spacing:-0.02em;font-weight:600;margin-bottom:24px}
-  h2{font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:40px 0 12px}
-  p,li{color:#222;margin-bottom:12px}
+  h1{color:#F8FAFC;font-size:clamp(30px,5vw,48px);line-height:1.05;letter-spacing:-0.02em;font-weight:600;margin-bottom:24px}
+  h2{color:#F8FAFC;font-size:24px;font-weight:600;letter-spacing:-0.01em;margin:40px 0 12px}
+  p,li{color:#CBD5E1;margin-bottom:12px}
   ul{padding-left:24px}
-  .back{display:inline-block;margin-bottom:40px;font-size:16px;font-weight:600;color:var(--ink)}
+  .back{display:inline-block;margin-bottom:40px;font-size:16px;font-weight:600;color:#F8FAFC}
   .back:hover{color:var(--accent);text-decoration:none}
-  .box{background:var(--surface);border-radius:var(--r);padding:24px;margin-top:40px;font-size:16px}
+  .box{background:var(--surface);border:1px solid rgba(203,213,225,.18);border-radius:var(--r);padding:24px;margin-top:40px;font-size:16px}
   :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 </style>
 </head>
