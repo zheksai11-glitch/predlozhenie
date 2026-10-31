@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="12" fill="#2450c9"/>
-  <text x="32" y="45" font-family="Manrope, Segoe UI, Arial, sans-serif" font-size="34" font-weight="600"
-        fill="#ffffff" text-anchor="middle">Е</text>
+  <rect width="64" height="64" rx="12" fill="#111827"/>
+  <text x="32" y="42" font-family="Manrope, Segoe UI, Arial, sans-serif" font-size="32" font-weight="600"
+        fill="#F8FAFC" text-anchor="middle">Е</text>
+  <rect x="20" y="47" width="24" height="4" rx="2" fill="#0EA5E9"/>
 </svg>
