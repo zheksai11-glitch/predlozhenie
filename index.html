@@ -3,353 +3,405 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Сайт начинается с интервью — Евгений, Сыктывкар</title>
+<title>Сайт начинается с интервью. Проект и сборка, Сыктывкар</title>
 <meta name="description" content="Интервью о вашем бизнесе, разбор конкурентов, проект сайта и сборка. Проект 30 000 ₽, сборка 30 000 ₽, вместе 60 000 ₽. Оплата по этапам, Сыктывкар.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Сайт начинается с интервью — Сыктывкар">
+<meta property="og:title" content="Сайт начинается с интервью. Сыктывкар">
 <meta property="og:description" content="Сначала разговор о вашем бизнесе и разбор конкурентов. Потом проект сайта и сборка.">
+<meta property="og:image" content="https://zheksai11-glitch.github.io/predlozhenie/og.png">
 <meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
   @font-face{font-family:"Manrope";src:url("fonts/manrope-400.woff2") format("woff2");font-weight:400;font-display:swap}
   @font-face{font-family:"Manrope";src:url("fonts/manrope-600.woff2") format("woff2");font-weight:600;font-display:swap}
-  @font-face{font-family:"Oswald";src:url("fonts/oswald-600.woff2") format("woff2");font-weight:600;font-display:swap}
-  @font-face{font-family:"Oswald";src:url("fonts/oswald-700.woff2") format("woff2");font-weight:700;font-display:swap}
 
   :root{
-    --bg:#ffffff; --surface:#f4f4f4; --ink:#111111; --muted:#6b6b6b;
-    --accent:#1a4be0; --accent-ink:#ffffff; --field:#111111; --field-ink:#ffffff;
-    --pad:clamp(18px,4vw,40px); --max:1240px;
-    --s-small:0.875rem; --s-body:clamp(1.0625rem,1rem + 0.2vw,1.125rem);
-    --s-lead:clamp(1.25rem,1.05rem + 0.8vw,1.5rem); --s-head:clamp(2rem,1.2rem + 3vw,3.25rem);
-    --s-display:clamp(2.6rem,11vw,9rem);
+    --bg:#ffffff; --surface:#f4f4f4; --ink:#111111; --muted:#666666;
+    --accent:#2450c9; --accent-hover:#1c40a6; --line:#e6e6e6;
+    --r-sm:8px; --r-lg:16px;
+    --max:1280px; --pad:24px;
+    --ease:cubic-bezier(.22,1,.36,1);
+    --t-move:500ms; --t-color:300ms;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{overflow-x:hidden;scroll-behavior:smooth}
+  html{scroll-behavior:smooth;overflow-x:hidden}
   body{background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;
-    font-size:var(--s-body);line-height:1.55;-webkit-font-smoothing:antialiased}
+    font-size:18px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;
+    text-wrap:pretty}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline;text-underline-offset:.18em}
+  h1,h2,h3{text-wrap:balance;letter-spacing:-0.02em}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-  .display{font-family:"Oswald",system-ui,sans-serif;font-weight:700;text-transform:uppercase;
-    letter-spacing:-0.01em;line-height:.92}
+  .skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;
+    border-radius:var(--r-sm);z-index:60}
+  .skip:focus{left:16px}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);
+    white-space:nowrap}
 
-  .top{display:flex;align-items:baseline;justify-content:flex-end;gap:clamp(16px,3vw,34px);
-    padding:clamp(18px,2.4vw,30px) 0 0;font-size:var(--s-small)}
-  .top a{color:var(--ink)}
-  .top .who{color:var(--muted);margin-right:auto}
-
-  .hero{padding:clamp(40px,7vw,90px) 0 clamp(50px,8vw,110px)}
-  h1{font-size:var(--s-display);max-width:14ch}
-  .hero-foot{display:grid;grid-template-columns:1fr auto;gap:clamp(22px,4vw,60px);align-items:end;
-    margin-top:clamp(26px,4vw,48px)}
-  .hero-foot p{max-width:34ch;font-size:var(--s-lead);line-height:1.4}
-  .btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-family:"Manrope",sans-serif;
-    font-weight:600;font-size:var(--s-body);padding:16px 26px;border:0;cursor:pointer;white-space:nowrap}
-  .btn:hover{text-decoration:none;background:#1239b8}
+  .nav{position:fixed;top:12px;left:50%;transform:translateX(-50%);z-index:50;width:min(100% - 24px, var(--max));
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    background:var(--bg);border-radius:var(--r-lg);padding:8px 12px 8px 16px;
+    box-shadow:0 1px 2px rgba(17,17,17,.04),0 8px 24px rgba(17,17,17,.06)}
+  .nav .brand{font-weight:600;font-size:16px;letter-spacing:-0.01em;color:var(--ink)}
+  .nav .links{display:flex;align-items:center;gap:24px;font-size:14px}
+  .nav .links a{color:var(--ink);transition:color var(--t-color) var(--ease)}
+  .nav .links a:hover{color:var(--accent);text-decoration:none}
+  .nav .links a[aria-current="page"]{color:var(--accent)}
   @media(max-width:760px){
-    .hero-foot{grid-template-columns:1fr}
-    h1{max-width:9ch}
+    .nav .links{display:none}
+    .nav{padding:8px 8px 8px 14px}
   }
 
-  section{padding:clamp(60px,9vw,130px) 0}
-  .s-head{font-size:var(--s-head);max-width:22ch;margin-bottom:clamp(30px,4vw,54px)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--accent);color:#fff;font-family:inherit;font-size:16px;font-weight:600;
+    padding:12px 20px;border:0;border-radius:var(--r-sm);cursor:pointer;white-space:nowrap;
+    transition:background var(--t-color) var(--ease),transform var(--t-color) var(--ease)}
+  .btn:hover{background:var(--accent-hover);text-decoration:none;transform:translateY(-1px)}
+  .btn:active{transform:scale(.98)}
+  .link-quiet{font-size:16px;font-weight:600;color:var(--ink)}
+  .link-quiet:hover{color:var(--accent);text-decoration:none}
 
-  .caps{list-style:none;display:grid;gap:clamp(4px,1vw,10px)}
-  .caps li{font-family:"Oswald",system-ui,sans-serif;font-weight:600;font-size:clamp(1.6rem,4.4vw,3rem);
-    line-height:1.06;text-transform:uppercase;letter-spacing:-0.01em}
-  .caps li span{color:var(--muted)}
+  main{padding-top:96px}
+  section{padding:80px 0}
+  @media(min-width:900px){section{padding:96px 0}}
 
-  .steps{display:grid;gap:clamp(36px,5vw,64px)}
-  .step{max-width:44ch}
-  .step:nth-child(2){margin-left:clamp(0px,12vw,220px)}
-  .step:nth-child(3){margin-left:clamp(0px,24vw,440px)}
-  .step h3{font-size:var(--s-lead);margin-bottom:10px}
-  .step .meta{font-size:var(--s-small);color:var(--muted);margin-top:10px;max-width:42ch}
-  @media(max-width:760px){.step:nth-child(2),.step:nth-child(3){margin-left:0}}
+  .hero{padding-top:64px}
+  h1{font-size:clamp(48px,9vw,96px);line-height:.98;font-weight:600;max-width:15ch;
+    background:linear-gradient(90deg,#111111,#666666);-webkit-background-clip:text;background-clip:text;
+    color:transparent}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:end;margin-top:40px}
+  .lead{font-size:clamp(20px,2.2vw,24px);line-height:1.45;max-width:34ch;color:#222}
+  .proof{display:grid;gap:12px;justify-items:start}
+  .proof-line{font-size:14px;color:var(--muted);max-width:32ch}
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:32px}
+    h1{max-width:11ch}
+  }
 
-  .band{background:var(--surface)}
-  table{width:100%;border-collapse:collapse}
-  caption{text-align:left;font-size:var(--s-small);color:var(--muted);padding-bottom:18px}
-  th,td{text-align:left;padding:clamp(14px,2vw,22px) 12px;border-bottom:1px solid #e2e2e2;vertical-align:top}
-  th{font-size:var(--s-small);font-weight:600;color:var(--muted)}
-  td.name{font-size:var(--s-lead);font-weight:600;width:28%}
-  td.price{font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(1.4rem,2.6vw,1.9rem);
-    white-space:nowrap;width:20%}
-  td.what{color:#333}
+  .s-head{font-size:clamp(30px,4vw,48px);line-height:1.05;font-weight:600;max-width:24ch;
+    margin-bottom:48px}
+  .s-note{font-size:14px;color:var(--muted);max-width:46ch;margin-top:-32px;margin-bottom:40px}
+
+  .caps{list-style:none;display:grid;gap:8px}
+  .caps li{font-size:clamp(24px,3.4vw,36px);line-height:1.25;font-weight:600;letter-spacing:-0.02em}
+  .caps li span{color:var(--muted);font-weight:400}
+
+  .steps{display:grid;gap:64px}
+  .step{max-width:46ch}
+  .step:nth-child(2){margin-left:clamp(0px,10vw,160px)}
+  .step:nth-child(3){margin-left:clamp(0px,20vw,320px)}
+  .step h3{font-size:24px;font-weight:600;margin-bottom:12px}
+  .step p{max-width:46ch}
+  .step .meta{font-size:14px;color:var(--muted);margin-top:12px}
+  @media(max-width:900px){.step:nth-child(2),.step:nth-child(3){margin-left:0}}
+
+  .panel{background:var(--surface);border-radius:var(--r-lg);padding:40px}
+  @media(max-width:760px){.panel{padding:24px}}
+
+  table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+  caption{text-align:left;font-size:14px;color:var(--muted);padding-bottom:24px}
+  th,td{text-align:left;padding:24px 16px;vertical-align:top}
+  thead th{font-size:14px;font-weight:600;color:var(--muted);padding-bottom:8px}
+  tbody tr:nth-child(odd){background:#fbfbfb}
+  td.name{font-size:20px;font-weight:600;width:26%}
+  td.price{font-size:24px;font-weight:600;white-space:nowrap;width:18%}
+  td.what{color:#333;font-size:16px}
   @media(max-width:760px){
     thead{display:none}
-    tr{display:block;border-bottom:1px solid #e2e2e2;padding:16px 0}
-    th,td{display:block;border:0;padding:0 0 6px}
+    tbody tr{display:block;padding:16px 0;background:transparent!important}
+    th,td{display:block;padding:0 0 8px}
     td.name,td.price,td.what{width:auto}
   }
 
-  .calc{margin-top:clamp(28px,4vw,44px);display:grid;gap:12px;max-width:540px}
-  .calc h3{font-size:var(--s-body);font-weight:600}
-  .opt{display:flex;gap:12px;align-items:baseline;font-size:var(--s-body);cursor:pointer}
+  .calc{margin-top:40px;display:grid;gap:12px;max-width:560px}
+  .calc h3{font-size:16px;font-weight:600}
+  .opt{display:flex;gap:12px;align-items:baseline;font-size:16px;cursor:pointer}
   .opt input{width:18px;height:18px;accent-color:var(--accent);transform:translateY(2px);flex:none}
-  .total{font-family:"Oswald",sans-serif;font-weight:700;font-size:clamp(1.7rem,4vw,2.4rem);
-    text-transform:uppercase;letter-spacing:-0.01em;margin-top:8px}
-  .total small{display:block;font-family:"Manrope",sans-serif;font-weight:400;font-size:var(--s-small);
-    color:var(--muted);text-transform:none;letter-spacing:0;margin-top:6px}
+  .total{font-size:clamp(30px,4vw,36px);font-weight:600;letter-spacing:-0.02em;margin-top:8px}
+  .total small{display:block;font-size:14px;font-weight:400;color:var(--muted);letter-spacing:0;margin-top:4px}
 
-  .works{background:var(--surface);padding:clamp(8px,2vw,18px) clamp(18px,3vw,30px)}
-  .work{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:baseline;
-    padding:clamp(18px,2.4vw,26px) 0}
-  .work b{display:block;font-size:var(--s-lead);font-weight:600}
-  .work span{color:var(--muted);font-size:var(--s-small);display:block;margin-top:6px;max-width:52ch}
-  .work a{font-size:var(--s-small);white-space:nowrap}
-  @media(max-width:620px){.work{grid-template-columns:1fr}}
+  .work{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:baseline;padding:24px 0}
+  .work + .work{border-top:1px solid var(--line)}
+  .work b{display:block;font-size:20px;font-weight:600}
+  .work span{color:var(--muted);font-size:16px;display:block;margin-top:8px;max-width:52ch}
+  .work a{font-size:16px;font-weight:600;white-space:nowrap}
+  @media(max-width:620px){.work{grid-template-columns:1fr;gap:12px}}
 
-  .faq{display:grid;gap:clamp(26px,4vw,46px)}
-  .qa{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(18px,4vw,56px);align-items:start}
-  .qa dt{font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(1.2rem,2.4vw,1.7rem);
-    line-height:1.15;text-transform:uppercase}
-  .qa dd{color:#222;max-width:50ch}
+  .faq{display:grid;gap:40px}
+  .qa{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start;
+    padding-top:24px;border-top:1px solid var(--line)}
+  .qa:first-child{border-top:0;padding-top:0}
+  .qa dt{font-size:20px;font-weight:600;line-height:1.35}
+  .qa dd{color:#333;max-width:52ch}
   @media(max-width:760px){.qa{grid-template-columns:1fr;gap:8px}}
 
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,5vw,70px)}
-  .split h3{font-size:var(--s-lead);margin-bottom:14px}
-  .split ul{list-style:none;display:grid;gap:10px}
-  .split li{color:#222}
-  .split .lead-out{color:var(--muted);font-size:var(--s-small);margin-top:16px;max-width:40ch}
-  @media(max-width:760px){.split{grid-template-columns:1fr}}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+  .split h3{font-size:24px;font-weight:600;margin-bottom:16px}
+  .split ul{list-style:none;display:grid;gap:12px}
+  .split li{color:#333}
+  .split .lead-out{color:var(--muted);font-size:16px;margin-top:24px;max-width:40ch}
+  @media(max-width:760px){.split{grid-template-columns:1fr;gap:40px}}
 
-  .contact{background:var(--field);color:var(--field-ink);padding:clamp(60px,9vw,120px) 0}
-  .contact .s-head{color:var(--field-ink);margin-bottom:clamp(24px,4vw,44px)}
-  .rows{display:grid;gap:clamp(8px,1.4vw,16px)}
-  .row{font-family:"Oswald",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:-0.01em;
-    font-size:clamp(1.5rem,4.6vw,3.2rem);line-height:1.05;color:var(--field-ink);word-break:break-word}
-  .row a{color:var(--field-ink);border-bottom:2px solid rgba(255,255,255,.35)}
-  .row a:hover{text-decoration:none;border-color:#fff}
-  .contact .note{color:#b9b9b9;font-size:var(--s-small);margin-top:clamp(22px,4vw,38px);max-width:52ch}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .rows{display:grid;gap:8px}
+  .row{font-size:clamp(30px,4.6vw,48px);line-height:1.1;font-weight:600;letter-spacing:-0.02em;
+    word-break:break-word}
+  .row a{color:var(--ink)}
+  .row a:hover{color:var(--accent);text-decoration:none}
+  .contact-note{font-size:14px;color:var(--muted);max-width:40ch}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:32px}}
 
-  footer{background:var(--bg);padding:clamp(40px,7vw,90px) 0 clamp(34px,5vw,60px)}
-  .big-name{font-family:"Oswald",sans-serif;font-weight:700;text-transform:uppercase;line-height:.9;
-    font-size:clamp(2.2rem,9vw,7rem);letter-spacing:-0.01em}
-  .fnote{margin-top:clamp(20px,3vw,34px);font-size:var(--s-small);color:var(--muted);max-width:70ch}
+  footer{padding:64px 0 48px}
+  .fname{font-size:clamp(36px,7vw,72px);font-weight:600;line-height:1;letter-spacing:-0.03em}
+  .fmeta{margin-top:24px;display:flex;flex-wrap:wrap;gap:24px;font-size:14px;color:var(--muted)}
+  .fnote{margin-top:24px;font-size:14px;color:var(--muted);max-width:72ch}
 
-  html.js .rev{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+  html.js .rev{opacity:0;transform:translateY(20px);
+    transition:opacity 700ms var(--ease),transform 700ms var(--ease)}
   html.js .rev.in{opacity:1;transform:none}
-  html.js h1{clip-path:inset(0 0 100% 0);animation:rise .7s cubic-bezier(.2,.7,.2,1) .05s forwards}
-  @keyframes rise{to{clip-path:inset(0 0 0 0)}}
   @media(prefers-reduced-motion:reduce){
-    html.js .rev{opacity:1;transform:none;transition:none}
-    html.js h1{clip-path:none;animation:none}
+    html.js .rev{opacity:1;transform:none;transition:opacity 200ms linear}
+    .btn:hover{transform:none}
   }
-  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Перейти к содержанию</a>
 <script>document.documentElement.classList.add('js')</script>
 
-<div class="wrap top">
-  <span class="who">Евгений · Сыктывкар</span>
-  <a href="#work">работы</a>
-  <a href="#price">цены</a>
-  <a href="https://t.me/evglat11">telegram</a>
-</div>
-
-<header class="wrap hero">
-  <h1 class="display">Сайт начинается<br>с интервью</h1>
-  <div class="hero-foot">
-    <p>Спрашиваю, как устроен ваш бизнес, где теряются клиенты и что вы хотите показать.
-       Дальше проект, тексты и сайт. Сам, без посредников.</p>
-    <a class="btn" href="https://t.me/evglat11">Написать в Telegram</a>
+<nav class="nav" aria-label="Основная навигация">
+  <a class="brand" href="#main">Евгений</a>
+  <div class="links">
+    <a href="#work">работы</a>
+    <a href="#price">цены</a>
+    <a href="#contact">контакты</a>
   </div>
-</header>
+  <a class="btn" href="https://t.me/evglat11">Написать в Telegram</a>
+</nav>
 
-<section class="wrap">
-  <h2 class="s-head rev">Что входит в работу</h2>
-  <ul class="caps rev">
-    <li>Интервью <span>и разбор конкурентов</span></li>
-    <li>Структура <span>страниц</span></li>
-    <li>Тексты <span>под поиск и гео</span></li>
-    <li>Дизайн <span>и вёрстка</span></li>
-    <li>Заявки <span>в мессенджер</span></li>
-    <li>Поддержка <span>после запуска</span></li>
-  </ul>
-</section>
-
-<section class="wrap">
-  <h2 class="s-head rev">Как это устроено</h2>
-  <div class="steps">
-    <div class="step rev">
-      <h3>Интервью</h3>
-      <p>Сорок минут разговора: чем занимаетесь, как приходят клиенты сейчас, что делаете лучше
-         конкурентов, что мешает и что вы сами считаете слабым местом. Записываю и задаю вопросы,
-         пока не станет понятно, за что вам платят.</p>
-      <p class="meta">После интервью вы получаете одну страницу выводов. Она остаётся у вас, даже если мы дальше не работаем.</p>
-    </div>
-    <div class="step rev">
-      <h3>Проект</h3>
-      <p>Смотрю, что предлагают в городе: цены, офферы, как они выглядят в поиске. Собираю структуру
-         страниц, пишу тексты под ваш город и ваши услуги, рисую прототип главной.</p>
-      <p class="meta">Вы видите, что будет написано и как расставлено, до того как появится дизайн.</p>
-    </div>
-    <div class="step rev">
-      <h3>Сборка</h3>
-      <p>Дизайн, вёрстка, мобильная версия, скорость. Форма заявки уходит в Telegram или WhatsApp, домен
-         и публикация на мне.</p>
-      <p class="meta">Приёмка на телефоне: проверяем кнопку звонка и отправляем тестовую заявку.</p>
-    </div>
-  </div>
-</section>
-
-<section class="wrap band" id="price">
-  <h2 class="s-head rev">Цены</h2>
-  <table>
-    <caption>Цена этапа фиксируется до начала работ. Оплата: половина на старте, половина при сдаче.</caption>
-    <thead>
-      <tr><th scope="col">Что</th><th scope="col">Сколько</th><th scope="col">Что внутри</th></tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="name">Проект сайта</td>
-        <td class="price">30 000 ₽</td>
-        <td class="what">Интервью, разбор пяти-семи конкурентов в городе, структура страниц, тексты
-          под поиск и гео, прототип главной.</td>
-      </tr>
-      <tr>
-        <td class="name">Сборка сайта</td>
-        <td class="price">30 000 ₽</td>
-        <td class="what">Дизайн, вёрстка, мобильная версия, скорость, форма заявки в мессенджер, домен,
-          публикация, заголовки и микроразметка.</td>
-      </tr>
-      <tr>
-        <td class="name">Проект и сборка</td>
-        <td class="price">60 000 ₽</td>
-        <td class="what">Оба этапа подряд. Можно остановиться после проекта: тексты и прототип останутся
-          у вас.</td>
-      </tr>
-      <tr>
-        <td class="name">Поддержка</td>
-        <td class="price">3 000 ₽/мес</td>
-        <td class="what">До трёх часов правок контента в месяц: цены, услуги, тексты, фото, отзывы.
-          Проверка формы заявки и отчёт раз в месяц.</td>
-      </tr>
-      <tr>
-        <td class="name">Сверх лимита</td>
-        <td class="price">1 000 ₽/час</td>
-        <td class="what">Новый функционал, новые блоки, анимации, изменение дизайна. Объём и цена
-          согласуются до начала.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="calc rev">
-    <h3>Собрать свой набор</h3>
-    <label class="opt"><input type="checkbox" id="c1" checked> Проект сайта</label>
-    <label class="opt"><input type="checkbox" id="c2" checked> Сборка сайта</label>
-    <label class="opt"><input type="checkbox" id="c3"> Первые три клиента: проект за 20 000 ₽ в обмен на отзыв</label>
-    <p class="total" id="total">60 000 ₽<small>Проект и сборка</small></p>
-  </div>
-</section>
-
-<section class="wrap" id="work">
-  <h2 class="s-head rev">Работы</h2>
-  <div class="works rev">
-    <div class="work">
-      <div>
-        <b>Автосервис</b>
-        <span>Главная и страница услуги: цены на работы, запись, кнопка звонка, мобильная версия.</span>
+<main id="main">
+  <header class="wrap hero">
+    <h1>Сайт начинается с интервью</h1>
+    <div class="hero-grid">
+      <p class="lead">Спрашиваю, как устроен ваш бизнес, где теряются клиенты и что вы хотите
+        показать. Дальше проект, тексты и сайт. Сам, без посредников.</p>
+      <div class="proof">
+        <a class="btn" href="https://t.me/evglat11">Написать в Telegram</a>
+        <p class="proof-line">Интервью и страница выводов бесплатно. Оплата по этапам: половина на
+          старте, половина при сдаче.</p>
       </div>
-      <a href="https://zheksai11-glitch.github.io/tochka-opory/">открыть</a>
     </div>
-    <div class="work">
-      <div>
-        <b>База отдыха</b>
-        <span>Коттеджи и цены, акции, отзывы, форма брони, тексты под поиск по региону.</span>
-      </div>
-      <a href="https://zheksai11-glitch.github.io/mesto/">открыть</a>
-    </div>
-    <div class="work">
-      <div>
-        <b>Корпоративный сайт услуг</b>
-        <span>Многостраничник: услуги, портфолио, партнёры, лицензии, форма заявки.</span>
-      </div>
-      <a href="https://zheksai11-glitch.github.io/ogneproekt/">открыть</a>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section class="wrap">
-  <h2 class="s-head rev">Частые вопросы</h2>
-  <dl class="faq rev">
-    <div class="qa">
-      <dt>Сколько это займёт времени</dt>
-      <dd>Срок называю после интервью, когда понятен объём, и записываю в переписке. Работаю по вечерам:
-          лучше назову реальный срок и сделаю в него, чем красивый и сорву.</dd>
+  <section class="wrap">
+    <h2 class="s-head rev">Что входит в работу</h2>
+    <ul class="caps rev">
+      <li>Интервью <span>и разбор конкурентов</span></li>
+      <li>Структура <span>страниц</span></li>
+      <li>Тексты <span>под поиск и гео</span></li>
+      <li>Дизайн <span>и вёрстка</span></li>
+      <li>Заявки <span>в мессенджер</span></li>
+      <li>Поддержка <span>после запуска</span></li>
+    </ul>
+  </section>
+
+  <section class="wrap">
+    <h2 class="s-head rev">Как это устроено</h2>
+    <div class="steps">
+      <div class="step rev">
+        <h3>Интервью</h3>
+        <p>Сорок минут разговора: чем занимаетесь, как приходят клиенты сейчас, что делаете лучше
+          конкурентов, что мешает и в чём вы сами видите слабое место. Записываю и задаю вопросы,
+          пока не станет понятно, за что вам платят.</p>
+        <p class="meta">После интервью вы получаете одну страницу выводов. Она остаётся у вас, даже
+          если мы дальше не работаем.</p>
+      </div>
+      <div class="step rev">
+        <h3>Проект</h3>
+        <p>Смотрю, что предлагают в городе: цены, офферы, как они выглядят в поиске. Собираю структуру
+          страниц, пишу тексты под ваш город и ваши услуги, рисую прототип главной.</p>
+        <p class="meta">Вы видите, что будет написано и как расставлено, до того как появится дизайн.</p>
+      </div>
+      <div class="step rev">
+        <h3>Сборка</h3>
+        <p>Дизайн, вёрстка, мобильная версия, скорость. Форма заявки уходит в Telegram или WhatsApp,
+          домен и публикация на мне.</p>
+        <p class="meta">Приёмка на телефоне: проверяем кнопку звонка и отправляем тестовую заявку.</p>
+      </div>
     </div>
-    <div class="qa">
-      <dt>Как проходит оплата</dt>
-      <dd>По этапам: половина на старте, половина при сдаче. Проект и сборка идут отдельными этапами, можно
-          остановиться после проекта.</dd>
+  </section>
+
+  <section class="wrap" id="price">
+    <div class="panel">
+      <h2 class="s-head rev">Цены</h2>
+      <p class="s-note rev">Цена этапа фиксируется до начала работ. Оплата: половина на старте,
+        половина при сдаче.</p>
+      <table>
+        <caption class="visually-hidden">Стоимость работ</caption>
+        <thead>
+          <tr><th scope="col">Что</th><th scope="col">Сколько</th><th scope="col">Что внутри</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="name">Проект сайта</td>
+            <td class="price">30 000 ₽</td>
+            <td class="what">Интервью, разбор пяти или семи конкурентов в городе, структура страниц,
+              тексты под поиск и гео, прототип главной.</td>
+          </tr>
+          <tr>
+            <td class="name">Сборка сайта</td>
+            <td class="price">30 000 ₽</td>
+            <td class="what">Дизайн, вёрстка, мобильная версия, скорость, форма заявки в мессенджер,
+              домен, публикация, заголовки и микроразметка.</td>
+          </tr>
+          <tr>
+            <td class="name">Проект и сборка</td>
+            <td class="price">60 000 ₽</td>
+            <td class="what">Оба этапа подряд. Можно остановиться после проекта: тексты и прототип
+              останутся у вас.</td>
+          </tr>
+          <tr>
+            <td class="name">Поддержка</td>
+            <td class="price">3 000 ₽/мес</td>
+            <td class="what">До трёх часов правок контента в месяц: цены, услуги, тексты, фото, отзывы.
+              Проверка формы заявки и отчёт раз в месяц.</td>
+          </tr>
+          <tr>
+            <td class="name">Сверх лимита</td>
+            <td class="price">1 000 ₽/час</td>
+            <td class="what">Новый функционал, новые блоки, анимации, изменение дизайна. Объём и цена
+              согласуются до начала.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="calc rev">
+        <h3>Собрать свой набор</h3>
+        <label class="opt"><input type="checkbox" id="c1" checked> Проект сайта</label>
+        <label class="opt"><input type="checkbox" id="c2" checked> Сборка сайта</label>
+        <label class="opt"><input type="checkbox" id="c3"> Первые три клиента: проект за 20 000 ₽
+          в обмен на отзыв</label>
+        <p class="total" id="total" aria-live="polite">60 000 ₽<small>Проект и сборка</small></p>
+      </div>
     </div>
-    <div class="qa">
-      <dt>Что нужно от меня</dt>
-      <dd>Сорок минут на интервью, цены и услуги, фотографии, или решаем, чем их заменить, доступы
-          к домену. Остальное на мне.</dd>
+  </section>
+
+  <section class="wrap" id="work">
+    <h2 class="s-head rev">Работы</h2>
+    <div class="rev">
+      <div class="work">
+        <div>
+          <b>Автосервис</b>
+          <span>Главная и страница услуги: цены на работы, запись, кнопка звонка, мобильная версия.</span>
+        </div>
+        <a href="https://zheksai11-glitch.github.io/tochka-opory/">открыть</a>
+      </div>
+      <div class="work">
+        <div>
+          <b>База отдыха</b>
+          <span>Коттеджи и цены, акции, отзывы, форма брони, тексты под поиск по региону.</span>
+        </div>
+        <a href="https://zheksai11-glitch.github.io/mesto/">открыть</a>
+      </div>
+      <div class="work">
+        <div>
+          <b>Корпоративный сайт услуг</b>
+          <span>Многостраничник: услуги, портфолио, партнёры, лицензии, форма заявки.</span>
+        </div>
+        <a href="https://zheksai11-glitch.github.io/ogneproekt/">открыть</a>
+      </div>
     </div>
-    <div class="qa">
-      <dt>Что входит в поддержку</dt>
-      <dd>Правка контента: цены, услуги, тексты, фото, отзывы: до трёх часов в месяц. Новые страницы,
-          блоки, анимации и смена дизайна: отдельная работа по 1 000 ₽ в час, цена согласуется заранее.</dd>
-    </div>
-    <div class="qa">
-      <dt>А если что-то сломается</dt>
-      <dd>Тридцать дней после запуска исправляю бесплатно и в первую очередь: поехала вёрстка,
+  </section>
+
+  <section class="wrap">
+    <h2 class="s-head rev">Частые вопросы</h2>
+    <dl class="faq rev">
+      <div class="qa">
+        <dt>Сколько это займёт времени</dt>
+        <dd>Срок называю после интервью, когда понятен объём, и записываю в переписке. Работаю по
+          вечерам: лучше назову реальный срок и сделаю в него, чем красивый и сорву.</dd>
+      </div>
+      <div class="qa">
+        <dt>Как проходит оплата</dt>
+        <dd>По этапам: половина на старте, половина при сдаче. Проект и сборка идут отдельными
+          этапами, можно остановиться после проекта.</dd>
+      </div>
+      <div class="qa">
+        <dt>Что нужно от меня</dt>
+        <dd>Сорок минут на интервью, цены и услуги, фотографии или решение, чем их заменить,
+          доступы к домену. Остальное на мне.</dd>
+      </div>
+      <div class="qa">
+        <dt>Что входит в поддержку</dt>
+        <dd>Правка контента: цены, услуги, тексты, фото, отзывы. До трёх часов в месяц. Новые
+          страницы, блоки, анимации и смена дизайна считаются отдельно, по 1 000 ₽ в час, цена
+          согласуется заранее.</dd>
+      </div>
+      <div class="qa">
+        <dt>А если что-то сломается</dt>
+        <dd>Тридцать дней после запуска исправляю бесплатно и в первую очередь: поехала вёрстка,
           не работает форма или кнопка. Это про мои ошибки, а не про новые пожелания.</dd>
-    </div>
-  </dl>
-</section>
+      </div>
+    </dl>
+  </section>
 
-<section class="wrap">
-  <h2 class="s-head rev">Как делим работу</h2>
-  <div class="split rev">
-    <div>
-      <h3>На мне</h3>
-      <ul>
-        <li>Интервью и разбор конкурентов</li>
-        <li>Структура, тексты, прототип</li>
-        <li>Дизайн, вёрстка, мобильная версия, скорость</li>
-        <li>Домен, публикация, форма заявки</li>
-        <li>Проверка после запуска и правки контента</li>
-      </ul>
+  <section class="wrap">
+    <h2 class="s-head rev">Как делим работу</h2>
+    <div class="split rev">
+      <div>
+        <h3>На мне</h3>
+        <ul>
+          <li>Интервью и разбор конкурентов</li>
+          <li>Структура, тексты, прототип</li>
+          <li>Дизайн, вёрстка, мобильная версия, скорость</li>
+          <li>Домен, публикация, форма заявки</li>
+          <li>Проверка после запуска и правки контента</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Не на мне, и говорю сразу</h3>
+        <ul>
+          <li>Реклама: Директ и ВК. Подскажу, что настроить, но вести не возьмусь</li>
+          <li>Карточки в 2ГИС и Яндекс.Картах: скажу, что заполнить, заполните сами</li>
+          <li>Продажи и обзвон ваших клиентов: это ваша часть</li>
+        </ul>
+        <p class="lead-out">Заявки в штуках не обещаю: они зависят от цены, сезона и конкурентов.
+          Отвечаю за структуру, тексты, скорость и работающую форму.</p>
+      </div>
     </div>
-    <div>
-      <h3>Не на мне, и говорю сразу</h3>
-      <ul>
-        <li>Реклама: Директ и ВК. Подскажу, что настроить, но вести не возьмусь</li>
-        <li>Карточки в 2ГИС и Яндекс.Картах: скажу, что заполнить, заполните сами</li>
-        <li>Продажи и обзвон ваших клиентов: это ваша часть</li>
-      </ul>
-      <p class="lead-out">Заявки в штуках не обещаю: они зависят от цены, сезона и конкурентов. Отвечаю
-        за структуру, тексты, скорость и работающую форму.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="contact">
-  <div class="wrap">
-    <h2 class="s-head display rev">Давайте поговорим</h2>
-    <div class="rows rev">
-      <div class="row"><a href="https://t.me/evglat11">@evglat11</a></div>
-      <div class="row"><a href="mailto:me@zheksai11.ru">me@zheksai11.ru</a></div>
-      <div class="row">Сыктывкар</div>
+  <section class="wrap" id="contact">
+    <div class="panel">
+      <h2 class="s-head rev">Давайте поговорим</h2>
+      <div class="contact-grid rev">
+        <div class="rows">
+          <div class="row"><a href="https://t.me/evglat11">@evglat11</a></div>
+          <div class="row"><a href="mailto:me@zheksai11.ru">me@zheksai11.ru</a></div>
+          <div class="row">Сыктывкар</div>
+        </div>
+        <div>
+          <a class="btn" href="https://t.me/evglat11">Написать в Telegram</a>
+          <p class="contact-note" style="margin-top:16px">Работаю как физическое лицо, самозанятость
+            оформлю по запросу. Встречи в городе после интервью в переписке.</p>
+        </div>
+      </div>
     </div>
-    <p class="note">Работаю как физическое лицо, самозанятость оформлю по запросу. Встречи в городе —
-       после интервью в переписке.</p>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <div class="big-name rev">Евгений</div>
-    <p class="fnote">Работы в разделе «Работы»: демонстрационные макеты: компании и объекты вымышленные,
-       телефоны и цены условные. Клиентских проектов с трафиком и отзывами пока нет, поэтому первым
-       трём клиентам проект стоит 20 000 ₽ вместо 30 000.</p>
-  </div>
-</footer>
+  <footer class="wrap">
+    <div class="fname rev">Евгений</div>
+    <div class="fmeta">
+      <a href="privacy.html">Политика конфиденциальности</a>
+      <a href="https://t.me/evglat11">Telegram</a>
+      <a href="mailto:me@zheksai11.ru">me@zheksai11.ru</a>
+    </div>
+    <p class="fnote">Работы в разделе «Работы»: демонстрационные макеты, компании и объекты
+      вымышленные, телефоны и цены условные. Клиентских проектов с трафиком и отзывами пока нет,
+      поэтому первым трём клиентам проект стоит 20 000 ₽ вместо 30 000.</p>
+  </footer>
+</main>
 
 <script>
   (function () {
