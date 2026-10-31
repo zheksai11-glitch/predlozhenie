@@ -66,9 +66,9 @@
   .btn-ghost:hover{background:var(--step);color:var(--white)}
 
   main{padding-top:96px;position:relative;z-index:1}
-  section{padding:80px 0}
-  @media(min-width:900px){section{padding:96px 0}}
-  .hero{padding-top:56px}
+  section{padding:clamp(80px,11vw,152px) 0}
+  .sep{height:1px;background:rgba(203,213,225,.14);border:0;margin:0}
+  .hero{padding-top:56px;padding-bottom:clamp(64px,9vw,120px)}
 
   h1{font-size:clamp(48px,9vw,96px);line-height:.98;font-weight:600;max-width:15ch;
     background:linear-gradient(90deg,#F8FAFC,#A9B7C6);-webkit-background-clip:text;background-clip:text;
@@ -79,7 +79,8 @@
   .proof-line{font-size:14px;color:var(--silver);opacity:.85;max-width:32ch}
   @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:32px}h1{max-width:11ch}}
 
-  .s-head{font-size:clamp(30px,4vw,48px);line-height:1.05;font-weight:600;max-width:24ch;margin-bottom:40px}
+  .s-head{font-size:clamp(30px,4vw,48px);line-height:1.05;font-weight:600;max-width:24ch;
+    margin-bottom:clamp(32px,4vw,56px)}
   .s-note{font-size:14px;color:var(--silver);opacity:.85;max-width:46ch;margin-top:-24px;margin-bottom:32px}
 
   .caps{list-style:none;display:grid;gap:8px}
@@ -109,7 +110,7 @@
   .step .meta{font-size:14px;color:var(--silver);opacity:.8;margin-top:12px}
   @media(max-width:900px){.step:nth-child(2),.step:nth-child(3){margin-left:0}}
 
-  .nums{display:grid;gap:64px}
+  .nums{display:grid;gap:clamp(48px,6vw,80px)}
   .num-item{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:baseline}
   .num{font-size:clamp(48px,9vw,96px);font-weight:600;letter-spacing:-0.04em;line-height:.9;
     font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--white)}
@@ -141,7 +142,7 @@
   @media(max-width:820px){.light .split{grid-template-columns:1fr;gap:40px}}
 
   .faq{display:grid;gap:40px}
-  .qa{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start;padding-top:24px;
+  .qa{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start;padding-top:32px;
     border-top:1px solid var(--line)}
   .qa:first-child{border-top:0;padding-top:0}
   .qa dt{font-size:20px;font-weight:600;line-height:1.35;color:var(--white)}
@@ -164,13 +165,13 @@
     border-left:3px solid var(--accent);padding-left:16px}
   .trust-strip{margin-top:24px;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r-sm);
     color:var(--silver);font-size:16px;max-width:70ch}
-  .who{display:grid;gap:24px}
+  .who{display:grid;gap:clamp(24px,3vw,36px)}
   .who-item{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:baseline;
     padding-top:24px;border-top:1px solid var(--line)}
   .who-item:first-child{border-top:0;padding-top:0}
   .who-q{font-size:20px;font-weight:600;color:var(--white);max-width:32ch}
   .who-a{color:var(--silver);max-width:54ch}
-  .why{display:grid;gap:32px}
+  .why{display:grid;gap:clamp(28px,3.5vw,44px)}
   .why-item{max-width:60ch}
   .why-item b{display:block;font-size:20px;color:var(--white);margin-bottom:6px}
   .why-item p{color:var(--silver)}
@@ -247,6 +248,8 @@
     </div>
   </section>
 
+  <div class="sep" aria-hidden="true"></div>
+
   <section class="wrap" id="work">
     <h2 class="s-head rev">Три работы, каждая открывается</h2>
     <p class="s-note rev">Это мои работы. Объекты и названия вымышленные: клиентские проекты
@@ -293,6 +296,8 @@
       и в первую очередь: поехала вёрстка, не работает форма или кнопка.</p>
   </section>
 
+  <div class="sep" aria-hidden="true"></div>
+
   <section class="wrap">
     <h2 class="s-head rev">Что входит в работу</h2>
     <ul class="caps rev">
@@ -304,6 +309,8 @@
       <li>Поддержка <span>после запуска</span></li>
     </ul>
   </section>
+
+  <div class="sep" aria-hidden="true"></div>
 
   <section class="wrap">
     <h2 class="s-head rev">Как это устроено</h2>
@@ -331,6 +338,8 @@
     </div>
   </section>
 
+  <div class="sep" aria-hidden="true"></div>
+
   <section class="wrap">
     <h2 class="s-head rev">Почему со мной</h2>
     <div class="why rev">
@@ -352,6 +361,8 @@
       </div>
     </div>
   </section>
+
+  <div class="sep" aria-hidden="true"></div>
 
   <section class="wrap" id="price">
     <h2 class="s-head rev">Цены</h2>
@@ -410,6 +421,8 @@
     </div>
   </section>
 
+  <div class="sep" aria-hidden="true"></div>
+
   <section class="light">
     <div class="wrap">
       <h2 class="s-head rev">Как делим работу</h2>
@@ -437,6 +450,8 @@
       </div>
     </div>
   </section>
+
+  <div class="sep" aria-hidden="true"></div>
 
   <section class="wrap">
     <h2 class="s-head rev">Частые вопросы</h2>
@@ -469,6 +484,8 @@
       </div>
     </dl>
   </section>
+
+  <div class="sep" aria-hidden="true"></div>
 
   <section class="wrap" id="contact">
     <div class="panel">
