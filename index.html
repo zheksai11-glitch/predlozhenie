@@ -326,6 +326,28 @@
   .contact-link:hover{color:var(--lime);border-color:var(--lime)}
   .contact-city{font-size:clamp(26px,2.8vw,36px);font-weight:700;letter-spacing:-.03em}
   .contact-note{font-size:13px;line-height:1.5;color:rgba(245,241,233,.55);max-width:330px}
+  .inc{margin-top:clamp(32px,4vw,56px);padding-top:clamp(24px,3vw,40px);border-top:1px solid var(--line-light)}
+  .inc h3{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.03em;margin-bottom:20px}
+  .inc ul{list-style:none;columns:2;column-gap:clamp(24px,4vw,56px)}
+  .inc li{position:relative;padding-left:22px;margin-bottom:10px;break-inside:avoid;
+    font-size:15px;line-height:1.5;color:var(--muted-light)}
+  .inc li::before{content:"✳";position:absolute;left:0;top:1px;font-size:11px;color:var(--lime)}
+  .inc-note{margin-top:20px;font-size:13px;line-height:1.5;color:var(--muted)}
+  @media(max-width:760px){.inc ul{columns:1}}
+  .lead-form{display:grid;gap:12px;max-width:520px;margin-top:28px}
+  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lead-form input{width:100%;background:transparent;border:1px solid var(--line-light);color:var(--cream);
+    font:inherit;font-size:16px;padding:14px 16px;border-radius:2px;transition:border-color .3s}
+  .lead-form input::placeholder{color:rgba(245,241,233,.45)}
+  .lead-form input:focus{outline:none;border-color:var(--lime)}
+  .lead-form input[aria-invalid="true"]{border-color:#E8734A}
+  .lead-form .btn{justify-self:start}
+  .lf-note{font-size:12.5px;line-height:1.5;color:var(--muted-light);max-width:460px}
+  .lf-note a{color:var(--cream);border-bottom:1px solid var(--line-light)}
+  .lf-error{font-size:13px;line-height:1.4;color:#E8734A;min-height:0}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media(max-width:560px){.lf-row{grid-template-columns:1fr}}
+
   .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
     padding-top:22px;border-top:1px solid var(--line-light);font-size:13px;color:rgba(245,241,233,.55)}
   .foot .fname{color:var(--cream)}
@@ -643,7 +665,7 @@
           </summary>
           <div class="body">
             <p>Сорок минут разговора: чем занимаетесь, как приходят клиенты сейчас, что делаете лучше конкурентов, что мешает и в чём вы сами видите слабое место. Записываю и задаю вопросы, пока не станет понятно, за что вам платят.</p>
-            <p class="meta">После интервью вы получаете одну страницу выводов. Она остаётся у вас, даже если мы дальше не работаем.</p>
+            <p class="meta"><b>Результат:</b> одна страница выводов о вашем бизнесе. Остаётся у вас, даже если дальше не работаем.</p>
           </div>
         </details>
 
@@ -655,7 +677,7 @@
           </summary>
           <div class="body">
             <p>Смотрю, что предлагают в городе: цены, офферы, как они выглядят в поиске. Собираю структуру страниц, пишу тексты под ваш город и ваши услуги, рисую прототип главной.</p>
-            <p class="meta">Вы видите, что будет написано и как расставлено, до того как появится дизайн.</p>
+            <p class="meta"><b>Результат:</b> структура страниц, тексты и прототип главной — вы читаете и согласуете их до начала сборки.</p>
           </div>
         </details>
 
@@ -667,7 +689,7 @@
           </summary>
           <div class="body">
             <p>Дизайн, вёрстка, мобильная версия, скорость. Форма заявки уходит в Telegram или WhatsApp, домен и публикация на мне.</p>
-            <p class="meta">Приёмка на телефоне: проверяем кнопку звонка и отправляем тестовую заявку.</p>
+            <p class="meta"><b>Результат:</b> сайт на вашем домене, рабочая форма заявки, тестовая заявка и инструкция по работе.</p>
           </div>
         </details>
       </div>
@@ -762,6 +784,29 @@
         </article>
       </div>
 
+      <div class="inc reveal">
+        <h3>Что входит в 60 000 ₽</h3>
+        <ul>
+          <li>Интервью сорок минут</li>
+          <li>Страница выводов по вашему бизнесу</li>
+          <li>Разбор пяти или семи конкурентов в городе</li>
+          <li>Структура страниц под ваши запросы</li>
+          <li>Тексты по блокам, под поиск и гео</li>
+          <li>Прототип главной страницы</li>
+          <li>Дизайн всех страниц</li>
+          <li>Вёрстка и адаптив под телефон</li>
+          <li>Скорость загрузки и оптимизация картинок</li>
+          <li>Форма заявки в Telegram или WhatsApp</li>
+          <li>Домен и публикация</li>
+          <li>Заголовки, описания и микроразметка организации</li>
+          <li>Проверка на телефоне и тестовая заявка</li>
+          <li>Инструкция по работе с сайтом</li>
+          <li>Тридцать дней правок после запуска</li>
+        </ul>
+        <p class="inc-note">Домен около 300 ₽ в год и хостинг оплачиваете вы, я настраиваю и подключаю. Две итерации правок на каждом этапе входят в цену.</p>
+      </div>
+
+
       <div class="calc reveal">
         <div>
           <h3>Собрать свой набор</h3>
@@ -851,6 +896,19 @@
           <h2>Давайте поговорим.</h2>
           <p class="contact-lead">Напишите в Telegram или на почту. Договоримся о разговоре: сорок минут, бесплатно, без обязательств.</p>
           <a class="btn" href="https://t.me/evglat11">написать в telegram <span class="arr">↗</span></a>
+          <form class="lead-form" id="leadForm" novalidate>
+            <div class="lf-row">
+              <label class="sr-only" for="lf-name">Ваше имя</label>
+              <input id="lf-name" name="name" type="text" placeholder="Как вас зовут" autocomplete="name">
+              <label class="sr-only" for="lf-contact">Телефон или телеграм</label>
+              <input id="lf-contact" name="contact" type="text" placeholder="Телефон или @telegram" autocomplete="tel">
+            </div>
+            <p class="lf-error" id="lfError" role="alert" aria-live="polite"></p>
+            <button class="btn" type="submit">отправить заявку <span class="arr">↗</span></button>
+            <p class="lf-note">Кнопка откроет Telegram с готовым текстом заявки: на сервер ничего не уходит.
+              Нажимая, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</p>
+          </form>
+
         </div>
 
         <div class="contact-side reveal">
@@ -959,6 +1017,28 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     onScroll();
+    var lf = document.getElementById('leadForm');
+    if (lf) {
+      var lfName = document.getElementById('lf-name'),
+          lfContact = document.getElementById('lf-contact'),
+          lfError = document.getElementById('lfError');
+      lf.addEventListener('submit', function (e) {
+        e.preventDefault();
+        lfName.removeAttribute('aria-invalid');
+        lfContact.removeAttribute('aria-invalid');
+        var n = lfName.value.trim(), c = lfContact.value.trim();
+        if (!n || !c) {
+          lfError.textContent = 'Заполните имя и контакт — иначе не смогу ответить.';
+          if (!n) lfName.setAttribute('aria-invalid', 'true');
+          if (!c) lfContact.setAttribute('aria-invalid', 'true');
+          return;
+        }
+        lfError.textContent = '';
+        var text = 'Здравствуйте! Хочу обсудить сайт.\nИмя: ' + n + '\nКонтакт: ' + c;
+        window.open('https://t.me/evglat11?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      });
+    }
+
   })();
 </script>
 </body>
