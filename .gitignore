@@ -1,0 +1,8 @@
+# служебные и личные файлы — на сайте им не место
+*.md
+.env
+.env.*
+*.log
+*.zip
+.DS_Store
+node_modules/
