@@ -7,422 +7,543 @@
 <meta name="description" content="Сайты для локального бизнеса в Сыктывкаре: цены и запись на виду, заявка в Telegram. Сайт под ключ от 70 000 ₽, разбор и тексты 30 000 ₽. Три платежа по результатам.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Сайт для локального бизнеса: находят в поиске, видят цены">
-<meta property="og:description" content="Цены и запись на виду, заявка в Telegram. Разбор конкурентов до начала работы. Сыктывкар.">
+<meta property="og:description" content="Сайт под ключ от 70 000 ₽, разбор и тексты 30 000 ₽. Оплата тремя платежами по результатам. Сыктывкар.">
 <meta property="og:image" content="https://zheksai11-glitch.github.io/predlozhenie/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#0F2B1F">
+<meta name="theme-color" content="#05060f">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/TildaSans-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/authkit/inter-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/authkit/onest-cyrillic-500.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  @font-face{font-family:"Tilda Sans";src:url("fonts/TildaSans-VF.woff2") format("woff2-variations");
-    font-weight:250 1000;font-style:normal;font-display:swap}
+  /* ---------- type ---------- */
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-cyrillic-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-ext-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-cyrillic-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-ext-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-cyrillic-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-ext-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-cyrillic-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-ext-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Inter";src:url("fonts/authkit/inter-latin-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Onest";src:url("fonts/authkit/onest-cyrillic-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"Onest";src:url("fonts/authkit/onest-latin-ext-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Onest";src:url("fonts/authkit/onest-latin-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"Onest";src:url("fonts/authkit/onest-cyrillic-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"Onest";src:url("fonts/authkit/onest-latin-ext-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"Onest";src:url("fonts/authkit/onest-latin-600.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+  @font-face{font-family:"JetBrains Mono";src:url("fonts/authkit/jetbrains-mono-cyrillic-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+  @font-face{font-family:"JetBrains Mono";src:url("fonts/authkit/jetbrains-mono-latin-ext-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+  @font-face{font-family:"JetBrains Mono";src:url("fonts/authkit/jetbrains-mono-latin-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 
   :root{
-    --pine:#0F2B1F; --pine-deep:#081C14; --pine-soft:#15412E;
-    --cream:#F5F1E9; --paper:#FBFAF6; --lime:#D5F15A;
-    --ink:#0F2B1F; --muted:rgba(15,43,31,.72); --muted-light:rgba(245,241,233,.74);
-    --line:rgba(15,43,31,.16); --line-light:rgba(245,241,233,.22);
-    --max:1320px; --pad:clamp(18px,3.2vw,40px);
-    --ease:cubic-bezier(.16,1,.3,1);
-    --r:18px;
+    --canvas:#05060f; --canvas-2:#070812; --canvas-3:#090b17;
+    --plate:#2f343e;
+    --frost:#d1e4fa; --mist:#c7d3ea; --fog:#9da7ba;
+    --white:#ffffff; --violet:#663af3; --violet-hi:#7550f5; --blue:#b6d9fc;
+    --line:rgba(186,215,247,.12); --line-strong:rgba(186,215,247,.24);
+    --fill:rgba(199,211,234,.06); --fill-2:rgba(186,214,247,.03); --fill-3:rgba(186,214,247,.12);
+    --grad:linear-gradient(180deg,#d8ecf8 0%,#98c0ef 100%);
+    --elev:inset 0 1px 1px rgba(216,236,248,.2),inset 0 24px 48px rgba(168,216,245,.06),0 16px 32px rgba(0,0,0,.3);
+    --max:1200px; --pad:clamp(18px,3.4vw,32px);
+    --r:16px; --r-sm:6px;
+    --ease:cubic-bezier(.22,.61,.36,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:96px;overflow-x:hidden}
-  body{background:var(--cream);color:var(--ink);font-family:"Tilda Sans",system-ui,-apple-system,sans-serif;
-    font-size:17px;line-height:1.5;font-weight:400;-webkit-font-smoothing:antialiased;
+  html{scroll-behavior:smooth;scroll-padding-top:88px;overflow-x:hidden}
+  body{background:var(--canvas);color:var(--mist);
+    font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased;
     text-wrap:pretty;overflow-x:hidden}
   body.lock{overflow:hidden}
-  ::selection{background:var(--pine);color:var(--lime)}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:
+      linear-gradient(rgba(186,215,247,.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(186,215,247,.055) 1px,transparent 1px);
+    background-size:88px 88px;
+    -webkit-mask-image:radial-gradient(130% 95% at 50% 0%,#000 0%,rgba(0,0,0,.6) 45%,transparent 88%);
+    mask-image:radial-gradient(130% 95% at 50% 0%,#000 0%,rgba(0,0,0,.6) 45%,transparent 88%)}
+  ::selection{background:var(--violet);color:#fff}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
   ul{list-style:none}
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-  h1,h2,h3{font-weight:800;letter-spacing:-.045em;line-height:.95;text-wrap:balance}
-  :focus-visible{outline:2px solid var(--lime);outline-offset:4px}
-  .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-  .skip{position:absolute;left:-9999px;top:8px;background:var(--pine);color:var(--cream);
-    padding:10px 14px;z-index:90;border-radius:8px}
+  h1,h2,h3{font-family:"Onest","Inter",sans-serif;font-weight:500;letter-spacing:-.01em;
+    line-height:1.1;text-wrap:balance}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+  .container{max-width:var(--max);margin:0 auto;padding:0 var(--pad);position:relative;z-index:1}
+  .skip{position:absolute;left:-9999px;top:8px;background:var(--violet);color:#fff;
+    padding:10px 16px;z-index:90;border-radius:999px;font-size:14px}
   .skip:focus{left:16px}
-  .progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:95;background:var(--lime);
+  .progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:95;
+    background:linear-gradient(90deg,#98c0ef,var(--blue));
     transform:scaleX(0);transform-origin:left;pointer-events:none;will-change:transform}
-  .label{font-size:12px;line-height:1.3;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-  .dark .label,.dark .label{color:var(--muted-light)}
-  .note{font-size:14px;line-height:1.45;color:var(--muted)}
-  .dark .note{color:var(--muted-light)}
 
-  /* buttons */
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;
-    background:var(--lime);color:var(--pine);border-radius:999px;
-    font-size:16px;font-weight:600;line-height:1;padding:20px 30px;
-    transition:transform .4s var(--ease),background .3s var(--ease),color .3s var(--ease)}
-  .btn:hover{transform:translateY(-3px);background:var(--cream);color:var(--pine)}
-  .btn .arr{transition:transform .3s var(--ease)}
-  .btn:hover .arr{transform:translate(3px,-3px)}
-  .btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--line-light)}
-  .btn-ghost:hover{background:var(--cream);color:var(--pine)}
-  .link-line{display:inline-block;position:relative;font-weight:500;font-size:15px}
-  .link-line::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;
-    background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
-  .link-line:hover::after{transform:scaleX(1);transform-origin:left}
+  .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  @supports not ((-webkit-background-clip:text) or (background-clip:text)){
+    .grad{color:var(--frost);background:none}
+  }
+  .eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;
+    font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12.5px;line-height:1.2;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--mist);font-feature-settings:"tnum" on}
+  .eyebrow::before,.eyebrow::after{content:"";height:1px;flex:1;max-width:104px;
+    background:linear-gradient(90deg,transparent,rgba(186,215,247,.32))}
+  .eyebrow::after{transform:scaleX(-1)}
+  .eyebrow.left{justify-content:flex-start}
+  .eyebrow.left::before{display:none}
+  .eyebrow.left::after{max-width:104px;transform:scaleX(-1)}
+  .note{font-size:14px;line-height:1.5;color:var(--fog)}
 
-  /* header */
-  .site-head{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px var(--pad)}
-  .nav-shell{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;
-    gap:24px;height:64px;padding:0 12px 0 22px;border-radius:14px;
-    background:rgba(15,43,31,.92);backdrop-filter:blur(14px);color:var(--cream);
-    border:1px solid rgba(245,241,233,.08)}
-  .brand{display:inline-flex;align-items:baseline;font-size:30px;font-weight:800;
-    letter-spacing:-.05em;line-height:1;color:var(--cream)}
-  .brand .dot{color:var(--lime)}
-  .nav{display:flex;align-items:center;gap:clamp(18px,2.6vw,40px);font-size:15px;font-weight:500}
-  .nav a{color:rgba(245,241,233,.78);transition:color .25s}
-  .nav a:hover{color:var(--lime)}
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    height:52px;padding:0 26px;border-radius:999px;font-size:15px;font-weight:500;line-height:1;
+    color:var(--white);background:var(--fill);
+    box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.14);
+    transition:background .25s var(--ease),transform .25s var(--ease),box-shadow .25s var(--ease)}
+  .btn:hover{background:var(--fill-3);transform:translateY(-1px)}
+  .btn .arr{transition:transform .25s var(--ease);font-size:14px}
+  .btn:hover .arr{transform:translate(2px,-2px)}
+  .btn-primary{background:var(--violet);
+    box-shadow:inset 0 1px 1px rgba(216,236,248,.24),0 12px 28px -10px rgba(102,58,243,.65)}
+  .btn-primary:hover{background:var(--violet-hi)}
+  .btn-ghost{background:transparent}
+  .btn-ghost:hover{background:var(--fill)}
+
+  /* ---------- header ---------- */
+  .site-head{position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(5,6,15,.72);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(186,215,247,.08)}
+  .nav-shell{max-width:var(--max);margin:0 auto;height:72px;padding:0 var(--pad);
+    display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:inline-flex;align-items:baseline;font-family:"Onest",sans-serif;
+    font-size:20px;font-weight:600;letter-spacing:.02em;line-height:1;color:var(--frost)}
+  .brand .dot{color:var(--blue)}
+  .nav{display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);font-size:14px;font-weight:500}
+  .nav a{color:var(--fog);transition:color .2s}
+  .nav a:hover{color:var(--frost)}
   .nav-right{display:flex;align-items:center;gap:12px}
-  .nav-cta{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 22px;
-    border-radius:999px;background:var(--lime);color:var(--pine);font-size:14px;font-weight:700;
-    transition:background .3s}
-  .nav-cta:hover{background:var(--cream)}
-  .menu-btn{display:none;width:44px;height:44px;border-radius:50%;background:var(--lime);color:var(--pine);
-    align-items:center;justify-content:center;flex-direction:column;gap:5px}
+  .nav-cta{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 18px;
+    border-radius:999px;font-size:14px;font-weight:500;color:var(--white);background:var(--fill);
+    box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.14);transition:background .25s}
+  .nav-cta:hover{background:var(--fill-3)}
+  .menu-btn{display:none;width:40px;height:40px;border-radius:999px;background:var(--fill);
+    box-shadow:inset 0 0 0 1px var(--line);align-items:center;justify-content:center;
+    flex-direction:column;gap:5px;color:var(--frost)}
   .menu-btn span{display:block;width:16px;height:1.5px;background:currentColor;transition:transform .3s}
   .menu-btn[aria-expanded="true"] span:first-child{transform:translateY(3.25px) rotate(45deg)}
   .menu-btn[aria-expanded="true"] span:last-child{transform:translateY(-3.25px) rotate(-45deg)}
 
-  /* menu */
-  .menu{position:fixed;inset:0;z-index:60;background:var(--pine-deep);color:var(--cream);
+  /* ---------- mobile menu ---------- */
+  .menu{position:fixed;inset:0;z-index:60;background:rgba(5,6,15,.97);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);color:var(--mist);
     display:flex;flex-direction:column;padding:20px var(--pad) 32px;
-    transform:translateY(-102%);transition:transform .55s var(--ease);visibility:hidden}
+    transform:translateY(-102%);transition:transform .5s var(--ease);visibility:hidden}
   .menu.open{transform:none;visibility:visible}
-  .menu-top{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .menu-close{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;
-    border-radius:50%;background:var(--lime);color:var(--pine);font-size:22px;line-height:1}
-  .menu nav{display:flex;flex-direction:column;gap:6px;margin-top:auto;margin-bottom:auto}
-  .menu nav a{font-size:clamp(38px,8vw,72px);font-weight:800;letter-spacing:-.05em;line-height:1;
-    display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--line-light)}
-  .menu nav a span{font-size:12px;font-weight:500;letter-spacing:.06em;color:var(--lime);text-transform:uppercase}
-  .menu-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:15px;color:var(--muted-light)}
-  .menu-foot a:hover{color:var(--lime)}
+  .menu-top{display:flex;align-items:center;justify-content:space-between;height:52px}
+  .menu-close{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;
+    border-radius:999px;background:var(--fill);box-shadow:inset 0 0 0 1px var(--line);
+    color:var(--frost);font-size:22px;line-height:1}
+  .menu nav{display:flex;flex-direction:column;gap:0;margin:auto 0}
+  .menu nav a{font-family:"Onest",sans-serif;font-size:clamp(32px,8vw,56px);font-weight:500;
+    line-height:1.1;display:block;padding:14px 0;border-bottom:1px solid var(--line);
+    color:var(--mist);transition:color .2s}
+  .menu nav a:hover{color:var(--frost)}
+  .menu-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
+    font-size:14px;color:var(--fog)}
+  .menu-foot a:hover{color:var(--frost)}
 
-  /* hero */
-  .hero{position:relative;min-height:100svh;background:var(--pine-deep);color:var(--cream);
-    display:flex;flex-direction:column;overflow:hidden;padding:clamp(116px,15vh,168px) 0 clamp(40px,6vh,64px)}
-  .hero .container{position:relative;z-index:2;display:flex;flex-direction:column;flex:1;gap:clamp(26px,4.5vh,54px)}
-  .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
-  .feats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 28px;max-width:920px}
-  .feats li{position:relative;padding-left:18px;font-size:12px;font-weight:500;letter-spacing:.05em;
-    text-transform:uppercase;color:rgba(245,241,233,.72);max-width:290px}
-  .feats li::before{content:"";position:absolute;left:0;top:.45em;width:6px;height:6px;border-radius:50%;background:var(--lime)}
-  .hero-place{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,241,233,.5);white-space:nowrap}
-  .hero h1{font-size:clamp(48px,11.2vw,190px);line-height:.85;letter-spacing:-.055em;font-weight:800;
-    margin:auto 0;color:var(--cream)}
-  .hero h1 .line{display:block}
-  .hero h1 .accent{color:var(--lime)}
-  .hero-bottom{display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:clamp(24px,4vw,64px)}
-  .hero-copy{display:flex;flex-direction:column;align-items:flex-start;gap:24px;max-width:560px}
-  .hero-copy p{font-size:clamp(17px,1.6vw,21px);line-height:1.4;color:rgba(245,241,233,.86)}
-  .hero-note{font-size:13px;line-height:1.4;color:rgba(245,241,233,.5);max-width:420px}
-  .hero-card{justify-self:end;width:min(100%,420px);padding:24px;border-radius:16px;
-    border:1px solid var(--line-light);background:rgba(245,241,233,.07);backdrop-filter:blur(12px)}
-  .hero-card .label{color:var(--lime)}
-  .hero-card p{margin-top:14px;font-size:clamp(18px,1.8vw,23px);line-height:1.32;letter-spacing:-.01em}
-  .hero-card a{margin-top:20px;display:inline-flex;align-items:center;gap:8px;font-size:14px;
-    color:var(--cream);border-bottom:1px solid rgba(245,241,233,.4);padding-bottom:3px}
-  .hero-card a:hover{color:var(--lime);border-color:var(--lime)}
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:clamp(112px,14vh,152px) 0 clamp(56px,7vw,88px);
+    text-align:center}
+  .hero::before{content:"";position:absolute;left:50%;top:-320px;width:min(1200px,140vw);height:900px;
+    transform:translateX(-50%);pointer-events:none;
+    background:
+      radial-gradient(42% 44% at 50% 50%,rgba(124,145,182,.42) 0%,rgba(124,145,182,.16) 42%,transparent 72%),
+      radial-gradient(28% 30% at 58% 46%,rgba(102,58,243,.22) 0%,transparent 70%)}
+  .hero::after{content:"";position:absolute;left:50%;top:0;width:min(900px,110vw);height:1px;
+    transform:translateX(-50%);background:linear-gradient(90deg,transparent,rgba(186,215,247,.3),transparent)}
+  .hero .container{display:flex;flex-direction:column;align-items:center}
+  .hero .eyebrow{margin-bottom:clamp(24px,4vw,38px)}
+  .hero h1{font-size:clamp(52px,9vw,132px);line-height:.98;letter-spacing:-.02em;
+    max-width:1200px;margin-bottom:clamp(20px,3vw,28px)}
+  .hero-lead{max-width:600px;font-size:clamp(16px,1.6vw,19px);line-height:1.5;color:var(--mist)}
+  .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:clamp(26px,3.4vw,36px)}
+  .hero-note{margin-top:14px;font-size:13px;line-height:1.5;color:var(--fog);max-width:460px}
 
-  /* placeholder art */
-  .ph::before{content:"";position:absolute;inset:0;
-    background-image:linear-gradient(rgba(245,241,233,.055) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(245,241,233,.055) 1px,transparent 1px);
-    background-size:72px 72px;
-    -webkit-mask-image:radial-gradient(110% 90% at 70% 10%,#000 10%,transparent 78%);
-    mask-image:radial-gradient(110% 90% at 70% 10%,#000 10%,transparent 78%)}
-  .ph::after{content:"";position:absolute;right:-12%;top:-20%;width:60vw;height:60vw;border-radius:50%;
-    border:1px solid rgba(213,241,90,.18);box-shadow:0 0 0 60px rgba(213,241,90,.03),0 0 0 140px rgba(213,241,90,.02)}
-  .hero .ph::before{opacity:.75}
-  .hero-shade{position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg,rgba(8,28,20,.35) 0%,rgba(8,28,20,0) 32%,rgba(8,28,20,.55) 100%)}
+  .fan{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:20px;align-items:center;
+    width:100%;max-width:1040px;margin-top:clamp(38px,5vw,58px);text-align:left}
+  .fcard{border-radius:var(--r);background:var(--fill-2);box-shadow:var(--elev);
+    padding:22px;transition:transform .45s var(--ease),background .45s var(--ease)}
+  .fcard-l{transform:rotate(-6deg)}
+  .fcard-r{transform:rotate(6deg)}
+  .fcard:hover{transform:rotate(0) translateY(-4px);background:rgba(186,214,247,.06)}
+  .fcard-label{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+  .fcard-big{font-family:"Onest",sans-serif;font-size:clamp(26px,2.6vw,34px);font-weight:500;
+    color:var(--white);line-height:1.1;margin-bottom:8px}
+  .fcard p{font-size:14px;line-height:1.5;color:var(--fog)}
+  .fcard ul{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .fcard li{position:relative;padding-left:16px;font-size:14px;line-height:1.4;color:var(--mist)}
+  .fcard li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;
+    border-radius:50%;background:var(--blue);opacity:.8}
+  .browser{border-radius:12px;overflow:hidden;background:#0b0e1a;box-shadow:inset 0 0 0 1px var(--line)}
+  .browser-bar{display:flex;align-items:center;gap:5px;height:26px;padding:0 10px;
+    background:rgba(199,211,234,.06);border-bottom:1px solid rgba(186,215,247,.08)}
+  .browser-bar i{width:6px;height:6px;border-radius:50%;background:rgba(199,211,234,.28)}
+  .browser-bar span{margin-left:6px;font-family:"JetBrains Mono",monospace;font-size:9px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--fog)}
+  .browser img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left;
+    filter:saturate(.65) contrast(1.04) brightness(.92)}
+  .fcard-c .fcard-label{margin-top:14px;margin-bottom:0}
+  .hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;
+    margin-top:clamp(34px,4vw,48px);font-family:"JetBrains Mono",monospace;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--fog)}
+  .hero-meta li{position:relative;padding-left:14px}
+  .hero-meta li::before{content:"";position:absolute;left:0;top:.5em;width:4px;height:4px;
+    border-radius:50%;background:var(--blue);opacity:.7}
 
-  /* marquee */
-  .marquee{position:relative;overflow:hidden;background:var(--pine-deep);color:var(--cream);
-    border-top:1px solid rgba(245,241,233,.1);border-bottom:1px solid rgba(245,241,233,.1)}
-  .marquee-track{display:flex;width:max-content;animation:marq 34s linear infinite}
+  /* ---------- marquee ---------- */
+  .marquee{position:relative;overflow:hidden;background:rgba(7,8,18,.65);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
   .marquee:hover .marquee-track{animation-play-state:paused}
-  .marquee-group{display:flex;align-items:center;gap:clamp(24px,3vw,44px);padding:22px clamp(24px,3vw,44px) 22px 0}
-  .marquee span{font-size:clamp(17px,1.8vw,25px);font-weight:700;text-transform:uppercase;
-    letter-spacing:-.01em;white-space:nowrap}
-  .marquee i{font-style:normal;color:var(--lime);font-size:clamp(16px,1.7vw,22px);line-height:1}
+  .marquee-group{display:flex;align-items:center;gap:clamp(22px,2.6vw,40px);
+    padding:18px clamp(22px,2.6vw,40px) 18px 0}
+  .marquee span{font-family:"JetBrains Mono",monospace;font-size:12.5px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--fog);white-space:nowrap}
+  .marquee i{font-style:normal;color:var(--blue);opacity:.5;font-size:11px;line-height:1}
   @keyframes marq{to{transform:translateX(-50%)}}
 
-  /* sections */
-  section{padding:clamp(72px,9vw,130px) 0}
-  .sect-head{display:grid;grid-template-columns:minmax(150px,220px) 1fr;gap:clamp(20px,4vw,56px);
-    align-items:start;margin-bottom:clamp(40px,5vw,64px)}
-  .sect-head h2{font-size:clamp(38px,6vw,88px);line-height:.94;letter-spacing:-.05em;margin-top:-.1em}
-  .sect-head p{max-width:620px;margin-top:22px;color:var(--muted);font-size:17px;line-height:1.5}
-  .dark{background:var(--pine);color:var(--cream)}
-  .dark .sect-head p{color:var(--muted-light)}
-  .paper{background:var(--paper)}
+  /* ---------- sections ---------- */
+  .section{position:relative;padding:clamp(80px,9vw,132px) 0}
+  .alt{background:rgba(7,8,18,.72)}
+  .sec-head{max-width:780px;margin:0 auto clamp(38px,4.6vw,60px);text-align:center}
+  .sec-head .eyebrow{margin-bottom:20px}
+  .sec-head h2{font-size:clamp(36px,5.2vw,68px);line-height:1.06}
+  .sec-head p{margin-top:18px;font-size:clamp(16px,1.5vw,18px);line-height:1.55;color:var(--fog)}
 
-  /* work */
-  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px)}
-  .work{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
-    display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
-  .work:hover{transform:translateY(-6px);box-shadow:0 24px 44px -28px rgba(15,43,31,.45)}
-  .work-media{display:block;overflow:hidden;aspect-ratio:16/10;background:var(--pine-soft)}
-  .work-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-  .work:hover .work-media img{transform:scale(1.045)}
-  .work-body{padding:22px 22px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
-  .work-top{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
-  .work-top b{font-size:21px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
-  .work-top span{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
-    padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted);white-space:nowrap}
-  .work-body>p{color:var(--muted);font-size:15px;line-height:1.45}
-  .work-link{margin-top:auto;padding-top:14px;font-size:12px;font-weight:600;letter-spacing:.05em;
-    text-transform:uppercase;display:inline-flex;gap:8px;align-items:center}
-  .work-link:hover{color:var(--pine);text-decoration:underline;text-underline-offset:4px}
-  .works-note{margin-top:clamp(28px,4vw,44px);padding-top:24px;border-top:1px solid var(--line);
-    max-width:860px;color:var(--muted);font-size:15px;line-height:1.5}
+  /* ---------- works ---------- */
+  .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .work{display:flex;flex-direction:column;overflow:hidden;border-radius:var(--r);
+    background:var(--fill-2);box-shadow:var(--elev);
+    transition:transform .4s var(--ease),background .4s var(--ease)}
+  .work:hover{transform:translateY(-4px);background:rgba(186,214,247,.055)}
+  .work-media{display:block;overflow:hidden;background:#0b0e1a;
+    box-shadow:inset 0 0 0 1px rgba(186,215,247,.08)}
+  .work-media img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top left;
+    filter:saturate(.7) contrast(1.03) brightness(.94);
+    transition:transform .7s var(--ease),filter .5s var(--ease)}
+  .work:hover .work-media img{transform:scale(1.03);filter:saturate(.85) brightness(1)}
+  .work-body{padding:20px 20px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .work-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:nowrap}
+  .work-top b{font-family:"Onest",sans-serif;font-size:20px;font-weight:500;color:var(--mist);line-height:1.2;flex:1;min-width:0}
+  .work-top span{font-size:12px;font-weight:500;letter-spacing:.04em;padding:4px 8px;
+    border-radius:var(--r-sm);background:var(--fill-3);color:var(--frost);white-space:nowrap;
+    box-shadow:inset 0 1px 1px rgba(216,236,248,.14)}
+  .work-body>p{color:var(--fog);font-size:15px;line-height:1.5}
+  .work-link{margin-top:auto;padding-top:12px;font-family:"JetBrains Mono",monospace;
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--frost);
+    display:inline-flex;gap:8px;align-items:center;transition:color .2s}
+  .work-link:hover{color:var(--white)}
+  .works-note{margin-top:clamp(26px,3.4vw,40px);max-width:60ch;color:var(--fog);
+    font-size:14.5px;line-height:1.6}
 
-  /* approach */
-  .approach{position:relative;overflow:hidden;background:var(--pine)}
-  .approach .container{position:relative;z-index:2}
-  .approach .ph::before{opacity:.5}
-  .approach-head{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:end;
-    margin-bottom:clamp(36px,4vw,56px)}
-  .approach-head h2{font-size:clamp(38px,6vw,86px);line-height:.94;letter-spacing:-.05em}
-  .approach-head p{color:var(--muted-light);max-width:520px;margin-top:20px}
-  .approach-head .btn{justify-self:end}
-  .arow{display:grid;grid-template-columns:74px minmax(200px,.75fr) 1.25fr;gap:clamp(16px,3vw,40px);
-    padding:clamp(20px,2.4vw,30px) 0;border-top:1px solid var(--line-light);align-items:baseline;
-    transition:background .35s}
-  .arow:last-child{border-bottom:1px solid var(--line-light)}
-  .arow:hover{background:rgba(245,241,233,.035)}
-  .arow .num{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--lime)}
-  .arow h3{font-size:clamp(25px,3vw,40px);font-weight:700;letter-spacing:-.035em;line-height:1.05}
-  .arow p{color:var(--muted-light);font-size:16px;line-height:1.45;max-width:640px}
+  /* ---------- approach ---------- */
+  .feats-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:34px 28px;
+    margin-top:clamp(8px,1.4vw,16px)}
+  .feats-grid::before{content:none}
+  .feat{position:relative;display:grid;grid-template-columns:56px 1fr;grid-template-rows:auto auto;
+    gap:4px 18px;align-items:start;padding:0;z-index:1}
+  .ficon{display:grid;place-items:center;width:56px;height:56px;border-radius:9999px;grid-row:1 / span 2;
+    color:var(--frost);background:var(--fill-2);
+    box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.2),
+      inset 0 20px 32px rgba(168,216,245,.05);
+    transition:background .3s var(--ease),box-shadow .3s var(--ease)}
+  .feat:hover .ficon{background:var(--fill-3);box-shadow:inset 0 0 0 1px var(--line-strong),
+    inset 0 1px 1px rgba(216,236,248,.26),inset 0 20px 32px rgba(168,216,245,.08)}
+  .ficon svg{width:24px;height:24px}
+  .feat h3{font-size:18px;font-weight:500;color:var(--mist);line-height:1.3;padding-top:8px}
+  .feat p{font-size:14.5px;line-height:1.55;color:var(--fog)}
 
-  /* who */
-  .wrow{display:grid;grid-template-columns:74px minmax(240px,.85fr) 1.15fr;gap:clamp(16px,3vw,40px);
-    padding:clamp(24px,3vw,36px) 0;border-top:1px solid var(--line);align-items:baseline}
-  .wrow:last-child{border-bottom:1px solid var(--line)}
-  .wrow .num{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
-  .wrow h3{font-size:clamp(24px,2.7vw,36px);font-weight:700;letter-spacing:-.035em;line-height:1.08}
-  .wrow p{color:var(--muted);font-size:16px;line-height:1.5;max-width:660px}
+  /* ---------- who ---------- */
+  .rows{border-top:1px solid var(--line);max-width:1000px;margin:0 auto}
+  .wrow{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(20px,4vw,56px);
+    padding:clamp(24px,3vw,34px) 0;border-bottom:1px solid var(--line);align-items:baseline}
+  .wrow h3{font-size:clamp(22px,2.3vw,29px);line-height:1.18;color:var(--mist)}
+  .wrow p{color:var(--fog);font-size:16px;line-height:1.6;max-width:62ch}
 
-  /* process */
-  .pcard{border-top:1px solid var(--line)}
-  .pcard:last-child{border-bottom:1px solid var(--line)}
-  .pcard summary{display:grid;grid-template-columns:74px 1fr auto;gap:clamp(16px,3vw,40px);
-    align-items:center;padding:clamp(22px,2.8vw,34px) 0;cursor:pointer;list-style:none}
-  .pcard summary::-webkit-details-marker{display:none}
-  .pcard .num{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
-  .pcard h3{font-size:clamp(28px,4vw,54px);font-weight:700;letter-spacing:-.04em;line-height:1;
-    transition:color .3s}
-  .pcard summary:hover h3{color:#5E7320}
-  .more{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.05em;
-    text-transform:uppercase;color:var(--muted)}
-  .plus{position:relative;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);
-    flex:none;transition:background .3s,border-color .3s}
+  /* ---------- process ---------- */
+  .pcard{border-bottom:1px solid var(--line)}
+  .pcard:first-of-type{border-top:1px solid var(--line)}
+  .pcard h3{margin:0}
+  .pcard-trigger{display:flex;align-items:center;justify-content:space-between;gap:24px;
+    width:100%;padding:clamp(20px,2.6vw,30px) 0;text-align:left}
+  .pcard-title{font-family:"Onest",sans-serif;font-size:clamp(24px,3.2vw,40px);font-weight:500;
+    line-height:1.1;color:var(--mist);transition:color .2s}
+  .pcard-trigger:hover .pcard-title{color:var(--white)}
+  .more{display:flex;align-items:center;gap:16px;font-family:"JetBrains Mono",monospace;
+    font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fog)}
+  .plus{position:relative;width:42px;height:42px;border-radius:9999px;flex:none;
+    background:var(--fill-2);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.18);
+    color:var(--frost);transition:background .3s,box-shadow .3s}
   .plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;
     background:currentColor;transform:translate(-50%,-50%);transition:transform .35s var(--ease)}
   .plus::after{transform:translate(-50%,-50%) rotate(90deg)}
-  .pcard[open] .plus{background:var(--lime);border-color:var(--lime);color:var(--pine)}
-  .pcard[open] .plus::after{transform:translate(-50%,-50%) rotate(0)}
-  .pcard .body{display:grid;grid-template-columns:1.4fr .8fr;gap:clamp(20px,3vw,44px);
-    padding:0 0 clamp(26px,3vw,36px) calc(74px + clamp(16px,3vw,40px));max-width:1060px}
-  .pcard .body p{color:var(--muted);font-size:16px;line-height:1.55}
-  .pcard .body .meta{font-size:14px;line-height:1.5;padding-left:18px;border-left:2px solid var(--lime);
-    color:var(--muted)}
+  .pcard-trigger:hover .plus{background:var(--fill-3)}
 
-  /* why */
-  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,30px)}
-  .why{padding-top:22px;border-top:2px solid var(--pine);display:flex;flex-direction:column;gap:14px}
-  .why .num{font-size:clamp(52px,5.4vw,80px);font-weight:800;line-height:.8;letter-spacing:-.06em;
-    color:transparent;-webkit-text-stroke:1.5px rgba(15,43,31,.55)}
-  .why h3{font-size:clamp(23px,2.3vw,30px);font-weight:700;letter-spacing:-.03em}
-  .why p{color:var(--muted);font-size:16px;line-height:1.5}
+  /* process dialog */
+  .pmodal{width:min(560px,calc(100vw - 32px));max-height:min(86vh,720px);overflow:auto;
+    margin:auto;padding:clamp(24px,4vw,36px);border:0;color:var(--mist);
+    border-radius:var(--r);background:rgba(5,6,15,.97);
+    box-shadow:inset 0 1px 1px rgba(216,236,248,.2),inset 0 24px 48px rgba(168,216,245,.06),
+      0 16px 32px rgba(0,0,0,.3);
+    opacity:0;transform:translateY(14px) scale(.98);
+    transition:opacity .25s var(--ease),transform .25s var(--ease)}
+  .pmodal[open]{opacity:1;transform:none}
+  .pmodal:focus{outline:none}
+  @starting-style{.pmodal[open]{opacity:0;transform:translateY(14px) scale(.98)}}
+  .pmodal::backdrop{background:rgba(5,6,15,.55);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .pmodal-close{position:absolute;top:14px;right:14px;display:inline-flex;align-items:center;
+    justify-content:center;width:38px;height:38px;border-radius:9999px;font-size:20px;line-height:1;
+    color:var(--frost);background:var(--fill-2);
+    box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.16);
+    transition:background .2s,color .2s}
+  .pmodal-close:hover{background:var(--fill-3);color:var(--white)}
+  .pmodal-label{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:14px;padding-right:48px}
+  .pmodal h3{font-size:clamp(26px,3vw,36px);line-height:1.1;color:var(--white);
+    letter-spacing:-.01em;margin-bottom:16px}
+  .pmodal p{color:var(--fog);font-size:15.5px;line-height:1.65;max-width:52ch}
+  .pmodal .pmodal-meta{margin-top:20px;padding:16px 18px;border-radius:12px;color:var(--mist);
+    font-size:14px;line-height:1.55;background:var(--fill-2);
+    box-shadow:inset 0 0 0 1px var(--line)}
 
-  /* price */
+  /* ---------- why ---------- */
+  #why.section{padding-bottom:0}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;align-content:start}
+  .why{padding:26px;border-radius:var(--r);background:var(--fill-2);box-shadow:var(--elev);
+    transition:background .3s var(--ease)}
+  .why:hover{background:rgba(186,214,247,.055)}
+  .why-h{margin:0}
+  .why-trigger{display:grid;grid-template-columns:1fr auto;gap:16px 12px;width:100%;
+    align-items:start;text-align:left}
+  .why-trigger .ficon{grid-column:1;grid-row:1;width:48px;height:48px}
+  .why-trigger .ficon svg{width:21px;height:21px}
+  .why-title{grid-column:1 / -1;grid-row:2;font-family:"Onest",sans-serif;font-size:22px;
+    font-weight:500;line-height:1.2;color:var(--mist);transition:color .2s}
+  .why-trigger:hover .why-title{color:var(--white)}
+  .why-caret{grid-column:2;grid-row:1;justify-self:end;position:relative;width:32px;height:32px;
+    border-radius:9999px;flex:none;background:var(--fill-2);
+    box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.16);
+    color:var(--frost);transition:background .3s,box-shadow .3s}
+  .why-caret::before,.why-caret::after{content:"";position:absolute;left:50%;top:50%;width:11px;
+    height:1.5px;background:currentColor;transform:translate(-50%,-50%);
+    transition:transform .35s var(--ease)}
+  .why-caret::after{transform:translate(-50%,-50%) rotate(90deg)}
+  .why.open .why-caret{background:var(--fill-3);box-shadow:inset 0 0 0 1px var(--line-strong)}
+  .why.open .why-caret::after{transform:translate(-50%,-50%) rotate(0)}
+  .why-panel{display:grid;grid-template-rows:0fr;
+    transition:grid-template-rows .5s var(--ease)}
+  .why.open .why-panel{grid-template-rows:1fr}
+  .why-panel-in{overflow:hidden;min-height:0;opacity:0;transform:translateY(-4px);
+    transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .why.open .why-panel-in{opacity:1;transform:none;transition-delay:.08s}
+  .why-panel p{color:var(--fog);font-size:15px;line-height:1.6;padding-top:14px}
+
+  /* ---------- price ---------- */
   .price-list{margin-top:8px}
-  .prow{display:grid;grid-template-columns:66px 1.25fr auto 132px;gap:clamp(16px,3vw,36px);
-    align-items:center;padding:clamp(22px,2.6vw,30px) 0;border-top:1px solid var(--line-light)}
-  .prow:last-child{border-bottom:1px solid var(--line-light)}
-  .prow .num{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--lime)}
-  .prow h3{font-size:clamp(24px,2.6vw,34px);font-weight:700;letter-spacing:-.035em;line-height:1.1}
-  .prow .desc{color:var(--muted-light);font-size:15px;line-height:1.45;margin-top:8px;max-width:600px}
-  .prow .price{font-size:clamp(26px,2.8vw,38px);font-weight:700;letter-spacing:-.03em;white-space:nowrap;line-height:1.1}
-  .prow .price .term{display:block;font-size:12px;font-weight:400;letter-spacing:.04em;
-    text-transform:uppercase;color:var(--muted-light);margin-top:6px}
+  .prow{display:grid;grid-template-columns:1fr auto 56px;gap:clamp(16px,3vw,32px);
+    align-items:center;padding:clamp(22px,2.6vw,28px) 0;border-top:1px solid var(--line)}
+  .prow:last-of-type{border-bottom:1px solid var(--line)}
+  .prow h3{font-size:clamp(22px,2.4vw,30px);line-height:1.15;color:var(--mist)}
+  .prow .desc{color:var(--fog);font-size:15px;line-height:1.55;margin-top:6px;max-width:600px}
+  .prow .price{font-family:"Onest",sans-serif;font-size:clamp(24px,2.6vw,32px);
+    font-weight:500;letter-spacing:-.01em;white-space:nowrap;line-height:1.1;color:var(--white);
+    text-align:right}
+  .prow .price .term{display:block;font-family:"JetBrains Mono",monospace;font-size:11.5px;
+    font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--fog);margin-top:8px}
   .prow .go{justify-self:end;display:inline-flex;align-items:center;justify-content:center;
-    width:56px;height:56px;border-radius:50%;background:rgba(245,241,233,.1);color:var(--cream);
-    border:1px solid var(--line-light);font-size:20px;transition:background .3s,color .3s,transform .3s}
-  .prow .go:hover{background:var(--lime);color:var(--pine);border-color:var(--lime);transform:translateY(-2px)}
-  .calc{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,3vw,48px);align-items:center;
-    margin-top:clamp(36px,4vw,56px);padding:clamp(24px,3vw,40px);border-radius:20px;
-    background:var(--cream);color:var(--pine)}
-  .calc h3{font-size:clamp(24px,2.4vw,32px);font-weight:700;letter-spacing:-.03em;margin-bottom:18px}
-  .check{display:flex;align-items:flex-start;gap:12px;padding:11px 0;font-size:15px;line-height:1.4;
-    color:var(--ink);cursor:pointer;border-top:1px solid var(--line)}
-  .check input{appearance:none;flex:none;width:20px;height:20px;margin-top:1px;border:1.5px solid rgba(15,43,31,.4);
-    border-radius:6px;background:transparent;cursor:pointer;position:relative;transition:background .2s,border-color .2s}
-  .check input:checked{background:var(--pine);border-color:var(--pine)}
+    width:48px;height:48px;border-radius:9999px;color:var(--frost);font-size:17px;
+    background:var(--fill-2);box-shadow:inset 0 0 0 1px var(--line),inset 0 1px 1px rgba(216,236,248,.18);
+    transition:background .25s,color .25s,transform .25s,box-shadow .25s}
+  .prow .go:hover{background:var(--violet);color:#fff;transform:translateY(-2px);
+    box-shadow:inset 0 0 0 1px rgba(216,236,248,.24),0 10px 24px -10px rgba(102,58,243,.7)}
+
+  .calc{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,3vw,48px);
+    align-items:center;margin-top:clamp(34px,4vw,52px);padding:clamp(24px,3vw,36px);
+    border-radius:var(--r);
+    background:rgba(186,214,247,.045);
+    box-shadow:var(--elev)}
+  .calc h3{font-size:clamp(22px,2.2vw,28px);line-height:1.2;color:var(--mist);margin-bottom:16px}
+  .check{display:flex;align-items:flex-start;gap:12px;padding:13px 0;font-size:14.5px;
+    line-height:1.45;color:var(--mist);cursor:pointer;border-top:1px solid var(--line)}
+  .check input{appearance:none;flex:none;width:20px;height:20px;margin-top:1px;border-radius:var(--r-sm);
+    background:var(--fill);box-shadow:inset 0 0 0 1px rgba(186,215,247,.24);cursor:pointer;
+    position:relative;transition:background .2s,box-shadow .2s}
+  .check input:checked{background:var(--violet);box-shadow:inset 0 1px 1px rgba(216,236,248,.2)}
   .check input:checked::after{content:"";position:absolute;left:6px;top:2px;width:6px;height:11px;
-    border:solid var(--lime);border-width:0 1.6px 1.6px 0;transform:rotate(42deg)}
-  .calc-note{font-size:13px;line-height:1.45;color:var(--muted);margin-top:16px}
-  .total{text-align:right;font-size:clamp(40px,5vw,64px);font-weight:800;letter-spacing:-.055em;line-height:1}
-  .total small{display:block;font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-    color:var(--muted);margin-top:12px}
+    border:solid #fff;border-width:0 1.6px 1.6px 0;transform:rotate(42deg)}
+  .calc-note{font-size:13px;line-height:1.5;color:var(--fog);margin-top:14px}
+  .total{text-align:right;font-family:"Onest",sans-serif;
+    font-size:clamp(40px,5vw,64px);font-weight:500;letter-spacing:-.02em;line-height:1}
+  .total small{display:block;font-family:"JetBrains Mono",monospace;font-size:11.5px;
+    font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--fog);margin-top:14px}
 
-  /* limits */
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.4vw,28px)}
-  .split-card{padding:clamp(24px,3vw,34px);border-radius:var(--r);background:var(--paper);
-    border:1px solid var(--line);display:flex;flex-direction:column;gap:18px}
-  .split-card.dark-card{background:var(--pine);color:var(--cream);border-color:var(--pine)}
-  .split-card h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;letter-spacing:-.03em}
+  /* ---------- limits ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .split-card{padding:clamp(24px,2.6vw,32px);border-radius:var(--r);
+    background:var(--fill-2);box-shadow:var(--elev);display:flex;flex-direction:column;gap:18px}
+  .split-card.dark-card{background:rgba(186,214,247,.06)}
+  .split-card h3{font-size:clamp(21px,2vw,26px);line-height:1.2;color:var(--mist)}
   .split-card ul{display:flex;flex-direction:column}
-  .split-card li{padding:14px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.45;
-    display:flex;gap:12px;align-items:flex-start}
-  .split-card li::before{content:"—";flex:none;color:#7A8F1F}
-  .split-card.dark-card li{border-color:var(--line-light);color:rgba(245,241,233,.82)}
-  .split-card.dark-card li::before{content:"+";color:var(--lime)}
-  .lead-out{padding:18px 20px;border-radius:12px;background:rgba(213,241,90,.22);
-    border:1px solid rgba(15,43,31,.14);font-size:14px;line-height:1.5}
+  .split-card li{padding:13px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.5;
+    color:var(--fog);display:flex;gap:12px;align-items:flex-start}
+  .split-card li::before{content:"—";flex:none;color:var(--fog)}
+  .split-card.dark-card li{color:var(--mist)}
+  .split-card.dark-card li::before{content:"+";color:var(--blue)}
+  .lead-out{margin-top:auto;padding:16px 18px;border-radius:12px;background:var(--fill);
+    box-shadow:inset 0 0 0 1px var(--line);font-size:14px;line-height:1.55;color:var(--mist)}
 
-  /* faq */
-  .faq-wrap{display:grid;grid-template-columns:minmax(240px,380px) 1fr;gap:clamp(28px,5vw,72px);align-items:start}
-  .faq-head h2{font-size:clamp(38px,5.6vw,80px);line-height:.94;letter-spacing:-.05em;margin-top:16px;position:sticky;top:110px}
-  .faq-head .label{display:block}
+  /* ---------- faq ---------- */
+  .faq-wrap{display:grid;grid-template-columns:minmax(240px,340px) 1fr;
+    gap:clamp(28px,5vw,72px);align-items:start}
+  .faq-head h2{font-size:clamp(36px,4.6vw,60px);line-height:1.06;margin-top:18px}
+  .faq-head{position:sticky;top:100px}
   .faq{border-top:1px solid var(--line)}
   .faq summary{display:flex;align-items:center;justify-content:space-between;gap:20px;
-    padding:24px 0;cursor:pointer;list-style:none;font-size:clamp(18px,1.9vw,24px);
-    font-weight:600;letter-spacing:-.02em;line-height:1.25}
+    padding:22px 0;cursor:pointer;list-style:none;font-family:"Onest",sans-serif;
+    font-size:clamp(17px,1.7vw,20px);font-weight:500;line-height:1.3;color:var(--mist)}
   .faq summary::-webkit-details-marker{display:none}
-  .faq-plus{position:relative;width:34px;height:34px;flex:none;border-radius:50%;
-    background:var(--lime);color:var(--pine);transition:transform .35s var(--ease)}
-  .faq-plus::before,.faq-plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;
+  .faq summary:hover{color:var(--white)}
+  .faq-plus{position:relative;width:32px;height:32px;flex:none;border-radius:9999px;
+    background:var(--fill-2);box-shadow:inset 0 0 0 1px var(--line);
+    color:var(--frost);transition:background .3s,transform .35s var(--ease)}
+  .faq-plus::before,.faq-plus::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;
     background:currentColor;transform:translate(-50%,-50%)}
   .faq-plus::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .35s var(--ease)}
-  .faq[open] .faq-plus{transform:rotate(180deg)}
+  .faq[open] .faq-plus{background:var(--fill-3)}
   .faq[open] .faq-plus::after{transform:translate(-50%,-50%) rotate(0)}
-  .faq .answer{padding:0 54px 26px 0;max-width:720px;color:var(--muted);font-size:16px;line-height:1.55}
+  .faq .answer{padding:0 48px 24px 0;max-width:60ch;color:var(--fog);font-size:16px;line-height:1.6}
 
-  /* contact */
-  .contact{position:relative;background:var(--pine);color:var(--cream);overflow:hidden;
-    padding-bottom:clamp(28px,4vw,44px)}
-  .contact::before{content:"";position:absolute;right:-10%;top:-30%;width:70vw;height:70vw;border-radius:50%;
-    background:radial-gradient(circle,rgba(213,241,90,.16),transparent 62%);pointer-events:none}
-  .contact .container{position:relative;z-index:1}
-  .contact h2{font-size:clamp(52px,10vw,150px);line-height:.88;letter-spacing:-.055em;margin:18px 0 28px}
-  .contact-lead{max-width:520px;color:var(--muted-light);font-size:18px;line-height:1.5;margin-bottom:32px}
-  .contact-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,72px);align-items:end;
-    padding-bottom:clamp(48px,7vw,96px)}
-  .contact-side{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-  .contact-col{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
-  .contact-col .label{color:var(--lime)}
-  .contact-link{font-size:clamp(17px,1.7vw,21px);font-weight:500;letter-spacing:-.01em;
-    border-bottom:1px solid rgba(245,241,233,.3);padding-bottom:2px}
-  .contact-link:hover{color:var(--lime);border-color:var(--lime)}
-  .contact-city{font-size:clamp(26px,2.8vw,36px);font-weight:700;letter-spacing:-.03em}
-  .contact-note{font-size:13px;line-height:1.5;color:rgba(245,241,233,.55);max-width:330px}
-  .inc{margin-top:clamp(32px,4vw,56px);padding-top:clamp(24px,3vw,40px);border-top:1px solid var(--line-light)}
-  .inc h3{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.03em;margin-bottom:20px}
-  .inc ul{list-style:none;columns:2;column-gap:clamp(24px,4vw,56px)}
-  .inc li{position:relative;padding-left:22px;margin-bottom:10px;break-inside:avoid;
-    font-size:15px;line-height:1.5;color:var(--muted-light)}
-  .inc li::before{content:"✳";position:absolute;left:0;top:1px;font-size:11px;color:var(--lime)}
-  .inc-note{margin-top:20px;font-size:13px;line-height:1.5;color:var(--muted)}
-  @media(max-width:760px){.inc ul{columns:1}}
-  .lead-form{display:grid;gap:12px;max-width:520px;margin-top:28px}
-  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .lead-form input{width:100%;background:transparent;border:1px solid var(--line-light);color:var(--cream);
-    font:inherit;font-size:16px;padding:14px 16px;border-radius:2px;transition:border-color .3s}
-  .lead-form input::placeholder{color:rgba(245,241,233,.45)}
-  .lead-form input:focus{outline:none;border-color:var(--lime)}
-  .lead-form input[aria-invalid="true"]{border-color:#E8734A}
-  .lead-form .btn{justify-self:start}
-  .lf-note{font-size:12.5px;line-height:1.5;color:var(--muted-light);max-width:460px}
-  .lf-note a{color:var(--cream);border-bottom:1px solid var(--line-light)}
-  .lf-error{font-size:13px;line-height:1.4;color:#E8734A;min-height:0}
-  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  @media(max-width:560px){.lf-row{grid-template-columns:1fr}}
+  /* ---------- contact ---------- */
+  .contact{position:relative;overflow:hidden;padding:clamp(80px,9vw,128px) 0 clamp(26px,4vw,40px)}
+  .contact::before{content:"";position:absolute;left:50%;top:-40%;width:min(1100px,130vw);height:900px;
+    transform:translateX(-50%);pointer-events:none;
+    background:radial-gradient(45% 45% at 50% 50%,rgba(124,145,182,.3),transparent 70%)}
+  .contact h2{font-size:clamp(48px,8vw,120px);line-height:1.02;margin:18px 0 22px}
+  .contact-lead{max-width:520px;color:var(--fog);font-size:clamp(16px,1.6vw,18px);
+    line-height:1.55;margin-bottom:28px}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);
+    align-items:end;padding-bottom:clamp(44px,6vw,80px)}
+  .contact-side{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .contact-col{display:flex;flex-direction:column;gap:8px;align-items:flex-start;
+    padding:20px;border-radius:var(--r);background:var(--fill-2);box-shadow:var(--elev)}
+  .contact-col .fcard-label{margin-bottom:4px}
+  .contact-link{font-size:15px;font-weight:500;color:var(--frost);
+    border-bottom:1px solid rgba(186,215,247,.24);padding-bottom:2px;transition:color .2s,border-color .2s}
+  .contact-link:hover{color:#fff;border-color:var(--blue)}
+  .contact-city{font-family:"Onest",sans-serif;font-size:22px;font-weight:500;color:var(--mist)}
+  .contact-note{font-size:13px;line-height:1.55;color:var(--fog);max-width:300px}
+  .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+    padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--fog)}
+  .foot .fname{color:var(--mist)}
+  .foot a:hover{color:var(--frost)}
 
-  .foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
-    padding-top:22px;border-top:1px solid var(--line-light);font-size:13px;color:rgba(245,241,233,.55)}
-  .foot .fname{color:var(--cream)}
-  .foot a:hover{color:var(--lime)}
-
-  /* motion */
-  html.js .reveal{opacity:0;transform:translateY(26px);
-    transition:opacity .9s var(--ease),transform .9s var(--ease);
-    transition-delay:calc(var(--i,0) * 55ms)}
+  /* ---------- motion ---------- */
+  html.js .reveal{opacity:0;transform:translateY(22px);
+    transition:opacity .8s var(--ease),transform .8s var(--ease);
+    transition-delay:calc(var(--i,0) * 70ms)}
   html.js .reveal.in{opacity:1;transform:none}
-  html.js .head-reveal{opacity:0;transform:translateY(18px);
-    transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  html.js .head-reveal{opacity:0;transform:translateY(16px);
+    transition:opacity .9s var(--ease),transform .9s var(--ease)}
   html.js .head-reveal.in{opacity:1;transform:none}
 
   @media (prefers-reduced-motion:reduce){
     *{animation-duration:.001ms !important;animation-iteration-count:1 !important;
       transition-duration:.001ms !important;scroll-behavior:auto !important}
-    html.js .reveal,html.js .head-reveal{opacity:1;transform:none;clip-path:none}
+    html.js .reveal,html.js .head-reveal{opacity:1;transform:none}
     .marquee-track{animation:none}
   }
 
-  /* responsive */
-  @media (max-width:1360px){
-  }
+  /* ---------- responsive ---------- */
   @media (max-width:1080px){
     .works-grid{grid-template-columns:repeat(2,1fr)}
+    .feats-grid{grid-template-columns:repeat(2,1fr)}
     .why-grid{grid-template-columns:1fr 1fr}
+    .fan{grid-template-columns:1fr 1.2fr 1fr}
   }
   @media (max-width:900px){
     .nav{display:none}
     .nav-cta{display:none}
     .menu-btn{display:inline-flex}
-    .hero-bottom{grid-template-columns:1fr;align-items:start}
-    .hero-card{justify-self:start;width:min(100%,520px)}
-    .sect-head{grid-template-columns:1fr;gap:14px}
-    .sect-head h2{margin-top:0}
-    .approach-head{grid-template-columns:1fr;align-items:start}
-    .approach-head .btn{justify-self:start}
-    .arow{grid-template-columns:52px 1fr;gap:12px 16px}
-    .arow p{grid-column:2}
-    .wrow{grid-template-columns:52px 1fr;gap:12px 16px}
-    .wrow p{grid-column:2}
-    .prow{grid-template-columns:52px 1fr auto;gap:12px 16px;align-items:start}
-    .prow .price{grid-column:2;grid-row:2;font-size:26px}
-    .prow .go{grid-column:3;grid-row:1 / span 2;align-self:center}
-    .pcard .body{grid-template-columns:1fr;padding-left:calc(52px + 16px)}
+    .fan{grid-template-columns:1fr 1fr;max-width:720px}
+    .fcard-c{grid-column:1 / -1;order:-1;transform:none}
+    .fcard-l,.fcard-r{transform:none}
+    .wrow{grid-template-columns:1fr;gap:8px}
     .faq-wrap{grid-template-columns:1fr;gap:24px}
-    .faq-head h2{position:static}
+    .faq-head{position:static}
     .contact-grid{grid-template-columns:1fr;align-items:start}
-  }
-  @media (max-width:720px){
-    :root{--r:14px}
-    .site-head{padding:10px 12px}
-    .nav-shell{height:56px;padding:0 8px 0 16px;border-radius:12px}
-    .brand{font-size:25px}
-    .hero{padding-top:104px;min-height:auto}
-    .hero .container{gap:32px}
-    .feats{grid-template-columns:1fr;gap:8px}
-    .hero h1{font-size:clamp(46px,15vw,82px);margin:24px 0 8px}
-    .hero-copy{gap:20px}
-    .hero-card{padding:20px}
-    .works-grid{grid-template-columns:1fr}
-    .why-grid{grid-template-columns:1fr;gap:26px}
     .split{grid-template-columns:1fr}
     .calc{grid-template-columns:1fr;align-items:start}
     .total{text-align:left}
-    .contact-side{grid-template-columns:1fr;gap:28px}
-    .pcard summary{grid-template-columns:34px 1fr auto;gap:12px}
-    .more span:first-child{display:none}
-    .pcard .body{padding-left:46px}
-    .hero-place{display:none}
-    .faq .answer{padding-right:0}
   }
+  @media (max-width:720px){
+    .site-head .nav-shell{height:60px}
+    .hero{padding-top:112px}
+    .hero h1{font-size:clamp(48px,13.5vw,76px)}
+    .hero .eyebrow{font-size:9.5px;letter-spacing:.1em;gap:10px}
+    .hero .eyebrow::before,.hero .eyebrow::after{max-width:40px}
+    .fan{grid-template-columns:1fr;max-width:460px}
+    .fcard-c{order:-1}
+    .feats-grid{grid-template-columns:1fr;gap:22px}
+    .works-grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr}
+    .contact-side{grid-template-columns:1fr}
+    .more span:first-child{display:none}
+    .prow{grid-template-columns:1fr auto;gap:10px 16px;align-items:start}
+    .prow .price{grid-column:1;grid-row:2;text-align:left;font-size:26px}
+    .prow .go{grid-column:2;grid-row:1 / span 2;align-self:center}
+    .faq .answer{padding-right:0}
+    .hero-meta{font-size:10px}
+    .works-note{font-size:13.5px}
+  }
+  @media (max-width:420px){
+    .feats-grid{grid-template-columns:1fr}
+    .btn{width:100%}
+    .hero-actions{width:100%}
+  }
+
+  /* ==== добавлено при переносе контента с рабочей версии ==== */
+  .includes{margin-top:clamp(38px,4.6vw,60px);padding-top:clamp(26px,3.2vw,40px);border-top:1px solid var(--line)}
+  .includes h3{font-family:"Onest",sans-serif;font-size:clamp(22px,2.6vw,30px);font-weight:500;color:var(--mist);margin-bottom:20px}
+  .includes ul{list-style:none;columns:2;column-gap:clamp(24px,4vw,56px)}
+  .includes li{position:relative;padding-left:22px;margin-bottom:11px;break-inside:avoid;
+    font-size:14.5px;line-height:1.5;color:var(--fog)}
+  .includes li::before{content:"\2733";position:absolute;left:0;top:1px;font-size:11px;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .includes-note{margin-top:22px;font-size:13px;line-height:1.55;color:var(--fog);max-width:78ch}
+  @media(max-width:760px){.includes ul{columns:1}}
+
+  .lead-form{display:grid;gap:12px;max-width:520px;margin-top:26px}
+  .lf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lead-form input{width:100%;background:var(--fill-2);border:1px solid var(--line-strong);color:var(--mist);
+    font:inherit;font-size:16px;padding:14px 16px;border-radius:var(--r-sm);transition:border-color .25s,background .25s}
+  .lead-form input::placeholder{color:rgba(199,211,234,.45)}
+  .lead-form input:hover{background:var(--fill)}
+  .lead-form input:focus{outline:none;border-color:var(--blue);background:var(--fill)}
+  .lead-form input[aria-invalid="true"]{border-color:#e8734a}
+  .lead-form .btn{justify-self:start}
+  .lf-note{font-size:12.5px;line-height:1.55;color:var(--fog);max-width:460px}
+  .lf-note a{color:var(--mist);border-bottom:1px solid var(--line-strong)}
+  .lf-error{font-size:13px;line-height:1.4;color:#e8734a;min-height:0}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  @media(max-width:560px){.lf-row{grid-template-columns:1fr}}
 </style>
-</head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
 <div class="progress" aria-hidden="true"></div>
@@ -433,7 +554,7 @@
     <a class="brand" href="#main" aria-label="Евгений, на главную">ЕВ<span class="dot">.</span></a>
     <nav class="nav" aria-label="Основная навигация">
       <a href="#work">работы</a>
-      <a href="#process">процесс</a>
+      <a href="#approach">подход</a>
       <a href="#price">цены</a>
       <a href="#faq">вопросы</a>
       <a href="#contact">контакты</a>
@@ -453,11 +574,11 @@
     <button class="menu-close" type="button" aria-label="Закрыть меню">×</button>
   </div>
   <nav aria-label="Меню страницы">
-    <a href="#work"><span>01</span>работы</a>
-    <a href="#process"><span>02</span>процесс</a>
-    <a href="#price"><span>03</span>цены</a>
-    <a href="#faq"><span>04</span>вопросы</a>
-    <a href="#contact"><span>05</span>контакты</a>
+    <a href="#work">работы</a>
+    <a href="#approach">подход</a>
+    <a href="#price">цены</a>
+    <a href="#faq">вопросы</a>
+    <a href="#contact">контакты</a>
   </nav>
   <div class="menu-foot">
     <a href="https://t.me/evglat11">telegram</a>
@@ -468,334 +589,257 @@
 
 <main id="main">
   <section class="hero">
-    <div class="hero-shade" aria-hidden="true"></div>
-
-    <div class="container">
-      <div class="hero-top">
-        <ul class="feats">
-          <li>первый созвон — бесплатно</li>
-          <li>сайт под ключ от 70 000 ₽</li>
-          <li>Сыктывкар, локальный бизнес</li>
-        </ul>
-        <span class="hero-place">Сыктывкар · 2026</span>
-      </div>
-
-      <h1 aria-label="Вас находят в поиске и сразу видят цены.">
-        <span class="line">Вас находят</span>
-        <span class="line">в поиске</span>
-        <span class="line">и видят <span class="accent">цены.</span></span>
-      </h1>
-
-      <div class="hero-bottom">
-        <div class="hero-copy">
-          <p>Сайт отвечает на вопросы, которые вам и так задают по телефону: сколько стоит, когда можно, что входит. Заявка приходит в Telegram, а не теряется в личке.</p>
-          <a class="btn" href="https://t.me/evglat11">обсудить проект <span class="arr">↗</span></a>
-          <span class="hero-note">Сорок минут интервью. Если не подойдёт — страница выводов остаётся у вас.</span>
-        </div>
-
-        <aside class="hero-card">
-          <span class="label">[ на выходе ]</span>
-          <p>Страница, где человек видит цены и записывается сам, не звоня, чтобы спросить цену. Заявка приходит в Telegram.</p>
-          <a href="#price">смотреть цены <span aria-hidden="true">↓</span></a>
+    <div class="container">      <p class="eyebrow">Сыктывкар · 2026 · сайты для локального бизнеса</p>      <h1 class="grad">Вас находят<br>в поиске<br>и видят цены.</h1>      <p class="hero-lead">Сайт отвечает на вопросы, которые вам и так задают по телефону: сколько стоит, когда можно, что входит. Заявка приходит в Telegram, а не теряется в личке.</p>      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://t.me/evglat11">обсудить проект <span class="arr">↗</span></a>
+        <a class="btn btn-ghost" href="#price">смотреть цены</a>
+      </div>      <span class="hero-note">Сорок минут интервью. Если не подойдёт — страница выводов остаётся у вас.</span>      <div class="fan">
+        <aside class="fcard fcard-l">
+          <p class="fcard-label">интервью · 40 минут</p>
+          <p class="fcard-big">Бесплатно</p>
+          <p>Страница выводов остаётся у вас, даже если дальше не работаем.</p>
         </aside>
-      </div>
+        <aside class="fcard fcard-c">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>пример работы</span></div>
+            <img src="assets/work-auto.jpg" alt="Главный экран сайта автосервиса «Точка опоры»" width="1921" height="1161">
+          </div>
+          <p class="fcard-label">автосервис «точка опоры»</p>
+        </aside>
+        <aside class="fcard fcard-r">
+          <p class="fcard-label">на выходе</p>
+          <p>Сайт с ценами и записью, заявка приходит вам в Telegram, вас находят по поиску по городу.</p>
+          <ul>
+            <li>цены и запись на сайте</li>
+            <li>заявка в Telegram</li>
+            <li>поиск по городу</li>
+          </ul>
+        </aside>
+      </div>      <ul class="hero-meta">        <li>первый созвон — бесплатно</li>        <li>сайт под ключ от 70 000 ₽</li>        <li>Сыктывкар, локальный бизнес</li>      </ul>
     </div>
-  </section>
-
-  <div class="marquee" aria-hidden="true">
+  </section><div class="marquee" aria-hidden="true">
     <div class="marquee-track">
       <div class="marquee-group">
-        <span>интервью</span><i>✳</i>
-        <span>структура</span><i>✳</i>
-        <span>тексты</span><i>✳</i>
-        <span>дизайн</span><i>✳</i>
-        <span>вёрстка</span><i>✳</i>
-        <span>заявки</span><i>✳</i>
-        <span>поддержка</span><i>✳</i>
+        <span>интервью</span><i>·</i>
+        <span>структура</span><i>·</i>
+        <span>тексты</span><i>·</i>
+        <span>дизайн</span><i>·</i>
+        <span>вёрстка</span><i>·</i>
+        <span>заявки</span><i>·</i>
+        <span>поддержка</span><i>·</i>
       </div>
       <div class="marquee-group">
-        <span>интервью</span><i>✳</i>
-        <span>структура</span><i>✳</i>
-        <span>тексты</span><i>✳</i>
-        <span>дизайн</span><i>✳</i>
-        <span>вёрстка</span><i>✳</i>
-        <span>заявки</span><i>✳</i>
-        <span>поддержка</span><i>✳</i>
+        <span>интервью</span><i>·</i>
+        <span>структура</span><i>·</i>
+        <span>тексты</span><i>·</i>
+        <span>дизайн</span><i>·</i>
+        <span>вёрстка</span><i>·</i>
+        <span>заявки</span><i>·</i>
+        <span>поддержка</span><i>·</i>
       </div>
     </div>
   </div>
 
-  <section id="work">
-    <div class="container">
-      <div class="sect-head head-reveal">
-        <span class="label">[ работы ]</span>
-        <div>
-          <h2>Три работы, каждая открывается.</h2>
-          <p>Это мои работы. Объекты и названия вымышленные: клиентские проекты я не публикую без разрешения. Показываю структуру и тексты, а не чужие фото.</p>
-        </div>
+    <section class="section" id="work">
+    <div class="container">      <div class="sec-head head-reveal">
+        <p class="eyebrow">работы</p>
+        <h2 class="grad">Три работы, каждая открывается.</h2>
+        <p>Это мои работы. Объекты и названия вымышленные: клиентские проекты я не публикую без разрешения. Показываю структуру и тексты, а не чужие фото.</p>
       </div>
 
-      <div class="works-grid" data-stagger>
-        <article class="work reveal">
+      <div class="works-grid" data-stagger>        <article class="work reveal">
           <a class="work-media" href="https://zheksai11-glitch.github.io/tochka-opory/" target="_blank" rel="noopener" aria-label="Открыть демо автосервиса">
-            <img src="assets/work-auto.jpg" alt="Главный экран сайта автосервиса «Точка опоры»" loading="lazy" width="1921" height="1161">
+            <img src="assets/work-auto.jpg" alt="Главный экран сайта автосервиса «Точка опоры»" width="1921" height="1161">
           </a>
           <div class="work-body">
             <div class="work-top"><b>Автосервис</b><span>лендинг</span></div>
             <p>Главная и страница услуги: цены на работы, запись, кнопка звонка.</p>
-            <a class="work-link" href="https://zheksai11-glitch.github.io/tochka-opory/" target="_blank" rel="noopener">[ открыть демо ] <span aria-hidden="true">↗</span></a>
+            <a class="work-link" href="https://zheksai11-glitch.github.io/tochka-opory/" target="_blank" rel="noopener">открыть демо <span aria-hidden="true">↗</span></a>
           </div>
-        </article>
-
-        <article class="work reveal">
+        </article>        <article class="work reveal">
           <a class="work-media" href="https://zheksai11-glitch.github.io/mesto/" target="_blank" rel="noopener" aria-label="Открыть демо базы отдыха">
-            <img src="assets/work-mesto.jpg" alt="Главный экран сайта базы отдыха «Место для души»" loading="lazy" width="1921" height="1161">
+            <img src="assets/work-mesto.jpg" alt="Главный экран сайта базы отдыха «Место для души»" width="1921" height="1161">
           </a>
           <div class="work-body">
             <div class="work-top"><b>База отдыха</b><span>лендинг</span></div>
             <p>Коттеджи и цены, акции, отзывы, форма брони, тексты под поиск по региону.</p>
-            <a class="work-link" href="https://zheksai11-glitch.github.io/mesto/" target="_blank" rel="noopener">[ открыть демо ] <span aria-hidden="true">↗</span></a>
+            <a class="work-link" href="https://zheksai11-glitch.github.io/mesto/" target="_blank" rel="noopener">открыть демо <span aria-hidden="true">↗</span></a>
           </div>
-        </article>
-
-        <article class="work reveal">
+        </article>        <article class="work reveal">
           <a class="work-media" href="https://zheksai11-glitch.github.io/ogneproekt/" target="_blank" rel="noopener" aria-label="Открыть демо корпоративного сайта">
-            <img src="assets/work-fire.jpg" alt="Главный экран корпоративного сайта «Огнепроект»" loading="lazy" width="1921" height="1161">
+            <img src="assets/work-fire.jpg" alt="Главный экран сайта корпоративного сайта «Огнепроект»" width="1921" height="1161">
           </a>
           <div class="work-body">
             <div class="work-top"><b>Корпоративный сайт услуг</b><span>многостраничник</span></div>
             <p>Многостраничник: услуги, портфолио, партнёры, лицензии, форма заявки.</p>
-            <a class="work-link" href="https://zheksai11-glitch.github.io/ogneproekt/" target="_blank" rel="noopener">[ открыть демо ] <span aria-hidden="true">↗</span></a>
+            <a class="work-link" href="https://zheksai11-glitch.github.io/ogneproekt/" target="_blank" rel="noopener">открыть демо <span aria-hidden="true">↗</span></a>
           </div>
-        </article>
+        </article>      </div>      <p class="works-note reveal">Клиентских проектов с трафиком и отзывами пока нет, поэтому первым трём клиентам проект стоит 20 000 ₽ вместо 30 000 — в обмен на отзыв и право показать работу.</p>    </div>
+  </section>  <section class="section" id="who">
+    <div class="container">      <div class="sec-head head-reveal">
+        <p class="eyebrow">для кого</p>
+        <h2 class="grad">Кому это нужно.</h2>
       </div>
-
-      <p class="works-note reveal">Клиентских проектов с трафиком и отзывами пока нет, поэтому первым трём клиентам проект стоит 20 000 ₽ вместо 30 000 — в обмен на отзыв и право показать работу.</p>
-    </div>
-  </section>
-
-
-  <section id="who">
-    <div class="container">
-      <div class="sect-head head-reveal">
-        <span class="label">[ для кого ]</span>
-        <div><h2>Кому это нужно.</h2></div>
-      </div>
-      <div class="rows" data-stagger>
-        <div class="wrow reveal">
-          <span class="num">[ 01 ]</span>
+      <div class="rows" data-stagger>        <div class="wrow reveal">
           <h3>Есть группа ВКонтакте, а сайта нет</h3>
           <p>В поиске вас не находят: человек ищет услугу по городу и попадает к конкуренту. Цены разбросаны по постам, одни и те же вопросы приходят в личку. Группа остаётся, сайт приводит людей из поиска.</p>
-        </div>
-        <div class="wrow reveal">
-          <span class="num">[ 02 ]</span>
+        </div>        <div class="wrow reveal">
           <h3>Сайт есть, но заявок нет</h3>
           <p>Нет цен, нет кнопки записи, с телефона не позвонить в один тап, заголовок «Главная». Сайт существует, но человеку по нему некуда идти. Начинаем с разбора: где именно теряются заявки.</p>
-        </div>
-        <div class="wrow reveal">
-          <span class="num">[ 03 ]</span>
+        </div>        <div class="wrow reveal">
           <h3>Только телефон, и больше ничего</h3>
           <p>Вас негде найти, кроме сарафана и случайного звонка. При этом есть график и услуги, которыми можно торговать. Тут собираем с нуля: структура, тексты, сайт, заявка в мессенджер.</p>
-        </div>
-      </div>
+        </div>      </div>
     </div>
-  </section>
-
-  <section class="paper" id="process">
-    <div class="container">
-      <div class="sect-head head-reveal">
-        <span class="label">[ процесс ]</span>
-        <div>
-          <h2>Как это устроено.</h2>
-          <p>Три этапа. Можно остановиться после проекта и забрать структуру, тексты и прототип себе.</p>
-        </div>
+  </section>  <section class="section alt" id="process">
+    <div class="container">      <div class="sec-head head-reveal">
+        <p class="eyebrow">процесс</p>
+        <h2 class="grad">Как это устроено.</h2>
+        <p>Три этапа. Можно остановиться после проекта и забрать структуру, тексты и прототип себе.</p>
       </div>
 
-      <div class="process-grid" data-stagger>
-        <details class="pcard reveal">
-          <summary>
-            <span class="num">[ 01 ]</span>
-            <h3>Созвон</h3>
-            <span class="more"><span>[ подробнее ]</span><span class="plus" aria-hidden="true"></span></span>
-          </summary>
-          <div class="body">
-            <p>Тридцать минут: задачи и цели, что сейчас не так с присутствием в поиске и в группе, ваши пожелания. Рассказываю, как идёт работа, предлагаю варианты сроков и цены.</p>
-            <p class="meta"><b>Результат:</b> понятен объём, вилка цены и подписан договор с ТЗ.</p>
-          </div>
-        </details>
-        <details class="pcard reveal">
-          <summary>
-            <span class="num">[ 02 ]</span>
-            <h3>Интервью</h3>
-            <span class="more"><span>[ подробнее ]</span><span class="plus" aria-hidden="true"></span></span>
-          </summary>
-          <div class="body">
-            <p>Сорок-шестьдесят минут по готовым вопросам: как устроен бизнес, откуда приходят клиенты, что получается лучше конкурентов, где теряются заявки.</p>
-            <p class="meta"><b>Результат:</b> план работ.</p>
-          </div>
-        </details>
-        <details class="pcard reveal">
-          <summary>
-            <span class="num">[ 03 ]</span>
-            <h3>Аудит и карта сайта</h3>
-            <span class="more"><span>[ подробнее ]</span><span class="plus" aria-hidden="true"></span></span>
-          </summary>
-          <div class="body">
-            <p>Пять или семь конкурентов в городе: цены, офферы, каналы, как выглядят в поиске. Отмечаю, что можно забрать себе.</p>
-            <p class="meta"><b>Результат:</b> проект сайта и карта сайта — структура всех страниц.</p>
-          </div>
-        </details>
-        <details class="pcard reveal">
-          <summary>
-            <span class="num">[ 04 ]</span>
-            <h3>Тексты</h3>
-            <span class="more"><span>[ подробнее ]</span><span class="plus" aria-hidden="true"></span></span>
-          </summary>
-          <div class="body">
-            <p>Пишу под поиск и под ИИ-поиск: заголовки, цены, ответы на вопросы, которые задают по телефону. Согласовываем построчно.</p>
-            <p class="meta"><b>Результат:</b> согласованные тексты, которые закрывают вопросы покупателя.</p>
-          </div>
-        </details>
-        <details class="pcard reveal">
-          <summary>
-            <span class="num">[ 05 ]</span>
-            <h3>Концепция главной</h3>
-            <span class="more"><span>[ подробнее ]</span><span class="plus" aria-hidden="true"></span></span>
-          </summary>
-          <div class="body">
-            <p>Цвета, шрифты, стилистика, отстройка от конкурентов. Одна концепция и две-три итерации правок.</p>
-            <p class="meta"><b>Результат:</b> согласованная стилистика сайта.</p>
-          </div>
-        </details>
-        <details class="pcard reveal">
-          <summary>
-            <span class="num">[ 06 ]</span>
-            <h3>Макет всех страниц</h3>
-            <span class="more"><span>[ подробнее ]</span><span class="plus" aria-hidden="true"></span></span>
-          </summary>
-          <div class="body">
-            <p>Отрисовываю весь сайт по согласованной концепции, с учётом того, как человек читает на телефоне.</p>
-            <p class="meta"><b>Результат:</b> макет, готовый к сборке.</p>
-          </div>
-        </details>
-        <details class="pcard reveal">
-          <summary>
-            <span class="num">[ 07 ]</span>
-            <h3>Сборка и запуск</h3>
-            <span class="more"><span>[ подробнее ]</span><span class="plus" aria-hidden="true"></span></span>
-          </summary>
-          <div class="body">
-            <p>Адаптив под телефон, формы заявок, домен, хостинг, заголовки и микроразметка. Проверяю на телефоне, отправляю тестовую заявку.</p>
-            <p class="meta"><b>Результат:</b> рабочий сайт на вашем домене, готовый к продвижению.</p>
-          </div>
-        </details>
-      </div>
+      <div class="process-grid" data-stagger>        <article class="pcard reveal">
+          <h3>
+            <button class="pcard-trigger" type="button" data-dialog="m-step-1" aria-haspopup="dialog">
+              <span class="pcard-title">Созвон</span>
+              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+        </article>        <article class="pcard reveal">
+          <h3>
+            <button class="pcard-trigger" type="button" data-dialog="m-step-2" aria-haspopup="dialog">
+              <span class="pcard-title">Интервью</span>
+              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+        </article>        <article class="pcard reveal">
+          <h3>
+            <button class="pcard-trigger" type="button" data-dialog="m-step-3" aria-haspopup="dialog">
+              <span class="pcard-title">Аудит и карта сайта</span>
+              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+        </article>        <article class="pcard reveal">
+          <h3>
+            <button class="pcard-trigger" type="button" data-dialog="m-step-4" aria-haspopup="dialog">
+              <span class="pcard-title">Тексты</span>
+              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+        </article>        <article class="pcard reveal">
+          <h3>
+            <button class="pcard-trigger" type="button" data-dialog="m-step-5" aria-haspopup="dialog">
+              <span class="pcard-title">Концепция главной</span>
+              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+        </article>        <article class="pcard reveal">
+          <h3>
+            <button class="pcard-trigger" type="button" data-dialog="m-step-6" aria-haspopup="dialog">
+              <span class="pcard-title">Макет всех страниц</span>
+              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+        </article>        <article class="pcard reveal">
+          <h3>
+            <button class="pcard-trigger" type="button" data-dialog="m-step-7" aria-haspopup="dialog">
+              <span class="pcard-title">Сборка и запуск</span>
+              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
+            </button>
+          </h3>
+        </article>      </div>
     </div>
-  </section>
-
-  <section id="why">
-    <div class="container">
-      <div class="sect-head head-reveal">
-        <span class="label">[ гарантии ]</span>
-        <div><h2>Гарантии и кто делает.</h2></div>
+  </section>  <section class="section" id="why">
+    <div class="container">      <div class="sec-head head-reveal">
+        <p class="eyebrow">гарантии</p>
+        <h2 class="grad">Гарантии и кто делает.</h2>
       </div>
-      <div class="why-grid" data-stagger>
-        <article class="why reveal">
-          <span class="num">[ 01 ]</span>
-          <h3>Тридцать дней после запуска</h3>
-          <p>Поехала вёрстка, не работает форма или кнопка — исправляю бесплатно и в первую очередь. Это про мои ошибки, а не про новые пожелания.</p>
-        </article>
-        <article class="why reveal">
-          <span class="num">[ 02 ]</span>
-          <h3>Три платежа по результатам</h3>
-          <p>21 000 после договора, 28 000 после согласования макета, 21 000 при запуске. Тексты и макет вы видите до того, как платите основную часть.</p>
-        </article>
-        <article class="why reveal">
-          <span class="num">[ 03 ]</span>
-          <h3>Техническая часть на мне</h3>
-          <p>Работаю системным администратором: серверы, базы данных, Linux, техническое образование. Домен, хостинг, почта и форма заявки не уходят подрядчику, обслуживаю их тоже я.</p>
-        </article>
-      </div>
+      <div class="why-grid" data-stagger>        <article class="why reveal">
+          <h3 class="why-h">
+            <button class="why-trigger" type="button" aria-expanded="false" aria-controls="why-panel-1">
+              <span class="ficon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c.7-3.7 3.7-6 7.5-6s6.8 2.3 7.5 6"/></svg>
+              </span>
+              <span class="why-title">Тридцать дней после запуска</span>
+              <span class="why-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="why-panel" id="why-panel-1" aria-hidden="true">
+            <div class="why-panel-in">
+              <p>Поехала вёрстка, не работает форма или кнопка — исправляю бесплатно и в первую очередь. Это про мои ошибки, а не про новые пожелания.</p>
+            </div>
+          </div>
+        </article>        <article class="why reveal">
+          <h3 class="why-h">
+            <button class="why-trigger" type="button" aria-expanded="false" aria-controls="why-panel-2">
+              <span class="ficon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="6" rx="1.5"/><rect x="3.5" y="14" width="17" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01M11 7h6M11 17h6"/></svg>
+              </span>
+              <span class="why-title">Три платежа по результатам</span>
+              <span class="why-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="why-panel" id="why-panel-2" aria-hidden="true">
+            <div class="why-panel-in">
+              <p>21 000 после договора, 28 000 после согласования макета, 21 000 при запуске. Тексты и макет вы видите до того, как платите основную часть.</p>
+            </div>
+          </div>
+        </article>        <article class="why reveal">
+          <h3 class="why-h">
+            <button class="why-trigger" type="button" aria-expanded="false" aria-controls="why-panel-3">
+              <span class="ficon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+              </span>
+              <span class="why-title">Техническая часть на мне</span>
+              <span class="why-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="why-panel" id="why-panel-3" aria-hidden="true">
+            <div class="why-panel-in">
+              <p>Работаю системным администратором: серверы, базы данных, Linux, техническое образование. Домен, хостинг, почта и форма заявки не уходят подрядчику, обслуживаю их тоже я.</p>
+            </div>
+          </div>
+        </article>      </div>
     </div>
-  </section>
-
-  <section class="dark" id="price">
-    <div class="container">
-      <div class="sect-head head-reveal">
-        <span class="label">[ услуги и стоимость ]</span>
-        <div>
-          <h2>Цены.</h2>
-          <p>Сайт под ключ — от 70 000 ₽, три платежа по результатам. Разбор и тексты — 30 000 ₽. Визуал считается отдельно, если у вас нет своих фотографий.</p>
-        </div>
+  </section>  <section class="section alt" id="price">
+    <div class="container">      <div class="sec-head head-reveal">
+        <p class="eyebrow">услуги и стоимость</p>
+        <h2 class="grad">Цены.</h2>
+        <p>Сайт под ключ — от 70 000 ₽, три платежа по результатам. Разбор и тексты — 30 000 ₽. Визуал считается отдельно, если у вас нет своих фотографий.</p>
       </div>
 
-      <div class="price-list" data-stagger">
-        <article class="prow reveal">
-          <span class="num">[ 01 ]</span>
+      <div class="price-list" data-stagger>        <article class="prow reveal">
           <div>
             <h3>Сайт под ключ</h3>
             <p class="desc">Семь шагов: созвон и договор, интервью, аудит конкурентов, тексты, концепция главной, макет всех страниц, сборка и запуск. Цена зависит от объёма: страницы, каталог, языки.</p>
           </div>
           <div class="price">от 70 000 ₽<span class="term">три платежа</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить сайт под ключ">↗</a>
-        </article>
-
-        <article class="prow reveal">
-          <span class="num">[ 02 ]</span>
+          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: сайт под ключ">↗</a>
+        </article>        <article class="prow reveal">
           <div>
             <h3>Разбор и тексты</h3>
             <p class="desc">Для тех, у кого сайт уже есть: созвон, интервью, аудит рынка и конкурентов, карта сайта, тексты по блокам. Без дизайна и сборки. На руки — план, структура и тексты.</p>
           </div>
           <div class="price">30 000 ₽<span class="term">если сайт есть</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить разбор и тексты">↗</a>
-        </article>
-
-        <article class="prow reveal">
-          <span class="num">[ 03 ]</span>
+          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: разбор и тексты">↗</a>
+        </article>        <article class="prow reveal">
           <div>
             <h3>Фото и видео</h3>
             <p class="desc">Если снимать нечего: изображения и короткое видео в стилистике сайта. Десять картинок — 5 000 ₽, ролик на полминуты — 3 000 ₽. Решается на интервью, оформляется допсоглашением.</p>
           </div>
           <div class="price">500 ₽<span class="term">за изображение, 100 ₽ за секунду</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить фото и видео">↗</a>
-        </article>
-
-        <article class="prow reveal">
-          <span class="num">[ 04 ]</span>
+          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: фото и видео">↗</a>
+        </article>        <article class="prow reveal">
           <div>
             <h3>После запуска</h3>
             <p class="desc">Подписки нет. Правки, новые блоки, анимации, изменение дизайна — почасово, минимум час. Тридцать дней на исправление моих ошибок — бесплатно.</p>
           </div>
           <div class="price">1 000 ₽<span class="term">в час</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить работы после запуска">↗</a>
-        </article>
-      </div>
-
-      <div class="inc reveal">
+          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: после запуска">↗</a>
+        </article>      </div>      <div class="includes reveal">
         <h3>Что входит в сайт под ключ</h3>
-        <ul>
-          <li>Созвон тридцать минут и договор</li>
-          <li>Интервью по вопросам</li>
-          <li>Аудит пяти-семи конкурентов</li>
-          <li>Карта сайта: структура всех страниц</li>
-          <li>Тексты по блокам, под поиск и ИИ-поиск</li>
-          <li>Согласование текстов построчно</li>
-          <li>Концепция главной: цвета, шрифты, стилистика</li>
-          <li>Две-три итерации правок</li>
-          <li>Макет всех страниц</li>
-          <li>Вёрстка и адаптив под телефон</li>
-          <li>Форма заявки в Telegram или WhatsApp</li>
-          <li>Домен, хостинг и публикация</li>
-          <li>Заголовки, описания и микроразметка</li>
-          <li>Проверка на телефоне и тестовая заявка</li>
-          <li>Инструкция по работе с сайтом</li>
-          <li>Тридцать дней исправлений после запуска</li>
-        </ul>
-        <p class="inc-note">Домен около 300 ₽ в год и хостинг оплачиваете вы, я настраиваю и подключаю. Оплата тремя частями: 21 000 на старте, 28 000 после согласования макета, 21 000 при запуске. Визуал — отдельно: 500 ₽ за изображение, 100 ₽ за секунду.</p>
-      </div>
-
-
-      <div class="calc reveal">
+        <ul>          <li>Созвон тридцать минут и договор</li>          <li>Интервью по вопросам</li>          <li>Аудит пяти-семи конкурентов</li>          <li>Карта сайта: структура всех страниц</li>          <li>Тексты по блокам, под поиск и ИИ-поиск</li>          <li>Согласование текстов построчно</li>          <li>Концепция главной: цвета, шрифты, стилистика</li>          <li>Две-три итерации правок</li>          <li>Макет всех страниц</li>          <li>Вёрстка и адаптив под телефон</li>          <li>Форма заявки в Telegram или WhatsApp</li>          <li>Домен, хостинг и публикация</li>          <li>Заголовки, описания и микроразметка</li>          <li>Проверка на телефоне и тестовая заявка</li>          <li>Инструкция по работе с сайтом</li>          <li>Тридцать дней исправлений после запуска</li>        </ul>
+        <p class="includes-note">Домен около 300 ₽ в год и хостинг оплачиваете вы, я настраиваю и подключаю. Оплата тремя частями: 21 000 на старте, 28 000 после согласования макета, 21 000 при запуске. Визуал — отдельно: 500 ₽ за изображение, 100 ₽ за секунду.</p>
+      </div>      <div class="calc reveal">
         <div>
           <h3>Посчитать свой вариант</h3>
           <label class="check"><input type="checkbox" id="c1" checked> Сайт под ключ — от 70 000 ₽</label>
@@ -803,102 +847,61 @@
           <label class="check"><input type="checkbox" id="c3"> Первые три клиента: скидка 15 000 на сайт, 5 000 на разбор</label>
           <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона. Визуал считается отдельно, если нужен.</p>
         </div>
-        <p class="total" id="total" aria-live="polite">70 000 ₽<small>Сайт под ключ</small></p>
+        <p class="total grad" id="total" aria-live="polite">70 000 ₽<small>Сайт под ключ</small></p>
+      </div>    </div>
+  </section>  <section class="section">
+    <div class="container">      <div class="sec-head head-reveal">
+        <p class="eyebrow">границы</p>
+        <h2 class="grad">Как делим работу.</h2>
       </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="sect-head head-reveal">
-        <span class="label">[ границы ]</span>
-        <div><h2>Как делим работу.</h2></div>
-      </div>
-      <div class="split" data-stagger>
-        <div class="split-card dark-card reveal">
+      <div class="split" data-stagger>        <div class="split-card dark-card reveal">
           <h3>На мне</h3>
-          <ul>
-            <li>Интервью и разбор конкурентов</li>
-            <li>Структура, тексты, прототип</li>
-            <li>Дизайн, вёрстка, мобильная версия, скорость</li>
-            <li>Домен, публикация, форма заявки</li>
-            <li>Проверка после запуска и правки контента</li>
-          </ul>
-        </div>
-        <div class="split-card reveal">
+          <ul>            <li>Интервью и разбор конкурентов</li>            <li>Структура, тексты, прототип</li>            <li>Дизайн, вёрстка, мобильная версия, скорость</li>            <li>Домен, публикация, форма заявки</li>            <li>Проверка после запуска и правки контента</li>          </ul>        </div>        <div class="split-card reveal">
           <h3>Не на мне, и говорю сразу</h3>
-          <ul>
-            <li>Реклама: Директ и ВК. Подскажу, что настроить, но вести не возьмусь</li>
-            <li>Карточки в 2ГИС и Яндекс.Картах: скажу, что заполнить, заполните сами</li>
-            <li>Продажи и обзвон ваших клиентов: это ваша часть</li>
-          </ul>
-          <p class="lead-out">Заявки в штуках не обещаю: они зависят от цены, сезона и конкурентов. Отвечаю за структуру, тексты, скорость и работающую форму.</p>
-        </div>
-      </div>
+          <ul>            <li>Реклама: Директ и ВК. Подскажу, что настроить, но вести не возьмусь</li>            <li>Карточки в 2ГИС и Яндекс.Картах: скажу, что заполнить, заполните сами</li>            <li>Продажи и обзвон ваших клиентов: это ваша часть</li>          </ul>          <p class="lead-out">Заявки в штуках не обещаю: они зависят от цены, сезона и конкурентов. Отвечаю за структуру, тексты, скорость и работающую форму.</p>        </div>      </div>
     </div>
-  </section>
-
-  <section class="paper" id="faq">
-    <div class="container">
-      <div class="faq-wrap" data-stagger>
+  </section>  <section class="section alt" id="faq">
+    <div class="container">      <div class="faq-wrap" data-stagger>
         <div class="faq-head head-reveal">
-          <span class="label">[ нас часто спрашивают ]</span>
-          <h2>Частые вопросы.</h2>
+          <p class="eyebrow left">нас часто спрашивают</p>
+          <h2 class="grad">Частые вопросы.</h2>
         </div>
 
-        <div class="faq-list">
-          <details class="faq reveal">
+        <div class="faq-list">          <details class="faq reveal">
             <summary>Сколько это займёт времени <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Срок называю после интервью, когда понятен объём, и записываю в переписке. Работаю по вечерам: лучше назову реальный срок и сделаю в него, чем красивый и сорву.</p>
-          </details>
-
-          <details class="faq reveal">
+          </details>          <details class="faq reveal">
             <summary>Как проходит оплата <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Три платежа, каждый после результата: 21 000 после договора, 28 000 после согласования макета, 21 000 при запуске. Визуал, если он нужен, оплачивается отдельно до начала дизайна.</p>
-          </details>
-
-          <details class="faq reveal">
+          </details>          <details class="faq reveal">
             <summary>Что нужно от меня <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Тридцать минут на созвон и сорок-шестьдесят на интервью. Цены и услуги, фотографии или решение делать визуал, доступы к домену и хостингу. Остальное на мне.</p>
-          </details>
-
-          <details class="faq reveal">
+          </details>          <details class="faq reveal">
             <summary>Что можно делать после запуска <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Подписки нет. Правки, новые блоки, анимации, изменение дизайна — почасово, 1 000 ₽ в час, минимум час. Тридцать дней после запуска исправляю свои ошибки бесплатно и в первую очередь.</p>
-          </details>
-
-          <details class="faq reveal">
+          </details>          <details class="faq reveal">
             <summary>А если что-то сломается <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Тридцать дней после запуска исправляю бесплатно и в первую очередь: поехала вёрстка, не работает форма или кнопка. Это про мои ошибки, а не про новые пожелания.</p>
-          </details>
-
-          <details class="faq reveal">
+          </details>          <details class="faq reveal">
             <summary>Почему от 70 000, а не фиксированная цена <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Потому что объём разный: пять страниц или пятнадцать, один язык или два, каталог или визитка. Точную цифру называю после созвона, фиксирую в договоре, и дальше она не меняется. Доплата возможна только если вы сами добавляете объём.</p>
-          </details>
-
-          <details class="faq reveal">
+          </details>          <details class="faq reveal">
             <summary>У меня нет фотографий <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Соберу визуал сам: 500 ₽ за изображение, 100 ₽ за секунду видео. Решается на интервью, когда видно, что у вас есть, оформляется допсоглашением и оплачивается до начала дизайна. Свои фото всегда лучше — их я обработаю бесплатно.</p>
-          </details>
-
-          <details class="faq reveal">
+          </details>          <details class="faq reveal">
             <summary>Мне нужен только разбор, без сайта <span class="faq-plus" aria-hidden="true"></span></summary>
             <p class="answer">Это отдельный продукт за 30 000 ₽: созвон, интервью, аудит рынка и конкурентов, карта сайта и тексты для вашего существующего сайта. Без дизайна и сборки. С него часто начинают те, у кого сайт уже есть.</p>
-          </details>
-        </div>
+          </details>        </div>
       </div>
     </div>
-  </section>
-
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="contact-grid" data-stagger>
+  </section>  <section class="contact" id="contact">
+    <div class="container">      <div class="contact-grid" data-stagger>
         <div class="reveal">
-          <span class="label">[ контакты ]</span>
-          <h2>Давайте поговорим.</h2>
+          <p class="eyebrow left">контакты</p>
+          <h2 class="grad">Давайте поговорим.</h2>
           <p class="contact-lead">Напишите в Telegram или на почту. Договоримся о разговоре: сорок минут, бесплатно, без обязательств.</p>
-          <a class="btn" href="https://t.me/evglat11">написать в telegram <span class="arr">↗</span></a>
+          <a class="btn btn-primary" href="https://t.me/evglat11">написать в telegram <span class="arr">↗</span></a>
+
           <form class="lead-form" id="leadForm" novalidate>
             <div class="lf-row">
               <label class="sr-only" for="lf-name">Ваше имя</label>
@@ -907,21 +910,20 @@
               <input id="lf-contact" name="contact" type="text" placeholder="Телефон или @telegram" autocomplete="tel">
             </div>
             <p class="lf-error" id="lfError" role="alert" aria-live="polite"></p>
-            <button class="btn" type="submit">отправить заявку <span class="arr">↗</span></button>
+            <button class="btn btn-primary" type="submit">отправить заявку <span class="arr">↗</span></button>
             <p class="lf-note">Кнопка откроет Telegram с готовым текстом заявки: на сервер ничего не уходит.
               Нажимая, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</p>
           </form>
-
         </div>
 
         <div class="contact-side reveal">
           <div class="contact-col">
-            <span class="label">[ для связи ]</span>
+            <p class="fcard-label">для связи</p>
             <a class="contact-link" href="https://t.me/evglat11">Telegram @evglat11</a>
             <a class="contact-link" href="mailto:me@zheksai11.ru">me@zheksai11.ru</a>
           </div>
           <div class="contact-col">
-            <span class="label">[ город ]</span>
+            <p class="fcard-label">город</p>
             <div class="contact-city">Сыктывкар</div>
             <p class="contact-note">Работаю как физическое лицо, самозанятость оформлю по запросу. Встречи в городе после интервью в переписке.</p>
           </div>
@@ -935,9 +937,49 @@
         <span>Сыктывкар</span>
       </div>
     </div>
-  </section>
-</main>
-
+  </section>  <dialog class="pmodal" id="m-step-1" tabindex="-1" aria-labelledby="m-step-1-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">процесс · этап 01</p>
+    <h3 id="m-step-1-title">Созвон</h3>
+    <p>Тридцать минут: задачи и цели, что сейчас не так с присутствием в поиске и в группе, ваши пожелания. Рассказываю, как идёт работа, предлагаю варианты сроков и цены.</p>
+    <p class="pmodal-meta"><b>Результат:</b> понятен объём, вилка цены и подписан договор с ТЗ.</p>
+  </dialog>  <dialog class="pmodal" id="m-step-2" tabindex="-1" aria-labelledby="m-step-2-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">процесс · этап 02</p>
+    <h3 id="m-step-2-title">Интервью</h3>
+    <p>Сорок-шестьдесят минут по готовым вопросам: как устроен бизнес, откуда приходят клиенты, что получается лучше конкурентов, где теряются заявки.</p>
+    <p class="pmodal-meta"><b>Результат:</b> план работ.</p>
+  </dialog>  <dialog class="pmodal" id="m-step-3" tabindex="-1" aria-labelledby="m-step-3-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">процесс · этап 03</p>
+    <h3 id="m-step-3-title">Аудит и карта сайта</h3>
+    <p>Пять или семь конкурентов в городе: цены, офферы, каналы, как выглядят в поиске. Отмечаю, что можно забрать себе.</p>
+    <p class="pmodal-meta"><b>Результат:</b> проект сайта и карта сайта — структура всех страниц.</p>
+  </dialog>  <dialog class="pmodal" id="m-step-4" tabindex="-1" aria-labelledby="m-step-4-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">процесс · этап 04</p>
+    <h3 id="m-step-4-title">Тексты</h3>
+    <p>Пишу под поиск и под ИИ-поиск: заголовки, цены, ответы на вопросы, которые задают по телефону. Согласовываем построчно.</p>
+    <p class="pmodal-meta"><b>Результат:</b> согласованные тексты, которые закрывают вопросы покупателя.</p>
+  </dialog>  <dialog class="pmodal" id="m-step-5" tabindex="-1" aria-labelledby="m-step-5-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">процесс · этап 05</p>
+    <h3 id="m-step-5-title">Концепция главной</h3>
+    <p>Цвета, шрифты, стилистика, отстройка от конкурентов. Одна концепция и две-три итерации правок.</p>
+    <p class="pmodal-meta"><b>Результат:</b> согласованная стилистика сайта.</p>
+  </dialog>  <dialog class="pmodal" id="m-step-6" tabindex="-1" aria-labelledby="m-step-6-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">процесс · этап 06</p>
+    <h3 id="m-step-6-title">Макет всех страниц</h3>
+    <p>Отрисовываю весь сайт по согласованной концепции, с учётом того, как человек читает на телефоне.</p>
+    <p class="pmodal-meta"><b>Результат:</b> макет, готовый к сборке.</p>
+  </dialog>  <dialog class="pmodal" id="m-step-7" tabindex="-1" aria-labelledby="m-step-7-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">процесс · этап 07</p>
+    <h3 id="m-step-7-title">Сборка и запуск</h3>
+    <p>Адаптив под телефон, формы заявок, домен, хостинг, заголовки и микроразметка. Проверяю на телефоне, отправляю тестовую заявку.</p>
+    <p class="pmodal-meta"><b>Результат:</b> рабочий сайт на вашем домене, готовый к продвижению.</p>
+  </dialog></main>
 <script>
   (function () {
     var menu = document.getElementById('menu');
@@ -958,6 +1000,67 @@
     links.forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
 
+    var pmodals = document.querySelectorAll('.pmodal');
+    document.querySelectorAll('[data-dialog]').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var d = document.getElementById(trigger.getAttribute('data-dialog'));
+        if (!d || !d.showModal) return;
+        d.showModal();
+        d.focus();
+        document.body.classList.add('lock');
+      });
+    });
+    pmodals.forEach(function (d) {
+      var closeBtn = d.querySelector('.pmodal-close');
+      if (closeBtn) closeBtn.addEventListener('click', function () { d.close(); });
+      d.addEventListener('click', function (e) {
+        var r = d.getBoundingClientRect();
+        if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) d.close();
+      });
+      d.addEventListener('close', function () { document.body.classList.remove('lock'); });
+    });
+
+    var whyGrid = document.querySelector('.why-grid');
+    var whyCards = Array.prototype.slice.call(document.querySelectorAll('.why'));
+
+    function whyCompact(card) {
+      var cs = getComputedStyle(card);
+      return card.querySelector('.why-trigger').offsetHeight
+        + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom);
+    }
+    function whyReserve() {
+      if (!whyGrid) return;
+      var cols = getComputedStyle(whyGrid).gridTemplateColumns.split(' ').filter(Boolean).length || 1;
+      var rows = Math.ceil(whyCards.length / cols);
+      var gap = parseFloat(getComputedStyle(whyGrid).rowGap) || 0;
+      var compact = Math.max.apply(null, whyCards.map(whyCompact));
+      var panel = Math.max.apply(null, whyCards.map(function (card) {
+        return card.querySelector('.why-panel-in').scrollHeight;
+      }));
+      whyGrid.style.minHeight = (rows * compact + (rows - 1) * gap + panel) + 'px';
+    }
+
+    function setWhy(card, open) {
+      var trigger = card.querySelector('.why-trigger');
+      var panel = document.getElementById(trigger.getAttribute('aria-controls'));
+      card.classList.toggle('open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (panel) panel.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
+    document.querySelectorAll('.why-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var card = trigger.closest('.why');
+        var open = !card.classList.contains('open');
+        document.querySelectorAll('.why.open').forEach(function (other) {
+          if (other !== card) setWhy(other, false);
+        });
+        setWhy(card, open);
+      });
+    });
+    whyReserve();
+    window.addEventListener('resize', whyReserve);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(whyReserve);
+
     var total = document.getElementById('total');
     var c1 = document.getElementById('c1'), c2 = document.getElementById('c2'), c3 = document.getElementById('c3');
     var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -967,14 +1070,14 @@
       total.animate([
         { opacity: .35, transform: 'translateY(10px)' },
         { opacity: 1, transform: 'none' }
-      ], { duration: 380, easing: 'cubic-bezier(.16,1,.3,1)' });
+      ], { duration: 380, easing: 'cubic-bezier(.22,.61,.36,1)' });
     }
     function recalc() {
       if (!total || !c1) return;
       var site = c3.checked ? 55000 : 70000;
       var review = c3.checked ? 25000 : 30000;
       var sum = (c1.checked ? site : 0) + (c2.checked ? review : 0);
-      if (!c1.checked && !c2.checked) { total.textContent = 'выберите продукт'; return; }
+      if (!c1.checked && !c2.checked) { total.textContent = 'выберите продукт'; popTotal(); return; }
       var label = c1.checked && c2.checked ? 'Сайт и разбор'
                 : c1.checked ? 'Сайт под ключ' : 'Разбор и тексты';
       total.innerHTML = money(sum) + '<small>' + label + '</small>';
@@ -1021,6 +1124,7 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     onScroll();
+
     var lf = document.getElementById('leadForm');
     if (lf) {
       var lfName = document.getElementById('lf-name'),
@@ -1042,7 +1146,6 @@
         window.open('https://t.me/evglat11?text=' + encodeURIComponent(text), '_blank', 'noopener');
       });
     }
-
   })();
 </script>
 </body>
