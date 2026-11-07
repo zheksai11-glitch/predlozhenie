@@ -337,6 +337,16 @@
     font-size:14px;line-height:1.55;background:var(--fill-2);
     box-shadow:inset 0 0 0 1px var(--line)}
 
+  .pcard-in{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(16px,3vw,56px);
+    align-items:baseline;padding:clamp(22px,2.8vw,32px) 0}
+  .pcard-title{font-family:"Onest",sans-serif;font-size:clamp(22px,2.6vw,32px);font-weight:500;
+    line-height:1.12;color:var(--mist)}
+  .pcard-body{display:grid;gap:12px}
+  .pcard-desc{color:var(--fog);font-size:16px;line-height:1.6;max-width:64ch}
+  .pcard-result{font-size:13.5px;line-height:1.55;color:var(--fog)}
+  .pcard-result span{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--blue);margin-right:7px}
+
   /* ---------- why ---------- */
   #why.section{padding-bottom:0}
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;align-content:start}
@@ -559,12 +569,15 @@
       background:linear-gradient(180deg,var(--canvas-3),var(--canvas-2));
       box-shadow:inset 0 0 0 1px var(--line),var(--elev),0 -18px 30px -20px rgba(0,0,0,.95)}
     .pcard:nth-child(1){z-index:1}
-    .pcard:nth-child(2){top:118px;z-index:2}
-    .pcard:nth-child(3){top:164px;z-index:3}
-    .pcard:nth-child(4){top:210px;z-index:4}
-    .pcard:nth-child(5){top:256px;z-index:5}
-    .pcard:nth-child(6){top:256px;z-index:6}
-    .pcard:nth-child(7){top:256px;z-index:7;margin-bottom:0}
+    .pcard:nth-child(2){top:88px;z-index:2}
+    .pcard:nth-child(3){top:104px;z-index:3}
+    .pcard:nth-child(4){top:120px;z-index:4}
+    .pcard:nth-child(5){top:136px;z-index:5}
+    .pcard:nth-child(6){top:136px;z-index:6}
+    .pcard:nth-child(7){top:136px;z-index:7;margin-bottom:0}
+    .pcard-in{grid-template-columns:1fr;gap:10px;padding:16px 0}
+    .pcard-desc{font-size:14.5px}
+    .pcard-result{font-size:12.5px}
     .pcard:first-of-type{border-top:0}
     .pcard-trigger{padding:4px 0;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
     .pcard-trigger:active{transform:scale(.985)}
@@ -763,62 +776,78 @@
         </div>      </div>
     </div>
   </section>  <section class="section alt" id="process">
-    <div class="container">      <div class="sec-head head-reveal">
+    <div class="container">
+      <div class="sec-head head-reveal">
         <p class="eyebrow">процесс</p>
         <h2 class="grad">Как это устроено.</h2>
         <p>Три этапа. Можно остановиться после проекта и забрать структуру, тексты и прототип себе.</p>
       </div>
 
-      <div class="process-grid" data-stagger>        <article class="pcard reveal">
-          <h3>
-            <button class="pcard-trigger" type="button" data-dialog="m-step-1" aria-haspopup="dialog">
-              <span class="pcard-title">Созвон</span>
-              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
-            </button>
-          </h3>
-        </article>        <article class="pcard reveal">
-          <h3>
-            <button class="pcard-trigger" type="button" data-dialog="m-step-2" aria-haspopup="dialog">
-              <span class="pcard-title">Интервью</span>
-              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
-            </button>
-          </h3>
-        </article>        <article class="pcard reveal">
-          <h3>
-            <button class="pcard-trigger" type="button" data-dialog="m-step-3" aria-haspopup="dialog">
-              <span class="pcard-title">Аудит и карта сайта</span>
-              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
-            </button>
-          </h3>
-        </article>        <article class="pcard reveal">
-          <h3>
-            <button class="pcard-trigger" type="button" data-dialog="m-step-4" aria-haspopup="dialog">
-              <span class="pcard-title">Тексты</span>
-              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
-            </button>
-          </h3>
-        </article>        <article class="pcard reveal">
-          <h3>
-            <button class="pcard-trigger" type="button" data-dialog="m-step-5" aria-haspopup="dialog">
-              <span class="pcard-title">Концепция главной</span>
-              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
-            </button>
-          </h3>
-        </article>        <article class="pcard reveal">
-          <h3>
-            <button class="pcard-trigger" type="button" data-dialog="m-step-6" aria-haspopup="dialog">
-              <span class="pcard-title">Макет всех страниц</span>
-              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
-            </button>
-          </h3>
-        </article>        <article class="pcard reveal">
-          <h3>
-            <button class="pcard-trigger" type="button" data-dialog="m-step-7" aria-haspopup="dialog">
-              <span class="pcard-title">Сборка и запуск</span>
-              <span class="more"><span>подробнее</span><span class="plus" aria-hidden="true"></span></span>
-            </button>
-          </h3>
-        </article>      </div>
+      <div class="process-grid" data-stagger>
+        <article class="pcard reveal">
+          <div class="pcard-in">
+            <h3 class="pcard-title">Созвон</h3>
+            <div class="pcard-body">
+              <p class="pcard-desc">Тридцать минут: задачи и цели, что сейчас не так с присутствием в поиске и в группе, ваши пожелания. Рассказываю, как идёт работа, предлагаю варианты сроков и цены.</p>
+              <p class="pcard-result"><span>результат</span> понятен объём, вилка цены и подписан договор с ТЗ.</p>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal">
+          <div class="pcard-in">
+            <h3 class="pcard-title">Интервью</h3>
+            <div class="pcard-body">
+              <p class="pcard-desc">Сорок-шестьдесят минут по готовым вопросам: как устроен бизнес, откуда приходят клиенты, что получается лучше конкурентов, где теряются заявки.</p>
+              <p class="pcard-result"><span>результат</span> план работ.</p>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal">
+          <div class="pcard-in">
+            <h3 class="pcard-title">Аудит и карта сайта</h3>
+            <div class="pcard-body">
+              <p class="pcard-desc">Пять или семь конкурентов в городе: цены, офферы, каналы, как выглядят в поиске. Отмечаю, что можно забрать себе.</p>
+              <p class="pcard-result"><span>результат</span> проект сайта и карта сайта — структура всех страниц.</p>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal">
+          <div class="pcard-in">
+            <h3 class="pcard-title">Тексты</h3>
+            <div class="pcard-body">
+              <p class="pcard-desc">Пишу под поиск и под ИИ-поиск: заголовки, цены, ответы на вопросы, которые задают по телефону. Согласовываем построчно.</p>
+              <p class="pcard-result"><span>результат</span> согласованные тексты, которые закрывают вопросы покупателя.</p>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal">
+          <div class="pcard-in">
+            <h3 class="pcard-title">Концепция главной</h3>
+            <div class="pcard-body">
+              <p class="pcard-desc">Цвета, шрифты, стилистика, отстройка от конкурентов. Одна концепция и две-три итерации правок.</p>
+              <p class="pcard-result"><span>результат</span> согласованная стилистика сайта.</p>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal">
+          <div class="pcard-in">
+            <h3 class="pcard-title">Макет всех страниц</h3>
+            <div class="pcard-body">
+              <p class="pcard-desc">Отрисовываю весь сайт по согласованной концепции, с учётом того, как человек читает на телефоне.</p>
+              <p class="pcard-result"><span>результат</span> макет, готовый к сборке.</p>
+            </div>
+          </div>
+        </article>
+        <article class="pcard reveal">
+          <div class="pcard-in">
+            <h3 class="pcard-title">Сборка и запуск</h3>
+            <div class="pcard-body">
+              <p class="pcard-desc">Адаптив под телефон, формы заявок, домен, хостинг, заголовки и микроразметка. Проверяю на телефоне, отправляю тестовую заявку.</p>
+              <p class="pcard-result"><span>результат</span> рабочий сайт на вашем домене, готовый к продвижению.</p>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </section>  <section class="section" id="why">
     <div class="container">      <div class="sec-head head-reveal">
@@ -1009,49 +1038,7 @@
         <span>Сыктывкар</span>
       </div>
     </div>
-  </section>  <dialog class="pmodal" id="m-step-1" tabindex="-1" aria-labelledby="m-step-1-title">
-    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
-    <p class="pmodal-label">процесс · этап 01</p>
-    <h3 id="m-step-1-title">Созвон</h3>
-    <p>Тридцать минут: задачи и цели, что сейчас не так с присутствием в поиске и в группе, ваши пожелания. Рассказываю, как идёт работа, предлагаю варианты сроков и цены.</p>
-    <p class="pmodal-meta"><b>Результат:</b> понятен объём, вилка цены и подписан договор с ТЗ.</p>
-  </dialog>  <dialog class="pmodal" id="m-step-2" tabindex="-1" aria-labelledby="m-step-2-title">
-    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
-    <p class="pmodal-label">процесс · этап 02</p>
-    <h3 id="m-step-2-title">Интервью</h3>
-    <p>Сорок-шестьдесят минут по готовым вопросам: как устроен бизнес, откуда приходят клиенты, что получается лучше конкурентов, где теряются заявки.</p>
-    <p class="pmodal-meta"><b>Результат:</b> план работ.</p>
-  </dialog>  <dialog class="pmodal" id="m-step-3" tabindex="-1" aria-labelledby="m-step-3-title">
-    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
-    <p class="pmodal-label">процесс · этап 03</p>
-    <h3 id="m-step-3-title">Аудит и карта сайта</h3>
-    <p>Пять или семь конкурентов в городе: цены, офферы, каналы, как выглядят в поиске. Отмечаю, что можно забрать себе.</p>
-    <p class="pmodal-meta"><b>Результат:</b> проект сайта и карта сайта — структура всех страниц.</p>
-  </dialog>  <dialog class="pmodal" id="m-step-4" tabindex="-1" aria-labelledby="m-step-4-title">
-    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
-    <p class="pmodal-label">процесс · этап 04</p>
-    <h3 id="m-step-4-title">Тексты</h3>
-    <p>Пишу под поиск и под ИИ-поиск: заголовки, цены, ответы на вопросы, которые задают по телефону. Согласовываем построчно.</p>
-    <p class="pmodal-meta"><b>Результат:</b> согласованные тексты, которые закрывают вопросы покупателя.</p>
-  </dialog>  <dialog class="pmodal" id="m-step-5" tabindex="-1" aria-labelledby="m-step-5-title">
-    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
-    <p class="pmodal-label">процесс · этап 05</p>
-    <h3 id="m-step-5-title">Концепция главной</h3>
-    <p>Цвета, шрифты, стилистика, отстройка от конкурентов. Одна концепция и две-три итерации правок.</p>
-    <p class="pmodal-meta"><b>Результат:</b> согласованная стилистика сайта.</p>
-  </dialog>  <dialog class="pmodal" id="m-step-6" tabindex="-1" aria-labelledby="m-step-6-title">
-    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
-    <p class="pmodal-label">процесс · этап 06</p>
-    <h3 id="m-step-6-title">Макет всех страниц</h3>
-    <p>Отрисовываю весь сайт по согласованной концепции, с учётом того, как человек читает на телефоне.</p>
-    <p class="pmodal-meta"><b>Результат:</b> макет, готовый к сборке.</p>
-  </dialog>  <dialog class="pmodal" id="m-step-7" tabindex="-1" aria-labelledby="m-step-7-title">
-    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
-    <p class="pmodal-label">процесс · этап 07</p>
-    <h3 id="m-step-7-title">Сборка и запуск</h3>
-    <p>Адаптив под телефон, формы заявок, домен, хостинг, заголовки и микроразметка. Проверяю на телефоне, отправляю тестовую заявку.</p>
-    <p class="pmodal-meta"><b>Результат:</b> рабочий сайт на вашем домене, готовый к продвижению.</p>
-  </dialog></main>
+  </section>  </main>
 <script>
   (function () {
     var menu = document.getElementById('menu');
