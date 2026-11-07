@@ -727,6 +727,10 @@
     .flip-hint{display:none}
     .flip-back p{font-size:13.5px}
   }
+
+  @media (prefers-reduced-motion: reduce){
+    .flip-inner{transition:none}
+  }
 </style>
 <body>
 <script>document.documentElement.classList.add('js')</script>
