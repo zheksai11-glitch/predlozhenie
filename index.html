@@ -686,6 +686,47 @@
     .prow .term{white-space:normal;letter-spacing:.06em}
     .prow .price{font-size:clamp(22px,6.4vw,28px)}
   }
+
+  /* ---------- «для кого»: карточки с переворотом ---------- */
+  .who-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,24px);
+    margin-top:clamp(28px,3.4vw,44px)}
+  .flipcard{position:relative;min-height:clamp(190px,15.5vw,225px);perspective:1600px;
+    border-radius:var(--r);cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent}
+  .flipcard:focus-visible{box-shadow:0 0 0 2px var(--blue)}
+  .flip-inner{position:relative;width:100%;height:100%;min-height:inherit;
+    transform-style:preserve-3d;
+    transition:transform .62s cubic-bezier(.23,1,.32,1)}
+  .flipcard.is-flipped .flip-inner{transform:rotateY(180deg)}
+  .flip-face{position:absolute;inset:0;display:flex;flex-direction:column;
+    justify-content:space-between;gap:14px;padding:clamp(20px,2.2vw,26px);
+    border-radius:var(--r);background:linear-gradient(180deg,var(--canvas-3),var(--canvas-2));
+    box-shadow:inset 0 0 0 1px var(--line),var(--elev);overflow:hidden;
+    -webkit-backface-visibility:hidden;backface-visibility:hidden;
+    transition:box-shadow .3s var(--ease)}
+  .flipcard:hover .flip-front{box-shadow:inset 0 0 0 1px var(--line-strong),var(--elev)}
+  .flip-back{transform:rotateY(180deg);justify-content:flex-start;gap:12px}
+  .flip-num{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:var(--blue)}
+  .flipcard h3{font-family:"Onest",sans-serif;font-size:clamp(20px,2vw,26px);font-weight:500;
+    line-height:1.15;color:var(--mist);margin:auto 0 0}
+  .flip-hint{display:inline-flex;align-items:center;gap:8px;font-family:"JetBrains Mono",monospace;
+    font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--fog)}
+  .flip-hint i{font-style:normal;color:var(--blue)}
+  .flip-back p{font-size:13.5px;line-height:1.55;color:var(--fog)}
+  .flip-back b{color:var(--mist);font-weight:500}
+  .flip-back .flip-hint{margin-top:auto}
+  @media(max-width:720px){
+    .who-grid{grid-template-columns:1fr;gap:14px}
+    .flipcard{perspective:none;min-height:0;cursor:default;
+      padding:18px 20px;border-radius:var(--r);
+      background:linear-gradient(180deg,var(--canvas-3),var(--canvas-2));
+      box-shadow:inset 0 0 0 1px var(--line),var(--elev)}
+    .flip-inner{transform:none!important;display:block;min-height:0;transform-style:flat}
+    .flip-face{position:static;transform:none;padding:0;background:none;box-shadow:none;
+      overflow:visible;-webkit-backface-visibility:visible;backface-visibility:visible;gap:10px}
+    .flip-back{margin-top:10px}
+    .flip-hint{display:none}
+    .flip-back p{font-size:13.5px}
+  }
 </style>
 <body>
 <script>document.documentElement.classList.add('js')</script>
@@ -851,23 +892,66 @@
         <p>Три ситуации, в которых сайт окупается, и одна, в которой я отговорю.</p>
       </div>
       <p class="geo-note">Сайт нужен бизнесу, если клиенты ищут услугу в поиске по городу и сравнивают цены. Группа ВКонтакте достаточна, если загрузка идёт от постоянных клиентов, у бизнеса одна услуга и рост не планируется. В остальных случаях сайт и группа работают вместе: сайт приводит людей из поиска, группа их удерживает.</p>
-      <div class="rows" data-stagger>
-        <div class="wrow reveal">
-          <h3>Группа ВКонтакте есть, а сайта нет — что теряете</h3>
-          <p><b>Признаки:</b> вы публикуете цены в постах, а в личку приходят одни и те же вопросы; в поиске по городу вас нет; человек, который ищет услугу, попадает к конкуренту.<br><b>Что делаем:</b> оставляем группу как канал для своих, сайт ставим туда, откуда приходят новые — под поиск, с ценами и записью.</p>
-        </div>
-        <div class="wrow reveal">
-          <h3>Сайт есть, но заявок нет — три причины</h3>
-          <p><b>Признаки:</b> нет цен, нет кнопки записи, с телефона не дозвониться в один тап, заголовок страницы — «Главная», с мобильного всё разъезжается.<br><b>Что делаем:</b> начинаем с разбора — смотрим, где именно теряются люди, и только потом решаем, переделывать целиком или хватит текстов и структуры.</p>
-        </div>
-        <div class="wrow reveal">
-          <h3>Только телефон и сарафан — что вы не показываете</h3>
-          <p><b>Признаки:</b> вас находят по рекомендации, но найти в интернете нельзя; услуги и график есть, а показать их негде.<br><b>Что делаем:</b> собираем с нуля — структура, тексты, сайт, заявка в мессенджер.</p>
-        </div>
-        <div class="wrow reveal">
-          <h3>Когда сайт не нужен</h3>
-          <p>Если вся загрузка идёт от постоянных клиентов, у вас одна услуга и вы не собираетесь расти — сайт не окупится. Скажу это на созвоне и не буду продавать. Обычно так бывает у узких мастеров с очередью на месяц вперёд.</p>
-        </div>
+      <div class="who-grid" data-stagger>
+        <article class="flipcard reveal" role="button" tabindex="0" aria-expanded="false">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <span class="flip-num">[ 01 ]</span>
+              <h3>Группа ВКонтакте есть, а сайта нет</h3>
+              <span class="flip-hint">подробнее <i aria-hidden="true">↗</i></span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-num">[ 01 ]</span>
+              <p><b>Признаки:</b> вы публикуете цены в постах, а в личку приходят одни и те же вопросы; в поиске по городу вас нет; человек, который ищет услугу, попадает к конкуренту.</p>
+              <p><b>Что делаем:</b> оставляем группу как канал для своих, сайт ставим туда, откуда приходят новые — под поиск, с ценами и записью.</p>
+              <span class="flip-hint">свернуть <i aria-hidden="true">↙</i></span>
+            </div>
+          </div>
+        </article>
+        <article class="flipcard reveal" role="button" tabindex="0" aria-expanded="false">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <span class="flip-num">[ 02 ]</span>
+              <h3>Сайт есть, но заявок нет</h3>
+              <span class="flip-hint">подробнее <i aria-hidden="true">↗</i></span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-num">[ 02 ]</span>
+              <p><b>Признаки:</b> нет цен, нет кнопки записи, с телефона не дозвониться в один тап, заголовок страницы — «Главная», с мобильного всё разъезжается.</p>
+              <p><b>Что делаем:</b> начинаем с разбора — смотрим, где именно теряются люди, и только потом решаем, переделывать целиком или хватит текстов и структуры.</p>
+              <span class="flip-hint">свернуть <i aria-hidden="true">↙</i></span>
+            </div>
+          </div>
+        </article>
+        <article class="flipcard reveal" role="button" tabindex="0" aria-expanded="false">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <span class="flip-num">[ 03 ]</span>
+              <h3>Только телефон и сарафан</h3>
+              <span class="flip-hint">подробнее <i aria-hidden="true">↗</i></span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-num">[ 03 ]</span>
+              <p><b>Признаки:</b> вас находят по рекомендации, но найти в интернете нельзя; услуги и график есть, а показать их негде.</p>
+              <p><b>Что делаем:</b> собираем с нуля — структура, тексты, сайт, заявка в мессенджер.</p>
+              <span class="flip-hint">свернуть <i aria-hidden="true">↙</i></span>
+            </div>
+          </div>
+        </article>
+        <article class="flipcard reveal" role="button" tabindex="0" aria-expanded="false">
+          <div class="flip-inner">
+            <div class="flip-face flip-front">
+              <span class="flip-num">[ 04 ]</span>
+              <h3>Когда сайт не нужен</h3>
+              <span class="flip-hint">подробнее <i aria-hidden="true">↗</i></span>
+            </div>
+            <div class="flip-face flip-back">
+              <span class="flip-num">[ 04 ]</span>
+              <p>Вся загрузка идёт от постоянных клиентов, у вас одна услуга и вы не собираетесь расти. сайт не окупится. Скажу это на созвоне и не буду продавать. Обычно так бывает у узких мастеров с очередью на месяц вперёд.</p>
+              <span class="flip-hint">свернуть <i aria-hidden="true">↙</i></span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>  <section class="section alt" id="process">
@@ -1405,6 +1489,23 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     onScroll();
+
+    var flipCards = document.querySelectorAll('.flipcard');
+    function flippingAllowed() { return !window.matchMedia('(max-width: 720px)').matches; }
+    flipCards.forEach(function (card) {
+      function toggle() {
+        if (!flippingAllowed()) return;
+        var open = card.classList.toggle('is-flipped');
+        card.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
 
     var lf = document.getElementById('leadForm');
     if (lf) {
