@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Сайт для локального бизнеса: находят в поиске, видят цены. Сыктывкар</title>
-<meta name="description" content="Сайты для локального бизнеса в Сыктывкаре: цены и запись на виду, заявка в Telegram. Сайт под ключ от 70 000 ₽, разбор и тексты 30 000 ₽. Три платежа по результатам.">
+<title>Сайт для бизнеса в Сыктывкаре — от 70 000 ₽ | Евгений</title>
+<meta name="description" content="Сайты для локального бизнеса в Сыктывкаре: цены, запись, заявка в Telegram. От 70 000 ₽, три платежа по результатам, срок от 4 недель. Первый созвон бесплатно.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Сайт для локального бизнеса: находят в поиске, видят цены">
-<meta property="og:description" content="Сайт под ключ от 70 000 ₽, разбор и тексты 30 000 ₽. Оплата тремя платежами по результатам. Сыктывкар.">
+<meta property="og:title" content="Сайт для бизнеса в Сыктывкаре — от 70 000 ₽">
+<meta property="og:description" content="Цены, запись, заявка в Telegram. От 70 000 ₽, три платежа по результатам, срок от 4 недель. Первый созвон бесплатно.">
 <meta property="og:image" content="https://zheksai11-glitch.github.io/predlozhenie/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -628,6 +628,64 @@
   .lf-error{font-size:13px;line-height:1.4;color:#e8734a;min-height:0}
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   @media(max-width:560px){.lf-row{grid-template-columns:1fr}}
+
+  /* ==== блоки по аудиту: GEO-абзацы, состав по группам, «чего нет в цене», способы связи ==== */
+  .geo-note{margin-top:clamp(20px,2.6vw,30px);max-width:78ch;font-size:14px;line-height:1.65;
+    color:var(--fog);padding-left:16px;border-left:2px solid var(--line-strong)}
+  .sec-head + .geo-note{margin-left:auto;margin-right:auto}
+  .includes ul{columns:1}
+  .inc-group{margin-top:22px}
+  .inc-title{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .inc-group ul{list-style:none;columns:2;column-gap:clamp(24px,4vw,56px)}
+  .inc-group li{position:relative;padding-left:22px;margin-bottom:11px;break-inside:avoid;
+    font-size:14.5px;line-height:1.5;color:var(--fog)}
+  .inc-group li::before{content:"\2733";position:absolute;left:0;top:1px;font-size:11px;
+    background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .inc-none{margin-top:clamp(30px,3.6vw,46px);padding:clamp(20px,2.6vw,28px);
+    border-radius:var(--r);background:var(--fill-2);box-shadow:inset 0 0 0 1px var(--line)}
+  .inc-none h4{font-family:"Onest",sans-serif;font-size:clamp(18px,2vw,22px);font-weight:500;
+    color:var(--mist);margin-bottom:14px}
+  .inc-none ul{list-style:none;display:grid;gap:9px}
+  .inc-none li{position:relative;padding-left:20px;font-size:14.5px;line-height:1.5;color:var(--fog)}
+  .inc-none li::before{content:"\2014";position:absolute;left:0;color:var(--blue)}
+  .ways{display:grid;gap:10px;margin-top:24px;margin-bottom:6px}
+  .way{display:block;font-size:15px;line-height:1.5;color:var(--fog)}
+  .way b{color:var(--mist);font-weight:500;margin-right:4px}
+  .next-steps{list-style:none;counter-reset:ns;display:grid;gap:14px;margin-top:4px}
+  .next-steps li{position:relative;padding-left:34px;font-size:14px;line-height:1.55;color:var(--fog)}
+  .next-steps li::before{counter-increment:ns;content:counter(ns);position:absolute;left:0;top:-1px;
+    width:22px;height:22px;border-radius:9999px;display:grid;place-items:center;
+    font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--blue);
+    box-shadow:inset 0 0 0 1px var(--line-strong)}
+  .split-card li b{color:var(--mist);font-weight:500}
+  @media(max-width:720px){
+    .inc-group ul{columns:1}
+    .geo-note{font-size:13px}
+  }
+
+  /* H1 вырос по тексту (аудит) — кегль под длинную строку */
+  .hero h1{font-size:clamp(34px,4.6vw,64px);line-height:1.04;letter-spacing:-.025em;max-width:16ch}
+  .brand-role{margin-left:14px;font-family:"JetBrains Mono",monospace;font-size:10.5px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--fog);font-weight:400}
+  @media(max-width:900px){.brand-role{display:none}}
+  @media(max-width:720px){
+    .hero h1{font-size:clamp(26px,7.4vw,38px);max-width:20ch}
+  }
+
+  /* заголовки под длинные тексты из аудита */
+  .contact h2{font-size:clamp(26px,3.4vw,44px);line-height:1.1;max-width:26ch}
+  #why .why-grid{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:720px){
+    .contact h2{font-size:clamp(24px,7vw,34px);max-width:22ch}
+    #why .why-grid{grid-template-columns:1fr}
+  }
+
+  @media(max-width:720px){
+    /* подписи к ценам переносятся, иначе строка вылезает за экран */
+    .prow .term{white-space:normal;letter-spacing:.06em}
+    .prow .price{font-size:clamp(22px,6.4vw,28px)}
+  }
 </style>
 <body>
 <script>document.documentElement.classList.add('js')</script>
@@ -636,7 +694,7 @@
 
 <header class="site-head">
   <div class="nav-shell">
-    <a class="brand" href="#main" aria-label="Евгений, на главную">ЕВ<span class="dot">.</span></a>
+    <a class="brand" href="#main" aria-label="Евгений, веб-разработчик, Сыктывкар — на главную">ЕВ<span class="dot">.</span><span class="brand-role">Евгений · сайты в Сыктывкаре</span></a>
     <nav class="nav" aria-label="Основная навигация">
       <a href="#work">работы</a>
       <a href="#process">процесс</a>
@@ -674,10 +732,17 @@
 
 <main id="main">
   <section class="hero">
-    <div class="container">      <p class="eyebrow">Сыктывкар · 2026 · сайты для локального бизнеса</p>      <h1 class="grad">Вас находят<br>в поиске<br>и видят цены.</h1>      <p class="hero-lead">Сайт отвечает на вопросы, которые вам и так задают по телефону: сколько стоит, когда можно, что входит. Заявка приходит в Telegram, а не теряется в личке.</p>      <div class="hero-actions">
+    <div class="container">
+      <p class="eyebrow">Сыктывкар · сайты для бизнеса · от 70 000 ₽</p>
+      <h1 class="grad">Сайт для бизнеса в&nbsp;Сыктывкаре: цены, запись и&nbsp;заявка в&nbsp;Telegram</h1>
+      <p class="hero-lead">Делаю сайты для локального бизнеса: страница с ценами и записью, заявка приходит в Telegram, а не теряется среди сообщений. Срок — 4–5 недель после интервью, цена — от&nbsp;70&nbsp;000&nbsp;₽, тремя платежами по результатам.</p>
+      <div class="hero-actions">
         <a class="btn btn-primary" href="https://t.me/evglat11">обсудить проект <span class="arr">↗</span></a>
-        <a class="btn btn-ghost" href="#price">смотреть цены</a>
-      </div>      <span class="hero-note">Сорок минут интервью. Если не подойдёт — страница выводов остаётся у вас.</span>      <div class="fan">
+        <a class="btn btn-ghost" href="#price">смотреть цены и сроки</a>
+      </div>
+      <span class="hero-note">Первый созвон — 30 минут, бесплатно. После него присылаю вилку цены и срок в переписке.</span>
+
+      <div class="fan">
         <aside class="fcard fcard-l">
           <p class="fcard-label">интервью · 40 минут</p>
           <p class="fcard-big">Бесплатно</p>
@@ -686,20 +751,29 @@
         <aside class="fcard fcard-c">
           <div class="browser">
             <div class="browser-bar"><i></i><i></i><i></i><span>пример работы</span></div>
-            <img src="assets/work-auto.jpg" alt="Главный экран сайта автосервиса «Точка опоры»" width="1921" height="1161">
+            <img src="assets/work-auto.jpg" alt="Сайт автосервиса в Сыктывкаре — пример страницы услуги" width="1921" height="1161">
           </div>
           <p class="fcard-label">автосервис «точка опоры»</p>
         </aside>
         <aside class="fcard fcard-r">
           <p class="fcard-label">на выходе</p>
-          <p>Сайт с ценами и записью, заявка приходит вам в Telegram, вас находят по поиску по городу.</p>
+          <p>Сайт с ценами и записью, заявка приходит вам в Telegram.</p>
           <ul>
             <li>цены и запись на сайте</li>
             <li>заявка в Telegram</li>
-            <li>поиск по городу</li>
+            <li>микроразметка для поиска</li>
           </ul>
         </aside>
-      </div>      <ul class="hero-meta">        <li>первый созвон — бесплатно</li>        <li>сайт под ключ от 70 000 ₽</li>        <li>Сыктывкар, локальный бизнес</li>      </ul>
+      </div>
+
+      <ul class="hero-meta">
+        <li><b>40 минут</b> — интервью по готовым вопросам, бесплатно</li>
+        <li><b>от 70 000 ₽</b> — сайт под ключ, три платежа по результатам</li>
+        <li><b>4–5 недель</b> — срок после интервью, фиксируется в договоре</li>
+        <li><b>30 дней</b> — исправляю свои ошибки после запуска бесплатно</li>
+      </ul>
+
+      <p class="geo-note">Сайт под ключ для локального бизнеса в Сыктывкаре стоит от 70 000 ₽. Оплата идёт тремя платежами по результатам: 21 000 ₽ на старте, 28 000 ₽ после согласования макета, 21 000 ₽ при запуске. Первый созвон длится 30 минут и бесплатен; после него клиент получает вилку цены и срок в переписке.</p>
     </div>
   </section><div class="marquee" aria-hidden="true">
     <div class="marquee-track">
@@ -725,95 +799,117 @@
   </div>
 
     <section class="section" id="work">
-    <div class="container">      <div class="sec-head head-reveal">
-        <p class="eyebrow">работы</p>
-        <h2 class="grad">Три работы, каждая открывается.</h2>
-        <p>Это мои работы. Объекты и названия вымышленные: клиентские проекты я не публикую без разрешения. Показываю структуру и тексты, а не чужие фото.</p>
+    <div class="container">
+      <div class="sec-head head-reveal">
+        <p class="eyebrow">примеры работ</p>
+        <h2 class="grad">Три сайта, которые можно открыть и потрогать</h2>
+        <p>Клиентские проекты не публикую без разрешения владельца, поэтому показываю свои демо. Объекты и названия вымышленные — структура, тексты и цены настоящие: ровно это вы получите на своём сайте.</p>
       </div>
 
-      <div class="works-grid" data-stagger>        <article class="work reveal">
-          <a class="work-media" href="https://zheksai11-glitch.github.io/tochka-opory/" target="_blank" rel="noopener" aria-label="Открыть демо автосервиса">
-            <img src="assets/work-auto.jpg" alt="Главный экран сайта автосервиса «Точка опоры»" width="1921" height="1161">
+      <div class="works-grid" data-stagger>
+        <article class="work reveal">
+          <a class="work-media" href="https://zheksai11-glitch.github.io/tochka-opory/" target="_blank" rel="noopener" aria-label="Открыть демо сайта автосервиса">
+            <img src="assets/work-auto.jpg" alt="Сайт автосервиса в Сыктывкаре — пример страницы услуги" width="1921" height="1161">
           </a>
           <div class="work-body">
-            <div class="work-top"><b>Автосервис</b><span>лендинг</span></div>
-            <p>Главная и страница услуги: цены на работы, запись, кнопка звонка.</p>
+            <div class="work-top"><b>Сайт автосервиса</b><span>лендинг</span></div>
+            <p>Главная и страница услуги. Цены на работы, запись, кнопка звонка с телефона.<br>Что внутри: разбор «стучит подвеска → причина → цена», 7 вопросов с ответами, микроразметка автосервиса.</p>
             <a class="work-link" href="https://zheksai11-glitch.github.io/tochka-opory/" target="_blank" rel="noopener">открыть демо <span aria-hidden="true">↗</span></a>
           </div>
-        </article>        <article class="work reveal">
-          <a class="work-media" href="https://zheksai11-glitch.github.io/mesto/" target="_blank" rel="noopener" aria-label="Открыть демо базы отдыха">
-            <img src="assets/work-mesto.jpg" alt="Главный экран сайта базы отдыха «Место для души»" width="1921" height="1161">
+        </article>
+
+        <article class="work reveal">
+          <a class="work-media" href="https://zheksai11-glitch.github.io/mesto/" target="_blank" rel="noopener" aria-label="Открыть демо сайта базы отдыха">
+            <img src="assets/work-mesto.jpg" alt="Сайт базы отдыха — пример лендинга с бронированием" width="1921" height="1161">
           </a>
           <div class="work-body">
-            <div class="work-top"><b>База отдыха</b><span>лендинг</span></div>
-            <p>Коттеджи и цены, акции, отзывы, форма брони, тексты под поиск по региону.</p>
+            <div class="work-top"><b>Сайт базы отдыха</b><span>лендинг</span></div>
+            <p>Коттеджи с ценами по сезонам, акции, отзывы, форма брони.<br>Что внутри: тексты под поиск по региону, ответы на вопросы «сколько стоит», «что входит», «можно с животными».</p>
             <a class="work-link" href="https://zheksai11-glitch.github.io/mesto/" target="_blank" rel="noopener">открыть демо <span aria-hidden="true">↗</span></a>
           </div>
-        </article>        <article class="work reveal">
-          <a class="work-media" href="https://zheksai11-glitch.github.io/ogneproekt/" target="_blank" rel="noopener" aria-label="Открыть демо корпоративного сайта">
-            <img src="assets/work-fire.jpg" alt="Главный экран сайта корпоративного сайта «Огнепроект»" width="1921" height="1161">
+        </article>
+
+        <article class="work reveal">
+          <a class="work-media" href="https://zheksai11-glitch.github.io/ogneproekt/" target="_blank" rel="noopener" aria-label="Открыть демо корпоративного сайта услуг">
+            <img src="assets/work-fire.jpg" alt="Корпоративный сайт услуг — пример многостраничника" width="1921" height="1161">
           </a>
           <div class="work-body">
             <div class="work-top"><b>Корпоративный сайт услуг</b><span>многостраничник</span></div>
-            <p>Многостраничник: услуги, портфолио, партнёры, лицензии, форма заявки.</p>
+            <p>Услуги, портфолио, партнёры, лицензии, форма заявки.<br>Что внутри: структура из 8 страниц, где каждая закрывает свой запрос, а не повторяет главную.</p>
             <a class="work-link" href="https://zheksai11-glitch.github.io/ogneproekt/" target="_blank" rel="noopener">открыть демо <span aria-hidden="true">↗</span></a>
           </div>
-        </article>      </div>      <p class="works-note reveal">Клиентских проектов с трафиком и отзывами пока нет, поэтому первым трём клиентам проект стоит 20 000 ₽ вместо 30 000 — в обмен на отзыв и право показать работу.</p>    </div>
-  </section>  <section class="section" id="who">
-    <div class="container">      <div class="sec-head head-reveal">
-        <p class="eyebrow">для кого</p>
-        <h2 class="grad">Кому это нужно.</h2>
+        </article>
       </div>
-      <div class="rows" data-stagger>        <div class="wrow reveal">
-          <h3>Есть группа ВКонтакте, а сайта нет</h3>
-          <p>В поиске вас не находят: человек ищет услугу по городу и попадает к конкуренту. Цены разбросаны по постам, одни и те же вопросы приходят в личку. Группа остаётся, сайт приводит людей из поиска.</p>
-        </div>        <div class="wrow reveal">
-          <h3>Сайт есть, но заявок нет</h3>
-          <p>Нет цен, нет кнопки записи, с телефона не позвонить в один тап, заголовок «Главная». Сайт существует, но человеку по нему некуда идти. Начинаем с разбора: где именно теряются заявки.</p>
-        </div>        <div class="wrow reveal">
-          <h3>Только телефон, и больше ничего</h3>
-          <p>Вас негде найти, кроме сарафана и случайного звонка. При этом есть график и услуги, которыми можно торговать. Тут собираем с нуля: структура, тексты, сайт, заявка в мессенджер.</p>
-        </div>      </div>
+
+      <p class="works-note reveal">Клиентских проектов с трафиком и отзывами у меня пока нет — поэтому первым трём клиентам сайт под ключ стоит 55 000 ₽ вместо 70 000, а разбор с текстами — 25 000 ₽ вместо 30 000. В обмен на отзыв и право показать работу. Условие одно и то же во всех блоках страницы.</p>
+    </div>
+  </section>  <section class="section" id="who">
+    <div class="container">
+      <div class="sec-head head-reveal">
+        <p class="eyebrow">для кого</p>
+        <h2 class="grad">Кому нужен сайт, а кому хватит группы ВКонтакте</h2>
+        <p>Три ситуации, в которых сайт окупается, и одна, в которой я отговорю.</p>
+      </div>
+      <p class="geo-note">Сайт нужен бизнесу, если клиенты ищут услугу в поиске по городу и сравнивают цены. Группа ВКонтакте достаточна, если загрузка идёт от постоянных клиентов, у бизнеса одна услуга и рост не планируется. В остальных случаях сайт и группа работают вместе: сайт приводит людей из поиска, группа их удерживает.</p>
+      <div class="rows" data-stagger>
+        <div class="wrow reveal">
+          <h3>Группа ВКонтакте есть, а сайта нет — что теряете</h3>
+          <p><b>Признаки:</b> вы публикуете цены в постах, а в личку приходят одни и те же вопросы; в поиске по городу вас нет; человек, который ищет услугу, попадает к конкуренту.<br><b>Что делаем:</b> оставляем группу как канал для своих, сайт ставим туда, откуда приходят новые — под поиск, с ценами и записью.</p>
+        </div>
+        <div class="wrow reveal">
+          <h3>Сайт есть, но заявок нет — три причины</h3>
+          <p><b>Признаки:</b> нет цен, нет кнопки записи, с телефона не дозвониться в один тап, заголовок страницы — «Главная», с мобильного всё разъезжается.<br><b>Что делаем:</b> начинаем с разбора — смотрим, где именно теряются люди, и только потом решаем, переделывать целиком или хватит текстов и структуры.</p>
+        </div>
+        <div class="wrow reveal">
+          <h3>Только телефон и сарафан — что вы не показываете</h3>
+          <p><b>Признаки:</b> вас находят по рекомендации, но найти в интернете нельзя; услуги и график есть, а показать их негде.<br><b>Что делаем:</b> собираем с нуля — структура, тексты, сайт, заявка в мессенджер.</p>
+        </div>
+        <div class="wrow reveal">
+          <h3>Когда сайт не нужен</h3>
+          <p>Если вся загрузка идёт от постоянных клиентов, у вас одна услуга и вы не собираетесь расти — сайт не окупится. Скажу это на созвоне и не буду продавать. Обычно так бывает у узких мастеров с очередью на месяц вперёд.</p>
+        </div>
+      </div>
     </div>
   </section>  <section class="section alt" id="process">
     <div class="container">
       <div class="sec-head head-reveal">
         <p class="eyebrow">процесс</p>
-        <h2 class="grad">Как это устроено.</h2>
-        <p>Три этапа. Можно остановиться после проекта и забрать структуру, тексты и прототип себе.</p>
+        <h2 class="grad">Как проходит работа: семь шагов и сроки</h2>
+        <p>Каждый шаг заканчивается результатом, который остаётся у вас. Можно остановиться после третьего шага и забрать структуру, карту сайта и тексты — без дизайна и сборки.</p>
       </div>
+      <p class="geo-note">Сайт под ключ занимает 4–5 недель от первого созвона до запуска. Созвон — 30 минут, интервью — 40–60 минут, аудит конкурентов — 1–2 дня, тексты — 3–5 дней, концепция — 2–3 дня, макет — 3–5 дней, сборка и запуск — 2–3 дня. Каждый шаг заканчивается результатом, который остаётся у клиента.</p>
 
       <div class="process-grid" data-stagger>
         <article class="pcard reveal">
           <div class="pcard-in">
-            <h3 class="pcard-title">Созвон</h3>
+            <h3 class="pcard-title">Созвон — 30 минут</h3>
             <div class="pcard-body">
-              <p class="pcard-desc">Тридцать минут: задачи и цели, что сейчас не так с присутствием в поиске и в группе, ваши пожелания. Рассказываю, как идёт работа, предлагаю варианты сроков и цены.</p>
-              <p class="pcard-result"><span>результат</span> понятен объём, вилка цены и подписан договор с ТЗ.</p>
+              <p class="pcard-desc">Задачи и цели, что сейчас не так с присутствием в поиске и в группе. Рассказываю, как идёт работа, называю вилку цены и срок.</p>
+              <p class="pcard-result"><span>результат</span> понятный объём, вилка цены, договор с ТЗ.</p>
             </div>
           </div>
         </article>
         <article class="pcard reveal">
           <div class="pcard-in">
-            <h3 class="pcard-title">Интервью</h3>
+            <h3 class="pcard-title">Интервью — 40–60 минут</h3>
             <div class="pcard-body">
-              <p class="pcard-desc">Сорок-шестьдесят минут по готовым вопросам: как устроен бизнес, откуда приходят клиенты, что получается лучше конкурентов, где теряются заявки.</p>
+              <p class="pcard-desc">По готовым вопросам: как устроен бизнес, откуда приходят клиенты, что получается лучше конкурентов, где теряются заявки.</p>
               <p class="pcard-result"><span>результат</span> план работ.</p>
             </div>
           </div>
         </article>
         <article class="pcard reveal">
           <div class="pcard-in">
-            <h3 class="pcard-title">Аудит и карта сайта</h3>
+            <h3 class="pcard-title">Аудит конкурентов и карта сайта — 1–2 дня</h3>
             <div class="pcard-body">
-              <p class="pcard-desc">Пять или семь конкурентов в городе: цены, офферы, каналы, как выглядят в поиске. Отмечаю, что можно забрать себе.</p>
-              <p class="pcard-result"><span>результат</span> проект сайта и карта сайта — структура всех страниц.</p>
+              <p class="pcard-desc">Пять-семь конкурентов в городе: цены, офферы, каналы, как выглядят в поиске. Отмечаю, что можно забрать себе.</p>
+              <p class="pcard-result"><span>результат</span> структура всех страниц и список решений, которые стоит перенять.</p>
             </div>
           </div>
         </article>
         <article class="pcard reveal">
           <div class="pcard-in">
-            <h3 class="pcard-title">Тексты</h3>
+            <h3 class="pcard-title">Тексты — 3–5 дней</h3>
             <div class="pcard-body">
               <p class="pcard-desc">Пишу под поиск и под ИИ-поиск: заголовки, цены, ответы на вопросы, которые задают по телефону. Согласовываем построчно.</p>
               <p class="pcard-result"><span>результат</span> согласованные тексты, которые закрывают вопросы покупателя.</p>
@@ -822,7 +918,7 @@
         </article>
         <article class="pcard reveal">
           <div class="pcard-in">
-            <h3 class="pcard-title">Концепция главной</h3>
+            <h3 class="pcard-title">Концепция главной — 2–3 дня</h3>
             <div class="pcard-body">
               <p class="pcard-desc">Цвета, шрифты, стилистика, отстройка от конкурентов. Одна концепция и две-три итерации правок.</p>
               <p class="pcard-result"><span>результат</span> согласованная стилистика сайта.</p>
@@ -831,29 +927,31 @@
         </article>
         <article class="pcard reveal">
           <div class="pcard-in">
-            <h3 class="pcard-title">Макет всех страниц</h3>
+            <h3 class="pcard-title">Макет всех страниц — 3–5 дней</h3>
             <div class="pcard-body">
-              <p class="pcard-desc">Отрисовываю весь сайт по согласованной концепции, с учётом того, как человек читает на телефоне.</p>
+              <p class="pcard-desc">Отрисовываю весь сайт по согласованной концепции, с учётом того, как человек читает с телефона.</p>
               <p class="pcard-result"><span>результат</span> макет, готовый к сборке.</p>
             </div>
           </div>
         </article>
         <article class="pcard reveal">
           <div class="pcard-in">
-            <h3 class="pcard-title">Сборка и запуск</h3>
+            <h3 class="pcard-title">Сборка и запуск — 2–3 дня</h3>
             <div class="pcard-body">
               <p class="pcard-desc">Адаптив под телефон, формы заявок, домен, хостинг, заголовки и микроразметка. Проверяю на телефоне, отправляю тестовую заявку.</p>
-              <p class="pcard-result"><span>результат</span> рабочий сайт на вашем домене, готовый к продвижению.</p>
+              <p class="pcard-result"><span>результат</span> работающий сайт на вашем домене.</p>
             </div>
           </div>
         </article>
       </div>
+
+      <p class="works-note reveal">Итого от созвона до запуска — 4–5 недель. Срок фиксирую в договоре после интервью.</p>
     </div>
   </section>  <section class="section" id="why">
     <div class="container">
       <div class="sec-head head-reveal">
         <p class="eyebrow">почему со мной</p>
-        <h2 class="grad">Почему со мной.</h2>
+        <h2 class="grad">Почему заказывают у меня</h2>
       </div>
       <div class="why-grid" data-stagger>
         <article class="why reveal">
@@ -862,13 +960,13 @@
               <span class="ficon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c.7-3.7 3.7-6 7.5-6s6.8 2.3 7.5 6"/></svg>
               </span>
-              <span class="why-title">Не студия</span>
+              <span class="why-title">Один человек на всём цикле</span>
               <span class="why-caret" aria-hidden="true"></span>
             </button>
           </h3>
           <div class="why-panel" id="why-panel-1" aria-hidden="true">
             <div class="why-panel-in">
-              <p>Разговариваете со мной, делает тоже я. Ни менеджера, ни «отдела», которому передадут вашу задачу и всё перепутают.</p>
+              <p>Интервью, тексты, дизайн, вёрстка, домен, хостинг, форма заявки — на мне. Не нужно сводить трёх подрядчиков и объяснять каждому заново, чем вы занимаетесь. Если через месяц надо поменять цены — пишете мне, а не в поддержку.</p>
             </div>
           </div>
         </article>
@@ -878,13 +976,13 @@
               <span class="ficon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="6" rx="1.5"/><rect x="3.5" y="14" width="17" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01M11 7h6M11 17h6"/></svg>
               </span>
-              <span class="why-title">Не однодневка</span>
+              <span class="why-title">Техническая база, а не только вёрстка</span>
               <span class="why-caret" aria-hidden="true"></span>
             </button>
           </h3>
           <div class="why-panel" id="why-panel-2" aria-hidden="true">
             <div class="why-panel-in">
-              <p>Работаю системным администратором: серверы, базы данных, Linux. Техническое образование, «Информационные системы и технологии». Поэтому домен, хостинг, почта и форма заявки на мне.</p>
+              <p>Работаю системным администратором: Linux, серверы, базы данных. Образование — «Информационные системы и технологии». Поэтому домен, хостинг, почта, форма заявки и разметка для поиска не «настроит знакомый» — это моя ежедневная работа.</p>
             </div>
           </div>
         </article>
@@ -892,120 +990,234 @@
           <h3 class="why-h">
             <button class="why-trigger" type="button" aria-expanded="false" aria-controls="why-panel-3">
               <span class="ficon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h14M5 10.5h10M5 15h14M5 19.5h7"/></svg>
               </span>
-              <span class="why-title">Не сайт ради сайта</span>
+              <span class="why-title">Тексты пишу сам, под поиск и под ИИ</span>
               <span class="why-caret" aria-hidden="true"></span>
             </button>
           </h3>
           <div class="why-panel" id="why-panel-3" aria-hidden="true">
             <div class="why-panel-in">
-              <p>Сначала интервью и страница выводов, потом работа. Вы видите структуру, тексты и прототип до того, как заплатите за сборку.</p>
+              <p>Заголовки, цены, ответы на вопросы, которые вам и так задают по телефону. Не «текст ради текста»: страница должна отвечать на вопрос «сколько стоит» до звонка — иначе человек уходит к тому, у кого ответ есть.</p>
+            </div>
+          </div>
+        </article>
+        <article class="why reveal">
+          <h3 class="why-h">
+            <button class="why-trigger" type="button" aria-expanded="false" aria-controls="why-panel-4">
+              <span class="ficon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+              </span>
+              <span class="why-title">Результат виден до оплаты сборки</span>
+              <span class="why-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="why-panel" id="why-panel-4" aria-hidden="true">
+            <div class="why-panel-in">
+              <p>Сначала интервью и структура, потом тексты, потом макет. Вы видите всё это до того, как платите за сборку, и можете остановиться на любом шаге.</p>
             </div>
           </div>
         </article>
       </div>
+      <p class="geo-note">Евгений — веб-разработчик из Сыктывкара. Работает системным администратором (Linux, серверы, базы данных), образование по специальности «Информационные системы и технологии». Делает сайты под ключ: интервью, тексты, дизайн, вёрстка, домен, хостинг, формы заявок.</p>
     </div>
   </section>  <section class="section alt" id="price">
-    <div class="container">      <div class="sec-head head-reveal">
+    <div class="container">
+      <div class="sec-head head-reveal">
         <p class="eyebrow">услуги и стоимость</p>
-        <h2 class="grad">Цены.</h2>
-        <p>Сайт под ключ — от 70 000 ₽, три платежа по результатам. Разбор и тексты — 30 000 ₽. Визуал считается отдельно, если у вас нет своих фотографий.</p>
+        <h2 class="grad">Сколько стоит сайт: три продукта и честная вилка</h2>
+        <p>Сайт под ключ — от 70 000 ₽, три платежа по результатам. Разбор и тексты для существующего сайта — 30 000 ₽. Визуал считается отдельно, если у вас нет своих фотографий. Первым трём клиентам — 55 000 ₽ и 25 000 ₽ в обмен на отзыв и право показать работу.</p>
       </div>
 
-      <div class="price-list" data-stagger>        <article class="prow reveal">
+      <div class="price-list" data-stagger>
+        <article class="prow reveal">
           <div>
             <h3>Сайт под ключ</h3>
-            <p class="desc">Семь шагов: созвон и договор, интервью, аудит конкурентов, тексты, концепция главной, макет всех страниц, сборка и запуск. Цена зависит от объёма: страницы, каталог, языки.</p>
+            <p class="desc">Семь шагов: созвон и договор, интервью, аудит конкурентов, тексты, концепция главной, макет всех страниц, сборка и запуск. Цена зависит от объёма: число страниц, каталог, второй язык.</p>
           </div>
-          <div class="price">от 70 000 ₽<span class="term">три платежа</span></div>
+          <div class="price">от 70 000 ₽<span class="term">три платежа: 21 000 / 28 000 / 21 000</span></div>
           <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: сайт под ключ">↗</a>
-        </article>        <article class="prow reveal">
+        </article>
+        <article class="prow reveal">
           <div>
             <h3>Разбор и тексты</h3>
             <p class="desc">Для тех, у кого сайт уже есть: созвон, интервью, аудит рынка и конкурентов, карта сайта, тексты по блокам. Без дизайна и сборки. На руки — план, структура и тексты.</p>
           </div>
-          <div class="price">30 000 ₽<span class="term">если сайт есть</span></div>
+          <div class="price">30 000 ₽<span class="term">если сайт уже есть</span></div>
           <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: разбор и тексты">↗</a>
-        </article>        <article class="prow reveal">
+        </article>
+        <article class="prow reveal">
           <div>
             <h3>Фото и видео</h3>
-            <p class="desc">Если снимать нечего: изображения и короткое видео в стилистике сайта. Десять картинок — 5 000 ₽, ролик на полминуты — 3 000 ₽. Решается на интервью, оформляется допсоглашением.</p>
+            <p class="desc">Если снимать нечего: изображения и короткое видео в стилистике сайта. Десять иллюстраций — 5 000 ₽, ролик на полминуты — 3 000 ₽. Решается на интервью, оформляется допсоглашением.</p>
           </div>
-          <div class="price">500 ₽<span class="term">за изображение, 100 ₽ за секунду</span></div>
+          <div class="price">500 ₽<span class="term">за изображение · 100 ₽ за секунду видео</span></div>
           <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: фото и видео">↗</a>
-        </article>        <article class="prow reveal">
+        </article>
+        <article class="prow reveal">
           <div>
             <h3>После запуска</h3>
-            <p class="desc">Подписки нет. Правки, новые блоки, анимации, изменение дизайна — почасово, минимум час. Тридцать дней на исправление моих ошибок — бесплатно.</p>
+            <p class="desc">Подписки нет. Правки, новые блоки, анимации, изменение дизайна — почасово, 1 000 ₽ в час, минимум час. Тридцать дней после запуска исправляю свои ошибки бесплатно.</p>
           </div>
           <div class="price">1 000 ₽<span class="term">в час</span></div>
           <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: после запуска">↗</a>
-        </article>      </div>      <div class="includes reveal">
+        </article>
+      </div>
+
+      <div class="includes reveal">
         <h3>Что входит в сайт под ключ</h3>
-        <ul>          <li>Созвон тридцать минут и договор</li>          <li>Интервью по вопросам</li>          <li>Аудит пяти-семи конкурентов</li>          <li>Карта сайта: структура всех страниц</li>          <li>Тексты по блокам, под поиск и ИИ-поиск</li>          <li>Согласование текстов построчно</li>          <li>Концепция главной: цвета, шрифты, стилистика</li>          <li>Две-три итерации правок</li>          <li>Макет всех страниц</li>          <li>Вёрстка и адаптив под телефон</li>          <li>Форма заявки в Telegram или WhatsApp</li>          <li>Домен, хостинг и публикация</li>          <li>Заголовки, описания и микроразметка</li>          <li>Проверка на телефоне и тестовая заявка</li>          <li>Инструкция по работе с сайтом</li>          <li>Тридцать дней исправлений после запуска</li>        </ul>
-        <p class="includes-note">Домен около 300 ₽ в год и хостинг оплачиваете вы, я настраиваю и подключаю. Оплата тремя частями: 21 000 на старте, 28 000 после согласования макета, 21 000 при запуске. Визуал — отдельно: 500 ₽ за изображение, 100 ₽ за секунду.</p>
-      </div>      <div class="calc reveal">
+        <div class="inc-group">
+          <p class="inc-title">до кода — входит в цену</p>
+          <ul>
+            <li>созвон 30 минут и договор</li>
+            <li>интервью по вопросам</li>
+            <li>аудит 5–7 конкурентов</li>
+            <li>карта сайта</li>
+            <li>тексты по блокам под поиск и ИИ-поиск</li>
+            <li>построчное согласование</li>
+            <li>концепция главной</li>
+            <li>2–3 итерации правок</li>
+            <li>макет всех страниц</li>
+          </ul>
+        </div>
+        <div class="inc-group">
+          <p class="inc-title">сборка — входит в цену</p>
+          <ul>
+            <li>вёрстка и адаптив</li>
+            <li>форма заявки в Telegram или WhatsApp</li>
+            <li>домен, хостинг, публикация</li>
+            <li>заголовки, описания и микроразметка</li>
+            <li>проверка на телефоне и тестовая заявка</li>
+            <li>инструкция по работе с сайтом</li>
+          </ul>
+        </div>
+        <div class="inc-group">
+          <p class="inc-title">после запуска — входит в цену</p>
+          <ul>
+            <li>30 дней исправлений моих ошибок</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="inc-none reveal">
+        <h4>Чего нет в цене</h4>
+        <ul>
+          <li>Домен — около 300 ₽ в год, оплачиваете вы, подключаю я.</li>
+          <li>Хостинг — по тарифу провайдера, оплачиваете вы.</li>
+          <li>Реклама (Директ, ВК) — не веду.</li>
+          <li>Карточки в 2ГИС и Яндекс.Картах — подскажу, что заполнить, заполняете сами.</li>
+        </ul>
+      </div>
+
+      <div class="calc reveal">
         <div>
           <h3>Посчитать свой вариант</h3>
           <label class="check"><input type="checkbox" id="c1" checked> Сайт под ключ — от 70 000 ₽</label>
           <label class="check"><input type="checkbox" id="c2"> Разбор и тексты — 30 000 ₽</label>
           <label class="check"><input type="checkbox" id="c3"> Первые три клиента: скидка 15 000 на сайт, 5 000 на разбор</label>
-          <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона. Визуал считается отдельно, если нужен.</p>
+          <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона и дальше не меняется. Доплата возможна только если вы сами добавляете объём. Первым трём клиентам: 55 000 ₽ за сайт под ключ, 25 000 ₽ за разбор с текстами.</p>
         </div>
         <p class="total grad" id="total" aria-live="polite">70 000 ₽<small>Сайт под ключ</small></p>
-      </div>    </div>
-  </section>  <section class="section">
-    <div class="container">      <div class="sec-head head-reveal">
-        <p class="eyebrow">границы</p>
-        <h2 class="grad">Как делим работу.</h2>
       </div>
-      <div class="split" data-stagger>        <div class="split-card dark-card reveal">
-          <h3>На мне</h3>
-          <ul>            <li>Интервью и разбор конкурентов</li>            <li>Структура, тексты, прототип</li>            <li>Дизайн, вёрстка, мобильная версия, скорость</li>            <li>Домен, публикация, форма заявки</li>            <li>Проверка после запуска и правки контента</li>          </ul>        </div>        <div class="split-card reveal">
-          <h3>Не на мне, и говорю сразу</h3>
-          <ul>            <li>Реклама: Директ и ВК. Подскажу, что настроить, но вести не возьмусь</li>            <li>Карточки в 2ГИС и Яндекс.Картах: скажу, что заполнить, заполните сами</li>            <li>Продажи и обзвон ваших клиентов: это ваша часть</li>          </ul>          <p class="lead-out">Заявки в штуках не обещаю: они зависят от цены, сезона и конкурентов. Отвечаю за структуру, тексты, скорость и работающую форму.</p>        </div>      </div>
+    </div>
+  </section>  <section class="section">
+    <div class="container">
+      <div class="sec-head head-reveal">
+        <p class="eyebrow">границы</p>
+        <h2 class="grad">Что делаю я, а что остаётся на вас</h2>
+        <p>Говорю сразу, чтобы не выяснять это в середине проекта.</p>
+      </div>
+      <p class="geo-note">Я отвечаю за структуру, тексты, скорость загрузки и работающую форму. Количество заявок зависит от цены, сезона и конкурентов — поэтому цифру в штуках не обещаю: обещание, которое нельзя выполнить, дороже стоит вам, чем мне.</p>
+      <div class="split" data-stagger>
+        <div class="split-card dark-card reveal">
+          <h3>Что делаю я</h3>
+          <ul>
+            <li>интервью и разбор конкурентов;</li>
+            <li>структура, тексты, прототип;</li>
+            <li>дизайн, вёрстка, мобильная версия, скорость;</li>
+            <li>домен, публикация, форма заявки;</li>
+            <li>микроразметка и техническое SEO;</li>
+            <li>проверка после запуска и правки контента в течение 30 дней.</li>
+          </ul>
+        </div>
+        <div class="split-card reveal">
+          <h3>Что остаётся на вас</h3>
+          <ul>
+            <li><b>Реклама — Директ и ВК.</b> Подскажу, что настроить и на что смотреть, но вести не возьмусь: не беру денег за то, чего не делаю сам.</li>
+            <li><b>Карточки в 2ГИС и Яндекс.Картах.</b> Скажу, какие поля заполнить и какие фото поставить, заполняете сами — доступ к организациям остаётся у вас.</li>
+            <li><b>Продажи и обзвон.</b> Это ваша часть: заявку привожу, разговор ведёте вы.</li>
+            <li><b>Домен и хостинг оплачиваете вы.</b> Около 300 ₽ в год за домен и тариф провайдера — доступы остаются вашими, а не моими.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="geo-note">В работу входят интервью, структура, тексты, дизайн, вёрстка, адаптив, домен, хостинг, формы заявок, микроразметка и 30 дней исправлений после запуска. Реклама, карточки в 2ГИС и Яндекс.Картах, звонки клиентам и оплата домена остаются на стороне заказчика. Количество заявок не гарантируется — оно зависит от цены, сезона и конкуренции.</p>
     </div>
   </section>  <section class="section alt" id="faq">
-    <div class="container">      <div class="faq-wrap" data-stagger>
+    <div class="container">
+      <div class="faq-wrap" data-stagger>
         <div class="faq-head head-reveal">
           <p class="eyebrow left">нас часто спрашивают</p>
-          <h2 class="grad">Частые вопросы.</h2>
+          <h2 class="grad">Частые вопросы о сроках, цене и оплате</h2>
         </div>
 
-        <div class="faq-list">          <details class="faq reveal">
-            <summary>Сколько это займёт времени <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Срок называю после интервью, когда понятен объём, и записываю в переписке. Работаю по вечерам: лучше назову реальный срок и сделаю в него, чем красивый и сорву.</p>
-          </details>          <details class="faq reveal">
-            <summary>Как проходит оплата <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Три платежа, каждый после результата: 21 000 после договора, 28 000 после согласования макета, 21 000 при запуске. Визуал, если он нужен, оплачивается отдельно до начала дизайна.</p>
-          </details>          <details class="faq reveal">
-            <summary>Что нужно от меня <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Тридцать минут на созвон и сорок-шестьдесят на интервью. Цены и услуги, фотографии или решение делать визуал, доступы к домену и хостингу. Остальное на мне.</p>
-          </details>          <details class="faq reveal">
-            <summary>Что можно делать после запуска <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Подписки нет. Правки, новые блоки, анимации, изменение дизайна — почасово, 1 000 ₽ в час, минимум час. Тридцать дней после запуска исправляю свои ошибки бесплатно и в первую очередь.</p>
-          </details>          <details class="faq reveal">
-            <summary>А если что-то сломается <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Тридцать дней после запуска исправляю бесплатно и в первую очередь: поехала вёрстка, не работает форма или кнопка. Это про мои ошибки, а не про новые пожелания.</p>
-          </details>          <details class="faq reveal">
-            <summary>Почему от 70 000, а не фиксированная цена <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Потому что объём разный: пять страниц или пятнадцать, один язык или два, каталог или визитка. Точную цифру называю после созвона, фиксирую в договоре, и дальше она не меняется. Доплата возможна только если вы сами добавляете объём.</p>
-          </details>          <details class="faq reveal">
-            <summary>У меня нет фотографий <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Соберу визуал сам: 500 ₽ за изображение, 100 ₽ за секунду видео. Решается на интервью, когда видно, что у вас есть, оформляется допсоглашением и оплачивается до начала дизайна. Свои фото всегда лучше — их я обработаю бесплатно.</p>
-          </details>          <details class="faq reveal">
-            <summary>Мне нужен только разбор, без сайта <span class="faq-plus" aria-hidden="true"></span></summary>
-            <p class="answer">Это отдельный продукт за 30 000 ₽: созвон, интервью, аудит рынка и конкурентов, карта сайта и тексты для вашего существующего сайта. Без дизайна и сборки. С него часто начинают те, у кого сайт уже есть.</p>
-          </details>        </div>
+        <div class="faq-list">
+          <details class="faq reveal" id="faq-1">
+            <summary>Сколько времени делается сайт? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Сайт под ключ занимает 4–5 недель от первого созвона до запуска: интервью 40–60 минут, аудит конкурентов 1–2 дня, тексты 3–5 дней, концепция 2–3 дня, макет 3–5 дней, сборка 2–3 дня. Точный срок называю после интервью, когда понятен объём, и фиксирую в переписке и в договоре.</p>
+          </details>
+          <details class="faq reveal" id="faq-2">
+            <summary>Сколько стоит сайт и из чего складывается цена? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Сайт под ключ — от 70 000 ₽, разбор и тексты для готового сайта — 30 000 ₽. Цена зависит от числа страниц, наличия каталога и второго языка; домен (около 300 ₽ в год) и хостинг оплачиваются отдельно. Итоговая сумма фиксируется в договоре и дальше не меняется.</p>
+          </details>
+          <details class="faq reveal" id="faq-3">
+            <summary>Как проходит оплата? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Тремя платежами по результатам: 21 000 ₽ после договора, 28 000 ₽ после согласования макета, 21 000 ₽ при запуске. Визуал, если он нужен, оплачивается отдельно до начала дизайна.</p>
+          </details>
+          <details class="faq reveal" id="faq-4">
+            <summary>Что нужно от меня? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Тридцать минут на созвон и 40–60 минут на интервью, цены и услуги, фотографии или решение делать визуал, доступы к домену и хостингу. Остальное — на мне.</p>
+          </details>
+          <details class="faq reveal" id="faq-5">
+            <summary>У меня нет фотографий, что делать? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Соберу визуал сам: 500 ₽ за изображение, 100 ₽ за секунду видео. Решается на интервью, оформляется допсоглашением и оплачивается до начала дизайна. Свои фото всегда лучше — их обработаю бесплатно.</p>
+          </details>
+          <details class="faq reveal" id="faq-6">
+            <summary>Можно заказать только разбор, без сайта? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Да, это отдельный продукт за 30 000 ₽: созвон, интервью, аудит рынка и конкурентов, карта сайта и тексты для вашего существующего сайта. Без дизайна и сборки. С него часто начинают те, у кого сайт уже есть.</p>
+          </details>
+          <details class="faq reveal" id="faq-7">
+            <summary>Что происходит после запуска? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Подписки нет. Правки, новые блоки и изменение дизайна — почасово, 1 000 ₽ в час, минимум час. Тридцать дней после запуска исправляю свои ошибки бесплатно и в первую очередь.</p>
+          </details>
+          <details class="faq reveal" id="faq-8">
+            <summary>А если что-то сломается? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">В течение 30 дней после запуска исправляю бесплатно и в первую очередь: поехала вёрстка, не работает форма или кнопка. Это про мои ошибки, а не про новые пожелания.</p>
+          </details>
+          <details class="faq reveal" id="faq-9">
+            <summary>Почему цена «от», а не фиксированная? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Потому что объём разный: пять страниц или пятнадцать, один язык или два, каталог или визитка. Точную цифру называю после созвона, фиксирую в договоре — дальше она не меняется. Доплата возможна только если вы сами добавляете объём.</p>
+          </details>
+          <details class="faq reveal" id="faq-10">
+            <summary>Вы гарантируете заявки? <span class="faq-plus" aria-hidden="true"></span></summary>
+            <p class="answer">Нет. Отвечаю за структуру, тексты, скорость и работающую форму; количество заявок зависит от цены, сезона и конкуренции. Обещать цифру в штуках — значит обещать то, что от меня не зависит.</p>
+          </details>
+        </div>
       </div>
     </div>
   </section>  <section class="contact" id="contact">
-    <div class="container">      <div class="contact-grid" data-stagger>
+    <div class="container">
+      <div class="contact-grid" data-stagger>
         <div class="reveal">
           <p class="eyebrow left">контакты</p>
-          <h2 class="grad">Давайте поговорим.</h2>
-          <p class="contact-lead">Напишите в Telegram или на почту. Договоримся о разговоре: сорок минут, бесплатно, без обязательств.</p>
+          <h2 class="grad">Напишите — отвечу в течение рабочего дня</h2>
+          <p class="contact-lead">Расскажите в двух словах, чем занимаетесь и что нужно. Отвечу сам, без менеджеров, в течение рабочего дня. Если удобнее голосом — оставьте телефон, перезвоню.</p>
+
+          <div class="ways">
+            <p class="way"><b>Telegram:</b> <a class="contact-link" href="https://t.me/evglat11">@evglat11</a> — быстрее всего</p>
+            <p class="way"><b>Почта:</b> <a class="contact-link" href="mailto:me@zheksai11.ru">me@zheksai11.ru</a></p>
+            <p class="way"><b>Телефон:</b> по запросу — напишите в Telegram или на почту, перезвоню сам.</p>
+          </div>
+
           <a class="btn btn-primary" href="https://t.me/evglat11">написать в telegram <span class="arr">↗</span></a>
 
           <form class="lead-form" id="leadForm" novalidate>
@@ -1017,16 +1229,19 @@
             </div>
             <p class="lf-error" id="lfError" role="alert" aria-live="polite"></p>
             <button class="btn btn-primary" type="submit">отправить заявку <span class="arr">↗</span></button>
-            <p class="lf-note">Кнопка откроет Telegram с готовым текстом заявки: на сервер ничего не уходит.
+            <p class="lf-note">Кнопка откроет Telegram с готовым текстом заявки — на сервер ничего не уходит. Если Telegram нет, напишите на почту.
               Нажимая, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a>.</p>
           </form>
         </div>
 
         <div class="contact-side reveal">
           <div class="contact-col">
-            <p class="fcard-label">для связи</p>
-            <a class="contact-link" href="https://t.me/evglat11">Telegram @evglat11</a>
-            <a class="contact-link" href="mailto:me@zheksai11.ru">me@zheksai11.ru</a>
+            <p class="fcard-label">что будет после сообщения</p>
+            <ol class="next-steps">
+              <li>Отвечу и задам три вопроса: чем занимаетесь, что должно быть на сайте, есть ли фото.</li>
+              <li>Предложу время созвона на 30 минут — бесплатно, без обязательств.</li>
+              <li>После созвона пришлю вилку цены и срок в переписке, чтобы всё осталось у вас.</li>
+            </ol>
           </div>
           <div class="contact-col">
             <p class="fcard-label">город</p>
@@ -1037,10 +1252,11 @@
       </div>
 
       <div class="foot">
-        <span class="fname">© 2026 Евгений</span>
+        <span class="fname">Евгений — сайты для бизнеса в Сыктывкаре</span>
+        <a href="https://t.me/evglat11">Telegram @evglat11</a>
+        <a href="mailto:me@zheksai11.ru">me@zheksai11.ru</a>
         <a href="privacy.html">Политика конфиденциальности</a>
-        <a href="https://t.me/evglat11">Telegram</a>
-        <span>Сыктывкар</span>
+        <span>© 2026</span>
       </div>
     </div>
   </section>  </main>
