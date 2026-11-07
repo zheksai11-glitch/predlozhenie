@@ -730,6 +730,50 @@
   @media (prefers-reduced-motion: reduce){
     .flip-inner{transition:none}
   }
+
+  /* ---------- услуги: карточки + модалка с описанием ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(16px,2vw,22px);
+    margin-top:clamp(28px,3.4vw,44px)}
+  .svc-card{position:relative;display:flex;flex-direction:column;gap:12px;cursor:pointer;outline:none;
+    padding:clamp(22px,2.4vw,30px);border-radius:var(--r);
+    background:linear-gradient(180deg,var(--canvas-3),var(--canvas-2));
+    box-shadow:inset 0 0 0 1px var(--line),var(--elev);
+    transition:box-shadow .3s var(--ease),transform .3s var(--ease);
+    -webkit-tap-highlight-color:transparent}
+  .svc-card:hover{box-shadow:inset 0 0 0 1px var(--line-strong),var(--elev);transform:translateY(-2px)}
+  .svc-card:focus-visible{box-shadow:0 0 0 2px var(--blue)}
+  .svc-num{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:var(--blue)}
+  .svc-card h3{font-family:"Onest",sans-serif;font-size:clamp(22px,2.2vw,28px);font-weight:500;
+    line-height:1.15;color:var(--mist);margin:0}
+  .svc-lead{color:var(--fog);font-size:14.5px;line-height:1.55;margin:0}
+  .svc-foot{margin-top:auto;padding-top:16px;display:flex;align-items:flex-end;justify-content:space-between;
+    gap:16px;border-top:1px solid var(--line)}
+  .svc-price{font-family:"Onest",sans-serif;font-size:clamp(18px,1.8vw,22px);color:var(--frost);line-height:1.2}
+  .svc-price i{display:block;font-family:"JetBrains Mono",monospace;font-style:normal;font-size:10px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--fog);margin-top:5px}
+  .svc-more{display:inline-flex;align-items:center;gap:7px;font-family:"JetBrains Mono",monospace;
+    font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);text-align:right;flex:none}
+  .svc-more b{font-weight:400;color:var(--blue);transition:transform .25s var(--ease)}
+  .svc-card:hover .svc-more b{transform:translate(2px,-2px)}
+
+  /* модалка услуги */
+  dialog.pmodal::backdrop{background:rgba(3,9,7,.62);
+    -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+  .svc-modal{width:min(620px,calc(100vw - 32px))}
+  .svc-modal h3{font-family:"Onest",sans-serif;font-size:clamp(24px,2.6vw,32px);font-weight:500;
+    color:var(--frost);margin:6px 0 10px}
+  .pmodal-lead{color:var(--fog);font-size:15px;line-height:1.55;margin-bottom:22px}
+  .svc-block{margin-top:22px}
+  .svc-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:9px}
+  .svc-block p{color:var(--fog);font-size:14.5px;line-height:1.6}
+  .svc-list{list-style:none;display:grid;gap:8px}
+  .svc-list li{position:relative;padding-left:20px;color:var(--fog);font-size:14.5px;line-height:1.55}
+  .svc-list li::before{content:"\2733";position:absolute;left:0;top:1px;font-size:10px;color:var(--blue)}
+  @media(max-width:720px){
+    .svc-grid{grid-template-columns:1fr;gap:14px}
+    .svc-foot{flex-wrap:wrap;gap:10px}
+  }
 </style>
 <body>
 <script>document.documentElement.classList.add('js')</script>
@@ -1116,84 +1160,43 @@
         <p>Сайт под ключ — от 70 000 ₽, три платежа по результатам. Разбор и тексты для существующего сайта — 30 000 ₽. Визуал считается отдельно, если у вас нет своих фотографий. Первым трём клиентам — 55 000 ₽ и 25 000 ₽ в обмен на отзыв и право показать работу.</p>
       </div>
 
-      <div class="price-list" data-stagger>
-        <article class="prow reveal">
-          <div>
-            <h3>Сайт под ключ</h3>
-            <p class="desc">Семь шагов: созвон и договор, интервью, аудит конкурентов, тексты, концепция главной, макет всех страниц, сборка и запуск. Цена зависит от объёма: число страниц, каталог, второй язык.</p>
+      <div class="svc-grid" data-stagger>
+        <article class="svc-card reveal" role="button" tabindex="0" data-dialog="svc-01" aria-haspopup="dialog">
+          <span class="svc-num">[ 01 ]</span>
+          <h3>Сайт под ключ</h3>
+          <p class="svc-lead">Сайт с нуля: от интервью до работающего сайта на вашем домене.</p>
+          <div class="svc-foot">
+            <span class="svc-price">от 70 000 ₽ <i>три платежа по результатам</i></span>
+            <span class="svc-more">узнать подробности <b aria-hidden="true">↗</b></span>
           </div>
-          <div class="price">от 70 000 ₽<span class="term">три платежа: 21 000 / 28 000 / 21 000</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: сайт под ключ">↗</a>
         </article>
-        <article class="prow reveal">
-          <div>
-            <h3>Разбор и тексты</h3>
-            <p class="desc">Для тех, у кого сайт уже есть: созвон, интервью, аудит рынка и конкурентов, карта сайта, тексты по блокам. Без дизайна и сборки. На руки — план, структура и тексты.</p>
+        <article class="svc-card reveal" role="button" tabindex="0" data-dialog="svc-02" aria-haspopup="dialog">
+          <span class="svc-num">[ 02 ]</span>
+          <h3>Разбор и тексты</h3>
+          <p class="svc-lead">Для сайта, который уже есть: разбираю, почему нет заявок, и отдаю структуру с текстами.</p>
+          <div class="svc-foot">
+            <span class="svc-price">30 000 ₽ <i>если сайт уже есть</i></span>
+            <span class="svc-more">узнать подробности <b aria-hidden="true">↗</b></span>
           </div>
-          <div class="price">30 000 ₽<span class="term">если сайт уже есть</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: разбор и тексты">↗</a>
         </article>
-        <article class="prow reveal">
-          <div>
-            <h3>Фото и видео</h3>
-            <p class="desc">Нет своих фотографий и видео — генерирую их сам в стилистике сайта, фотосессия не нужна. Десять изображений — 5 000 ₽, ролик на полминуты — 3 000 ₽. Решается на интервью, оформляется допсоглашением.</p>
+        <article class="svc-card reveal" role="button" tabindex="0" data-dialog="svc-03" aria-haspopup="dialog">
+          <span class="svc-num">[ 03 ]</span>
+          <h3>Фото и видео</h3>
+          <p class="svc-lead">Нет своих фотографий и видео — генерирую их сам в стилистике сайта, фотосессия не нужна.</p>
+          <div class="svc-foot">
+            <span class="svc-price">500 ₽ <i>за изображение · 100 ₽ за секунду</i></span>
+            <span class="svc-more">узнать подробности <b aria-hidden="true">↗</b></span>
           </div>
-          <div class="price">500 ₽<span class="term">за изображение · 100 ₽ за секунду видео</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: фото и видео">↗</a>
         </article>
-        <article class="prow reveal">
-          <div>
-            <h3>После запуска</h3>
-            <p class="desc">Подписки нет. Правки, новые блоки, анимации, изменение дизайна — почасово, 1 000 ₽ в час, минимум час. Тридцать дней после запуска исправляю свои ошибки бесплатно.</p>
+        <article class="svc-card reveal" role="button" tabindex="0" data-dialog="svc-04" aria-haspopup="dialog">
+          <span class="svc-num">[ 04 ]</span>
+          <h3>После запуска</h3>
+          <p class="svc-lead">Работы по готовому сайту, без подписки.</p>
+          <div class="svc-foot">
+            <span class="svc-price">1 000 ₽ <i>в час · минимум час</i></span>
+            <span class="svc-more">узнать подробности <b aria-hidden="true">↗</b></span>
           </div>
-          <div class="price">1 000 ₽<span class="term">в час</span></div>
-          <a class="go" href="https://t.me/evglat11" aria-label="Обсудить: после запуска">↗</a>
         </article>
-      </div>
-
-      <div class="includes reveal">
-        <h3>Что входит в сайт под ключ</h3>
-        <div class="inc-group">
-          <p class="inc-title">до кода — входит в цену</p>
-          <ul>
-            <li>созвон 30 минут и договор</li>
-            <li>интервью по вопросам</li>
-            <li>аудит 5–7 конкурентов</li>
-            <li>карта сайта</li>
-            <li>тексты по блокам под поиск и ИИ-поиск</li>
-            <li>построчное согласование</li>
-            <li>концепция главной</li>
-            <li>2–3 итерации правок</li>
-            <li>макет всех страниц</li>
-          </ul>
-        </div>
-        <div class="inc-group">
-          <p class="inc-title">сборка — входит в цену</p>
-          <ul>
-            <li>вёрстка и адаптив</li>
-            <li>форма заявки в Telegram или WhatsApp</li>
-            <li>домен, хостинг, публикация</li>
-            <li>заголовки, описания и микроразметка</li>
-            <li>проверка на телефоне и тестовая заявка</li>
-            <li>инструкция по работе с сайтом</li>
-          </ul>
-        </div>
-        <div class="inc-group">
-          <p class="inc-title">после запуска — входит в цену</p>
-          <ul>
-            <li>30 дней исправлений моих ошибок</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="inc-none reveal">
-        <h4>Чего нет в цене</h4>
-        <ul>
-          <li>Домен — около 300 ₽ в год, оплачиваете вы, подключаю я.</li>
-          <li>Хостинг — по тарифу провайдера, оплачиваете вы.</li>
-          <li>Реклама (Директ, ВК) — не веду.</li>
-          <li>Карточки в 2ГИС и Яндекс.Картах — подскажу, что заполнить, заполняете сами.</li>
-        </ul>
       </div>
 
       <div class="calc reveal">
@@ -1346,7 +1349,128 @@
         <span>© 2026</span>
       </div>
     </div>
-  </section>  </main>
+  </section>  
+
+  <dialog class="pmodal svc-modal" id="svc-01" tabindex="-1" aria-labelledby="svc-01-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">услуга · 01</p>
+    <h3 id="svc-01-title">Сайт под ключ</h3>
+    <p class="pmodal-lead">Сайт с нуля: от интервью до работающего сайта на вашем домене.</p>
+    <div class="svc-block">
+      <p class="svc-label">что входит</p>
+      <ul class="svc-list">
+        <li>созвон, договор, интервью по вопросам</li>
+        <li>аудит 5–7 конкурентов в городе</li>
+        <li>карта сайта с запросом под каждую страницу</li>
+        <li>тексты по блокам — под поиск и ИИ-поиск</li>
+        <li>концепция и макет всех страниц</li>
+        <li>вёрстка, адаптив под телефон, скорость</li>
+        <li>форма заявки в Telegram или WhatsApp</li>
+        <li>домен, хостинг, публикация, микроразметка</li>
+        <li>проверка на телефоне, тестовая заявка, инструкция</li>
+        <li>30 дней исправлений моих ошибок</li>
+      </ul>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">на руки</p>
+      <p>Сайт на вашем домене, доступы у вас, инструкция по правкам.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">цена и срок</p>
+      <p>От 70 000 ₽, три платежа по результатам — 21 000 / 28 000 / 21 000. Первым трём клиентам — 55 000 ₽. Срок 4–5 недель.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">не входит</p>
+      <p>Домен (около 300 ₽ в год) и хостинг — оплачиваете вы; реклама, карточки в 2ГИС, обзвон, съёмка. Количество заявок в штуках не обещаю: оно зависит от цены, сезона и конкуренции.</p>
+    </div>
+  </dialog>
+
+  <dialog class="pmodal svc-modal" id="svc-02" tabindex="-1" aria-labelledby="svc-02-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">услуга · 02</p>
+    <h3 id="svc-02-title">Разбор и тексты</h3>
+    <p class="pmodal-lead">Для сайта, который уже есть: разбираю, почему нет заявок, и отдаю структуру с текстами.</p>
+    <div class="svc-block">
+      <p class="svc-label">что входит</p>
+      <ul class="svc-list">
+        <li>созвон и интервью по вопросам</li>
+        <li>аудит рынка и 5–7 конкурентов</li>
+        <li>разбор текущего сайта: что мешает заявкам</li>
+        <li>карта сайта с запросами по каждой странице</li>
+        <li>тексты по блокам, согласование построчно</li>
+      </ul>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">на руки</p>
+      <p>План работ, карта сайта, тексты в файле, список проблем по приоритету.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">цена и срок</p>
+      <p>30 000 ₽, первым трём — 25 000 ₽. Срок 1,5–2 недели.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">не входит</p>
+      <p>Дизайн, вёрстка, сборка, реклама.</p>
+    </div>
+  </dialog>
+
+  <dialog class="pmodal svc-modal" id="svc-03" tabindex="-1" aria-labelledby="svc-03-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">услуга · 03</p>
+    <h3 id="svc-03-title">Фото и видео</h3>
+    <p class="pmodal-lead">Нет своих фотографий и видео — генерирую их сам в стилистике сайта, фотосессия не нужна.</p>
+    <div class="svc-block">
+      <p class="svc-label">что входит</p>
+      <ul class="svc-list">
+        <li>генерация изображений под конкретные блоки: объект, работы, атмосфера — в стилистике сайта</li>
+        <li>три формата: десктоп, телефон, квадрат</li>
+        <li>обработка и приведение к одному цвету</li>
+        <li>исходники и сжатые версии для скорости</li>
+        <li>короткое видео: сценарий, генерация, монтаж, титры, версия без звука</li>
+      </ul>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">на руки</p>
+      <p>Изображения и видео в стилистике сайта: исходники и сжатые версии для загрузки.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">цена и срок</p>
+      <p>10 изображений — 5 000 ₽, ролик 30 секунд — 3 000 ₽. Решается на интервью, оформляется допсоглашением.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">не входит</p>
+      <p>Фотограф, студия, аренда, выезд, реквизит — вместо этого генерация. Сгенерированный кадр — иллюстрация, не документ: реальные фото работ лучше, их обработаю бесплатно.</p>
+    </div>
+  </dialog>
+
+  <dialog class="pmodal svc-modal" id="svc-04" tabindex="-1" aria-labelledby="svc-04-title">
+    <button class="pmodal-close" type="button" aria-label="Закрыть">×</button>
+    <p class="pmodal-label">услуга · 04</p>
+    <h3 id="svc-04-title">После запуска</h3>
+    <p class="pmodal-lead">Работы по готовому сайту, без подписки.</p>
+    <div class="svc-block">
+      <p class="svc-label">что входит</p>
+      <ul class="svc-list">
+        <li>правки цен, текстов, контактов, графика</li>
+        <li>новые блоки и страницы</li>
+        <li>формы, домен, хостинг, скорость</li>
+        <li>замеры и правки, если что-то просело</li>
+      </ul>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">на руки</p>
+      <p>Бесплатно в первые 30 дней — исправление моих ошибок: вёрстка, форма, кнопки.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">цена и срок</p>
+      <p>1 000 ₽ в час, минимум час, оплата по факту, оценка — до работы.</p>
+    </div>
+    <div class="svc-block">
+      <p class="svc-label">не входит</p>
+      <p>Подписка, реклама, соцсети, круглосуточная поддержка.</p>
+    </div>
+  </dialog>
+</main>
 <script>
   (function () {
     var menu = document.getElementById('menu');
@@ -1493,6 +1617,16 @@
     window.addEventListener('resize', onScroll);
     onScroll();
 
+
+    // карточки услуг: открытие по Enter/Space
+    document.querySelectorAll('.svc-card[data-dialog]').forEach(function (card) {
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+          e.preventDefault();
+          card.click();
+        }
+      });
+    });
     var flipCards = document.querySelectorAll('.flipcard');
     function flippingAllowed() { return true; }
     flipCards.forEach(function (card) {
