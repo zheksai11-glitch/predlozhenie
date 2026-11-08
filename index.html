@@ -203,17 +203,6 @@
   .hero-meta li::before{content:"";position:absolute;left:0;top:.5em;width:4px;height:4px;
     border-radius:50%;background:var(--blue);opacity:.7}
 
-  /* ---------- marquee ---------- */
-  .marquee{position:relative;overflow:hidden;background:var(--canvas-2);
-    border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
-  .marquee:hover .marquee-track{animation-play-state:paused}
-  .marquee-group{display:flex;align-items:center;gap:clamp(22px,2.6vw,40px);
-    padding:18px clamp(22px,2.6vw,40px) 18px 0}
-  .marquee span{font-family:"JetBrains Mono",monospace;font-size:12.5px;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--fog);white-space:nowrap}
-  .marquee i{font-style:normal;color:var(--blue);opacity:.5;font-size:11px;line-height:1}
-  @keyframes marq{to{transform:translateX(-50%)}}
 
   /* ---------- sections ---------- */
   .section{position:relative;padding:clamp(80px,9vw,132px) 0}
@@ -504,7 +493,6 @@
       transition-property:opacity,color,background-color,border-color,box-shadow !important;
       transition-duration:.2s !important}
     html.js .reveal,html.js .head-reveal{opacity:1;transform:none}
-    .marquee-track{animation:none}
     .faq::details-content{transition:none}
   }
 
@@ -851,28 +839,7 @@
 
       <p class="geo-note">Сайт под ключ для локального бизнеса в Сыктывкаре стоит от 70 000 ₽. Оплата идёт тремя платежами по результатам: 21 000 ₽ на старте, 28 000 ₽ после согласования макета, 21 000 ₽ при запуске. Первый созвон длится 30 минут и бесплатен; после него клиент получает вилку цены и срок в переписке.</p>
     </div>
-  </section><div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <div class="marquee-group">
-        <span>интервью</span><i>·</i>
-        <span>структура</span><i>·</i>
-        <span>тексты</span><i>·</i>
-        <span>дизайн</span><i>·</i>
-        <span>вёрстка</span><i>·</i>
-        <span>заявки</span><i>·</i>
-        <span>поддержка</span><i>·</i>
-      </div>
-      <div class="marquee-group">
-        <span>интервью</span><i>·</i>
-        <span>структура</span><i>·</i>
-        <span>тексты</span><i>·</i>
-        <span>дизайн</span><i>·</i>
-        <span>вёрстка</span><i>·</i>
-        <span>заявки</span><i>·</i>
-        <span>поддержка</span><i>·</i>
-      </div>
-    </div>
-  </div>
+  </section>
 
     <section class="section" id="work">
     <div class="container">
