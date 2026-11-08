@@ -61,13 +61,23 @@
     font-size:16px;line-height:1.55;font-weight:400;-webkit-font-smoothing:antialiased;
     text-wrap:pretty}
   body.lock{overflow:hidden}
+  /* фон: мягкие световые пятна вместо сетки */
   body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
     background-image:
-      linear-gradient(rgba(233,246,238,.055) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(233,246,238,.055) 1px,transparent 1px);
-    background-size:88px 88px;
-    -webkit-mask-image:radial-gradient(130% 95% at 50% 0%,#000 0%,rgba(0,0,0,.6) 45%,transparent 88%);
-    mask-image:radial-gradient(130% 95% at 50% 0%,#000 0%,rgba(0,0,0,.6) 45%,transparent 88%)}
+      radial-gradient(58vw 42vw at 78% -6%, rgba(124,207,166,.16), transparent 62%),
+      radial-gradient(52vw 40vw at 8% 12%, rgba(29,127,87,.20), transparent 66%),
+      radial-gradient(70vw 55vw at 50% 104%, rgba(124,207,166,.10), transparent 70%);
+    background-repeat:no-repeat}
+  /* зерно поверх пятен */
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+    background-size:180px 180px;
+    opacity:.05;mix-blend-mode:overlay;
+    -webkit-mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,rgba(0,0,0,.55) 55%,transparent 92%);
+    mask-image:radial-gradient(120% 90% at 50% 0%,#000 0%,rgba(0,0,0,.55) 55%,transparent 92%)}
+  @media (prefers-reduced-motion: reduce){
+    body::after{opacity:.04}
+  }
   ::selection{background:var(--violet);color:#fff}
   a{color:inherit;text-decoration:none}
   img{display:block;max-width:100%}
