@@ -753,6 +753,17 @@
 
   .inline-link{color:var(--frost);border-bottom:1px solid var(--line-strong);transition:border-color .2s}
   .inline-link:hover{border-color:var(--blue)}
+
+  .promo{display:grid;grid-template-columns:1.4fr .6fr;gap:clamp(20px,3vw,40px);align-items:center;
+    margin-top:clamp(24px,3vw,34px);padding:clamp(22px,2.6vw,30px);border-radius:var(--r);
+    background:var(--canvas-3);box-shadow:inset 0 0 0 1px var(--line),var(--elev)}
+  .promo-label{font-family:"JetBrains Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+  .promo h3{font-family:"Onest",sans-serif;font-size:clamp(20px,2.1vw,26px);font-weight:500;
+    color:var(--mist);line-height:1.2;margin:0 0 10px}
+  .promo-text{font-size:14.5px;line-height:1.55;color:var(--fog);max-width:60ch}
+  .promo-actions{display:flex;flex-direction:column;gap:10px;align-items:stretch}
+  @media(max-width:720px){.promo{grid-template-columns:1fr}.promo-actions{flex-direction:row;flex-wrap:wrap}}
 </style>
 <body>
 <script>document.documentElement.classList.add('js')</script>
@@ -887,7 +898,7 @@
         </article>
       </div>
 
-      <p class="works-note reveal">Клиентских проектов с трафиком и отзывами у меня пока нет — поэтому первым трём клиентам сайт под ключ стоит 55 000 ₽ вместо 70 000, а разбор с текстами — 25 000 ₽ вместо 30 000. В обмен на отзыв и право показать работу. Условие одно и то же во всех блоках страницы.</p>
+      <p class="works-note reveal">Клиентских проектов с трафиком и отзывами у меня пока нет. Поэтому за отзыв и право показать работу отдаю скидку: 15 000 ₽ на сайт под ключ и 5 000 ₽ на разбор. Спросите, действует ли она для вас.</p>
     </div>
   </section>  <section class="section" id="who">
     <div class="container">
@@ -1117,7 +1128,7 @@
       <div class="sec-head head-reveal">
         <p class="eyebrow">услуги и стоимость</p>
         <h2 class="grad">Сколько стоит сайт: три продукта и честная вилка</h2>
-        <p>Сайт под ключ — от 70 000 ₽, половина на старте и половина после сдачи. Разбор и тексты для существующего сайта — 30 000 ₽. Визуал считается отдельно, если у вас нет своих фотографий. Первым трём клиентам — 55 000 ₽ и 25 000 ₽ в обмен на отзыв и право показать работу.</p>
+        <p>Сайт под ключ — от 70 000 ₽, половина на старте и половина после сдачи. Разбор и тексты для существующего сайта — 30 000 ₽. Визуал считается отдельно, если у вас нет своих фотографий. Есть скидка: 15 000 ₽ на сайт и 5 000 ₽ на разбор за отзыв и право показать работу. Напишите — скажу, действует ли она для вас.</p>
       </div>
 
       <div class="svc-grid" data-stagger>
@@ -1161,13 +1172,25 @@
 
       <p class="works-note reveal" style="margin-top:clamp(24px,3vw,34px)">Подробный разбор цены — что влияет и как платить: <a class="inline-link" href="skolko-stoit-sayt/">сколько стоит сайт</a>.</p>
 
+      <div class="promo reveal">
+        <div>
+          <p class="promo-label">скидка</p>
+          <h3>Узнайте, действует ли скидка для вас</h3>
+          <p class="promo-text">15 000 ₽ на сайт под ключ и 5 000 ₽ на разбор — за отзыв и право показать работу. Условия называю в переписке: осталась ли скидка и подходите ли вы под неё.</p>
+        </div>
+        <div class="promo-actions">
+          <a class="btn btn-primary" href="https://t.me/evglat11?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D1%81%D0%BA%D0%B8%D0%B4%D0%BA%D1%83%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82">узнать про скидку <span class="arr">↗</span></a>
+          <a class="btn btn-ghost" href="mailto:me@zheksai11.ru?subject=%D0%A1%D0%BA%D0%B8%D0%B4%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D1%81%D0%BA%D0%B8%D0%B4%D0%BA%D1%83%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82">написать на почту</a>
+        </div>
+      </div>
+
       <div class="calc reveal">
         <div>
           <h3>Посчитать свой вариант</h3>
           <label class="check"><input type="checkbox" id="c1" checked> Сайт под ключ — от 70 000 ₽</label>
           <label class="check"><input type="checkbox" id="c2"> Разбор и тексты — 30 000 ₽</label>
-          <label class="check"><input type="checkbox" id="c3"> Первые три клиента: скидка 15 000 на сайт, 5 000 на разбор</label>
-          <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона и дальше не меняется. Доплата возможна только если вы сами добавляете объём. Первым трём клиентам: 55 000 ₽ за сайт под ключ, 25 000 ₽ за разбор с текстами.</p>
+          <label class="check"><input type="checkbox" id="c3"> Скидка за отзыв: 15 000 на сайт, 5 000 на разбор</label>
+          <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона и дальше не меняется. Доплата возможна только если вы сами добавляете объём. Со скидкой за отзыв сайт под ключ — 55 000 ₽, разбор с текстами — 25 000 ₽: уточните, действует ли она для вас.</p>
         </div>
         <p class="total grad" id="total" aria-live="polite">70 000 ₽<small>Сайт под ключ</small></p>
       </div>
@@ -1308,7 +1331,7 @@
     </div>
     <div class="svc-block">
       <p class="svc-label">цена и срок</p>
-      <p>От 70 000 ₽: половина на старте, половина после сдачи. Первым трём клиентам — 55 000 ₽. Срок от 20 дней.</p>
+      <p>От 70 000 ₽: половина на старте, половина после сдачи. Скидка 15 000 ₽ за отзыв и право показать работу — спросите, действует ли. Срок от 20 дней.</p>
     </div>
   </dialog>
 
@@ -1333,7 +1356,7 @@
     </div>
     <div class="svc-block">
       <p class="svc-label">цена и срок</p>
-      <p>30 000 ₽, первым трём — 25 000 ₽. Срок 1,5–2 недели.</p>
+      <p>30 000 ₽, скидка 5 000 ₽ за отзыв — спросите, действует ли. Срок 1,5–2 недели.</p>
     </div>
   </dialog>
 
