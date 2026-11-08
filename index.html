@@ -1189,8 +1189,7 @@
           <h3>Посчитать свой вариант</h3>
           <label class="check"><input type="checkbox" id="c1" checked> Сайт под ключ — от 70 000 ₽</label>
           <label class="check"><input type="checkbox" id="c2"> Разбор и тексты — 30 000 ₽</label>
-          <label class="check"><input type="checkbox" id="c3"> Скидка за отзыв: 15 000 на сайт, 5 000 на разбор</label>
-          <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона и дальше не меняется. Доплата возможна только если вы сами добавляете объём. Со скидкой за отзыв сайт под ключ — 55 000 ₽, разбор с текстами — 25 000 ₽: уточните, действует ли она для вас.</p>
+          <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона и дальше не меняется. Если действует скидка за отзыв, она вычитается из этой суммы — спросите об этом в переписке.</p>
         </div>
         <p class="total grad" id="total" aria-live="polite">70 000 ₽<small>Сайт под ключ</small></p>
       </div>
@@ -1505,8 +1504,8 @@
     }
     function recalc() {
       if (!total || !c1) return;
-      var site = c3.checked ? 55000 : 70000;
-      var review = c3.checked ? 25000 : 30000;
+      var site = (c3 && c3.checked) ? 55000 : 70000;
+      var review = (c3 && c3.checked) ? 25000 : 30000;
       var sum = (c1.checked ? site : 0) + (c2.checked ? review : 0);
       if (!c1.checked && !c2.checked) { total.textContent = 'выберите продукт'; popTotal(); return; }
       var label = c1.checked && c2.checked ? 'Сайт и разбор'
@@ -1514,7 +1513,7 @@
       total.innerHTML = money(sum) + '<small>' + label + '</small>';
       popTotal();
     }
-    if (c1) [c1, c2, c3].forEach(function (c) { c.addEventListener('change', recalc); });
+    if (c1) [c1, c2].forEach(function (c) { c.addEventListener('change', recalc); });
     recalc();
 
     document.querySelectorAll('[data-stagger]').forEach(function (group) {
