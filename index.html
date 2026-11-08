@@ -1183,16 +1183,6 @@
           <a class="btn btn-ghost" href="mailto:me@zheksai11.ru?subject=%D0%A1%D0%BA%D0%B8%D0%B4%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82&body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%20%D1%81%D0%BA%D0%B8%D0%B4%D0%BA%D1%83%20%D0%BD%D0%B0%20%D1%81%D0%B0%D0%B9%D1%82">написать на почту</a>
         </div>
       </div>
-
-      <div class="calc reveal">
-        <div>
-          <h3>Посчитать свой вариант</h3>
-          <label class="check"><input type="checkbox" id="c1" checked> Сайт под ключ — от 70 000 ₽</label>
-          <label class="check"><input type="checkbox" id="c2"> Разбор и тексты — 30 000 ₽</label>
-          <p class="calc-note">Итоговая сумма фиксируется в договоре после созвона и дальше не меняется. Если действует скидка за отзыв, она вычитается из этой суммы — спросите об этом в переписке.</p>
-        </div>
-        <p class="total grad" id="total" aria-live="polite">70 000 ₽<small>Сайт под ключ</small></p>
-      </div>
     </div>
   </section>    <section class="section alt" id="faq">
     <div class="container">
@@ -1490,31 +1480,6 @@
     window.addEventListener('resize', whyReserve);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(whyReserve);
 
-    var total = document.getElementById('total');
-    var c1 = document.getElementById('c1'), c2 = document.getElementById('c2'), c3 = document.getElementById('c3');
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var easeOut = getComputedStyle(document.documentElement).getPropertyValue('--ease-out').trim() || 'ease-out';
-    function money(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽'; }
-    function popTotal() {
-      if (!total || reduce || !total.animate) return;
-      total.animate([
-        { opacity: .35, transform: 'translateY(10px)' },
-        { opacity: 1, transform: 'none' }
-      ], { duration: 380, easing: easeOut });
-    }
-    function recalc() {
-      if (!total || !c1) return;
-      var site = (c3 && c3.checked) ? 55000 : 70000;
-      var review = (c3 && c3.checked) ? 25000 : 30000;
-      var sum = (c1.checked ? site : 0) + (c2.checked ? review : 0);
-      if (!c1.checked && !c2.checked) { total.textContent = 'выберите продукт'; popTotal(); return; }
-      var label = c1.checked && c2.checked ? 'Сайт и разбор'
-                : c1.checked ? 'Сайт под ключ' : 'Разбор и тексты';
-      total.innerHTML = money(sum) + '<small>' + label + '</small>';
-      popTotal();
-    }
-    if (c1) [c1, c2].forEach(function (c) { c.addEventListener('change', recalc); });
-    recalc();
 
     document.querySelectorAll('[data-stagger]').forEach(function (group) {
       Array.prototype.forEach.call(group.children, function (el, i) {
