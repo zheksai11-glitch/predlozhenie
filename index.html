@@ -325,7 +325,7 @@
     text-transform:uppercase;color:var(--blue);margin-right:7px}
 
   /* ---------- why ---------- */
-  #why.section{padding-bottom:0}
+  #why.section{padding-bottom:clamp(48px,6vw,88px)}
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;align-content:start}
   .why{padding:26px;border-radius:var(--r);background:var(--canvas-3);box-shadow:var(--elev);
     transition:background .3s var(--ease)}
@@ -606,7 +606,7 @@
   @media(max-width:560px){.lf-row{grid-template-columns:1fr}}
 
   /* ==== блоки по аудиту: GEO-абзацы, состав по группам, «чего нет в цене», способы связи ==== */
-  .geo-note{margin-top:clamp(20px,2.6vw,30px);max-width:78ch;font-size:14px;line-height:1.65;
+  .geo-note{margin-top:clamp(20px,2.6vw,30px);margin-bottom:clamp(22px,2.8vw,34px);max-width:78ch;font-size:14px;line-height:1.65;
     color:var(--fog);padding-left:16px;border-left:2px solid var(--line-strong)}
   .sec-head + .geo-note{margin-left:auto;margin-right:auto}
   .includes ul{columns:1}
